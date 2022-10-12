@@ -25,7 +25,7 @@ To install the latest version of go-mail simply issue the following command:
 $ go install github.com/wneessen/go-mail@latest
 ```
 
-## Your first program
+## Sending your first mail
 
 go-mail consists of two main components. The `Msg` which represents the mail message and the `Client` which takes
 care of the mail delivery via a SMTP service.
@@ -61,9 +61,52 @@ make sure that the provided address is accepted by go-mail and will not cause pr
 
 Next we want to set a subject line for our message and fill the mail body with some content.
 {{< highlight Go "linenos=table" >}}
-m.Subject("This is my first mail with go-mail!")
-m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+func main() {
+	[...]
+	m.Subject("This is my first mail with go-mail!")
+	m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+}
 {{< /highlight >}}
 
 The first argument for `SetBodyString()` is a content type we need to provide. In our example the 
 `mail.TypeTextPlain` basically represents a `text/plain` content time - meaning a plain text mail body.
+
+### Sending the mail
+
+Now that we have our mail message ready to go, let's bring it on the way and send it out. For this we'll 
+use the `Client`, which handles the SMTP transmission.
+
+{{< highlight Go "linenos=table" >}}
+func main() {
+	[...]
+	c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), 
+		mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
+	if err != nil {
+		log.Fatalf("failed to create mail client: %s", err)
+	}
+}
+{{< /highlight >}}
+
+In this example we connect to the mail server with the hostname `smtp.example.com` and provide the
+`Client` with a couple of options like the port we want to connect to, the fact that we want to use
+`SMTP PLAIN` for authentication and the username and password.
+
+Finally we tell the client to deliver the mail.
+
+{{< highlight Go "linenos=table" >}}
+func main() {
+	[...]
+	if err := c.DialAndSend(m); err != nil {
+		log.Fatalf("failed to send mail: %s", err)
+	}
+}
+{{< /highlight >}}
+
+The `DialAndSend()` method takes care of establishing the connection and sending out the mail. You have
+the option to call them separately as well, but we won't need this for the quick example.
+
+## Conclusion
+
+That was quite simple, wasn't it? You successfully prepared a mail message and delivered it to the
+recipient via a 3rd party mail server. go-mail of course can do much more. Check out the in-depth
+documentation for all the features.
