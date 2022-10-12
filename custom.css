@@ -1,1 +1,6 @@
-/* You can add custom styles here. */
+.btn-centered {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
