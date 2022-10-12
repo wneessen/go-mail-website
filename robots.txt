@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /tags/*
 
-Sitemap: sitemap.xml
+Sitemap: https://wneessen.github.io/go-mail-website/sitemap.xml
