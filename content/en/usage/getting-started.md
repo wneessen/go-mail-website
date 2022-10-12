@@ -1,9 +1,9 @@
 ---
-title: Erste Schritte
+title: Getting started
 weight: -20
 ---
 
-Auf dieser Seite erfahren Sie, wie Sie mit dem Geekdoc-Theme beginnen können, einschließlich der Installation und der grundlegenden Konfiguration.
+This page tells you how to get started with the Geekdoc theme, including installation and basic configuration.
 
 <!--more-->
 

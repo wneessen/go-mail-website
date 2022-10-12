@@ -1,0 +1,10 @@
+---
+more:
+  - name: Releases
+    ref: "https://github.com/wneessen/go-mail/releases"
+    external: true
+    icon: "gdoc_download"
+  - name: View Source
+    ref: "https://github.com/wneessen/go-mail"
+    external: true
+    icon: "gdoc_github"

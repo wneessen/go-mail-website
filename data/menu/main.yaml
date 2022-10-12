@@ -1,0 +1,10 @@
+---
+main:
+  - name:
+      en: Usage
+      de: Verwendung
+    sub:
+      - name:
+          en: Getting started
+          de: Erste Schritte
+        ref: "/usage/getting-started"
