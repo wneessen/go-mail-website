@@ -1,4 +1,4 @@
-#baseURL = "http://localhost"
+baseURL = "https://wneessen.github.io/go-mail-website"
 title = "go-mail"
 description = "Sending mails with go"
 theme = "hugo-geekdoc"
