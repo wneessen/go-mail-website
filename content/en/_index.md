@@ -1,9 +1,6 @@
 ---
-title: Foo bar
-description: > 
-  Yadaa foo bar blubb
-
-  Some more text
+title: Welcome
+description: Welcome
 ---
 
-Test
+This is the english page

@@ -1,6 +1,6 @@
-baseURL = "https://wneessen.github.io/go-mail-website"
+baseURL = "https://go-mail.dev"
 title = "go-mail"
-description = "Sending mails with go"
+description = "Easy to use, yet comprehensive library for sending mails with Go"
 theme = "hugo-geekdoc"
 
 # Required to get well formatted code blocks
@@ -11,6 +11,18 @@ enableGitInfo = false
 
 # Required if you want to render robots.txt template
 enableRobotsTXT = true
+
+defaultContentLanguage = "en"
+
+[languages.en]
+languageName = "English"
+contentDir = "content/en"
+weight = 10
+
+[languages.de]
+languageName = "Deutsch"
+contentDir = "content/de"
+weight = 20
 
 [markup]
 [markup.goldmark.renderer]
