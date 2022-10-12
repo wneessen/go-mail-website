@@ -110,3 +110,34 @@ the option to call them separately as well, but we won't need this for the quick
 That was quite simple, wasn't it? You successfully prepared a mail message and delivered it to the
 recipient via a 3rd party mail server. go-mail of course can do much more. Check out the in-depth
 documentation for all the features.
+
+## Full example code
+
+{{< highlight Go "linenos=table" >}}
+package main
+
+import (
+	"github.com/wneessen/go-mail"
+	"log"
+)
+
+func main() {
+	m := mail.NewMsg()
+	if err := m.From("toni.sender@example.com"); err != nil {
+		log.Fatalf("failed to set From address: %s", err)
+	}
+	if err := m.To("tina.recipient@example.com"); err != nil {
+		log.Fatalf("failed to set To address: %s", err)
+	}
+	m.Subject("This is my first mail with go-mail!")
+	m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+	c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
+		mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
+	if err != nil {
+		log.Fatalf("failed to create mail client: %s", err)
+	}
+	if err := c.DialAndSend(m); err != nil {
+		log.Fatalf("failed to send mail: %s", err)
+	}
+}
+{{< /highlight >}}
