@@ -2,7 +2,7 @@
 {{- $class := "" }}
 {{- $size := default "regular" (.Get "size" | lower) }}
 
-{{- if not (in (slice "regular" "large") $size) }}
+{{- if not (in (slice "regular" "large" "huge") $size) }}
   {{- $size = "regular" }}
 {{- end }}
 

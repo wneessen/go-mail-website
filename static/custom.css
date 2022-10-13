@@ -4,3 +4,11 @@
     margin-left: auto;
     width: 100%;
 }
+
+.gdoc-button--huge {
+    font-size: 1.75rem;
+}
+
+.gdoc-button--huge > .gdoc-button__link {
+    padding: 12px;
+}

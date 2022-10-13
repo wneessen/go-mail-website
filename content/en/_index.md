@@ -22,17 +22,9 @@ best practice with sane defaults. The library only dependends on the Go Standard
 go-mail works like a programatic email client and provides lots of methods and functionalities you would consider
 standard in a MUA.
 
-<div class="btn-centered">
-{{< button size="large" relref="usage/getting-started/" >}}Getting started sending mails with Go{{< /button >}}
+<div class="btn-centered btn-huge">
+{{< button size="huge" relref="usage/getting-started/" >}}Get started using go-mail{{< /button >}}
 </div>
-
-## Middleware
-The goal of go-mail is to keep it free from 3rd party dependencies and only focus on things a mail library should
-fulfill. Yet, since version v0.2.8 we've added support for middleware on the `Msg` object, allowing 3rd parties to
-alter a given mail message to their needs without relying on `go-mail` to support their specific need.
-
-To get our users started with message middleware, we've created a collection of useful middlewares. It can be
-found in a seperate repository: [go-mail-middlware](https://github.com/wneessen/go-mail-middleware).
 
 ## Feature highlights
 
@@ -51,20 +43,14 @@ practices with sane defaults
 
 <--->
 
-### Easy customization
-
-The look and feel can be easily customized by CSS custom properties (variables), features can be adjusted by Hugo parameters.
-
-{{< /columns >}}
-
-{{< columns >}}
-
 ### Full TLS support
 
 go-mail supports implicit STARTTLS with different policies as well as explicit SSL/TLS for connections
 to sending mail servers
 
-<--->
+{{< /columns >}}
+
+{{< columns >}}
 
 ### Contexts
 
@@ -77,15 +63,15 @@ We make use of Go contexts for better control flow and timeout/cancelation handl
 Support for three common SMTP authentication mechanisms (LOGIN, PLAIN, CRAM-MD5) as well as custom
 authentications.
 
-{{< /columns >}}
-
-{{< columns >}}
+<--->
 
 ### Mail address validation
 
 go-mail follows RFC5322 and validates the provided mail addresses
 
-<--->
+{{< /columns >}}
+
+{{< columns >}}
 
 ### Common mail header support
 
@@ -97,15 +83,15 @@ go-mail brings generators for lots of common mail headers (Message-ID, Date, Bul
 
 You can send mulitple mails over the same SMTP connection
 
-{{< /columns >}}
-
-{{< columns >}}
+<--->
 
 ### Attachments/Embeds
 
 Full support for attachments and inline embeds from different sources (local file system, `io.Reader` or `embed.FS`)
 
-<--->
+{{< /columns >}}
+
+{{< columns >}}
 
 ### Encodings and content types
 
@@ -115,18 +101,18 @@ go-mail supports different encondings and content types out of the box
 
 ### Middlewares
 
-Middleware supports for 3rd-party libraries to alter mail message to their need
+Middleware support for 3rd-party libraries to alter mail message to their need
+
+<--->
+
+### Sendmail and file storage
+
+Support for sending mail messages through a local sendmail installation as well as output to
+local files (e. g. as `.eml` files to disk to open them in a MUA)
 
 {{< /columns >}}
 
 {{< columns >}}
-
-### Sendmail and file storage
-
-Support for sending mail messages through a local sendmail installation as well as output to 
-loacl files (e. g. as `.eml` files to disk to open them in a MUA)
-
-<--->
 
 ### MDNs and DSNs
 
@@ -137,6 +123,8 @@ go-mail brings support for requestng MDNs (RFC 8098) and DSNs (RFC 1891)
 ### Template support
 
 Support for Go's `html/template` and `text/template` (as message body, alternative part or attachment/emebed)
+
+<--->
 
 {{< /columns >}}
 
