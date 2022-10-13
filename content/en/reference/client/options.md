@@ -89,11 +89,13 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `WithDSNMailReturnType` is the option you can use if you like to request DSNs but don't want to use the
-default `FULL` settings of the `WithDSN()` option.
+`WithDSNMailReturnType` enables the `Client` to request DSNs (if the server supports it)
+as described in the [RFC 1891](https://www.rfc-editor.org/rfc/rfc1891) and set the `MAIL FROM`
+Return option type to the given `DSNMailReturnOption`
 
-`WithDSNMailReturnType` takes a `DSNMailReturnOption` as argument. go-mail has the two types already built-in:
-* `DSNMailReturnHeadersOnly` requests that only the headers of the message be returned. \
+go-mail has the following two `DSNMailReturnOption` type already built-in:
+
+* `DSNMailReturnHeadersOnly`: requests that only the headers of the message be returned. \
   See: [RFC 1891, Section 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
 * `DSNMailReturnFull`: requests that the entire message be returned in any "failed" delivery status notification 
   issued for this recipient \
@@ -101,4 +103,78 @@ default `FULL` settings of the `WithDSN()` option.
 
 ### WithDSNRcptNotifyType()
 
-TBD
+{{< tabs "WithDSNRcptNotifyType" >}}
+{{< tab "Signature" >}}
+{{< highlight Go "linenos=table" >}}
+func WithDSNRcptNotifyType(...DSNRcptNotifyOption) Option
+{{< /highlight >}}
+{{< /tab >}}
+{{< tab "Example" >}}
+{{< highlight Go "linenos=table" >}}
+package main
+
+import (
+    "github.com/wneessen/go-mail"
+    "log"
+)
+
+func main() {
+    c, err := mail.NewClient("mail.example.com",
+        mail.WithDSNRcptNotifyType(mail.DSNRcptNotifyFailure, mail.DSNRcptNotifyDelay, mail.DSNRcptNotifySuccess))
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+{{< /highlight >}}
+{{< /tab >}}
+{{< /tabs >}}
+
+`WithDSNRcptNotifyType` enables the `Client` to request DSNs as described in 
+[RFC 1891](https://www.rfc-editor.org/rfc/rfc1891) and sets the `RCPT TO` notify options to the given list 
+of `DSNRcptNotifyOption`
+
+go-mail has the following `DSNRcptNotifyOption` types already built-in:
+
+* `DSNRcptNotifyNever`: requests that a DSN not be returned to the sender under any conditions. \
+  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifySuccess`: requests that a DSN be issued on successful delivery \
+  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifyFailure`: requests that a DSN be issued on delivery failure \
+  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifyDelay`: indicates the sender's willingness to receive "delayed" DSNs. Delayed DSNs may be 
+  issued if delivery of a message has been delayed for an unusual amount of time (as determined by the MTA 
+  at which the message is delayed), but the final delivery status (whether successful or failure) cannot 
+  be determined. The absence of the DELAY keyword in a NOTIFY parameter requests that a "delayed" DSN NOT be
+  issued under any conditions.
+  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+
+### WithHELO()
+
+{{< tabs "WithHELO" >}}
+{{< tab "Signature" >}}
+{{< highlight Go "linenos=table" >}}
+func WithHELO(string) Option
+{{< /highlight >}}
+{{< /tab >}}
+{{< tab "Example" >}}
+{{< highlight Go "linenos=table" >}}
+package main
+
+import (
+    "github.com/wneessen/go-mail"
+    "log"
+)
+
+func main() {
+    c, err := mail.NewClient("mail.example.com", mail.WithHELO("test.example.com"))
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+{{< /highlight >}}
+{{< /tab >}}
+{{< /tabs >}}
+
+`WithHELO` instructs the `Client` to use the provided string as HELO/EHLO greeting host. By default the
+`Client` will use Go's `os.Hostname()` method to get the local hostname and use that for the HELO/EHLO
+greeting. `WithHELO` will override this.
