@@ -1,10 +1,25 @@
 ---
 main:
   - name:
-      en: Usage
-      de: Verwendung
+      en: Getting started
+      de: Erste Schritte
     sub:
       - name:
-          en: Getting started
-          de: Erste Schritte
-        ref: "/usage/getting-started"
+          en: Introduction
+          de: Einführung
+        ref: "/getting-started/introduction"
+  - name:
+      en: Reference
+      de: Referenz
+    sub:
+      - name:
+          en: Client
+          de: Client
+        ref: "/reference/client"
+        sub:
+        - name: Options
+          ref: "/reference/client/options"
+      - name:
+          en: Msg
+          de: Msg
+        ref: "/reference/msg"

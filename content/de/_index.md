@@ -24,7 +24,7 @@ go-mail funktioniert wie ein programmatischer E-Mail-Client und bietet viele Met
 die man in einem MUA (Mail User Agent) als Standard betrachten würde.
 
 <div class="btn-centered btn-huge">
-{{< button size="huge" relref="usage/getting-started/" >}}Erste Schritte mit go-mail{{< /button >}}
+{{< button size="huge" relref="getting-started/introduction/" >}}Erste Schritte mit go-mail{{< /button >}}
 </div>
 
 ## Besondere Merkmale

@@ -23,7 +23,7 @@ go-mail works like a programatic email client and provides lots of methods and f
 standard in a MUA.
 
 <div class="btn-centered btn-huge">
-{{< button size="huge" relref="usage/getting-started/" >}}Get started using go-mail{{< /button >}}
+{{< button size="huge" relref="getting-started/introduction/" >}}Get started using go-mail{{< /button >}}
 </div>
 
 ## Feature highlights
