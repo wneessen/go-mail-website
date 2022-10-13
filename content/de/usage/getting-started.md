@@ -16,12 +16,13 @@ go-mail erfordert eine funktionierende Go-Installation (Version 1.16+). Lade Go 
 
 ## Installation
 
-go-mail kann mit Hilfe des Go-Modul-Installationsmechanismus über den Befehl `go install` installiert werden.
+go-mail kann mit Hilfe des Go-Modul-Installationsmechanismus über den Befehl `go get` installiert werden.
 
-Um die neueste Version von go-mail zu installieren, geben Sie einfach den folgenden Befehl ein:
+Um die neueste Version von go-mail zu installieren, gehe in Deinen Projektordner und importiere das Modul 
+ganz einfach mit dem folgenden Befehl:
 
 ```Shell
-$ go install github.com/wneessen/go-mail@latest
+$ go get github.com/wneessen/go-mail
 ```
 
 ## Versende Deine erste Mail
