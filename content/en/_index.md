@@ -14,7 +14,7 @@ geekdocAnchor: false
 [![REUSE status](https://api.reuse.software/badge/github.com/wneessen/go-mail)](https://api.reuse.software/info/github.com/wneessen/go-mail)
 <a href="https://ko-fi.com/D1D24V9IX"><img src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/5cbed8a4ae2b88347c06c923_BuyMeACoffee_blue.png" height="20" alt="buy ma a coffee"></a>
 
-<p align="center"><img src="./go-mail-2.svg" width="250" alt="go-mail logo"/></p>
+<p align="center"><img src="/go-mail-2.svg" width="250" alt="go-mail logo"/></p>
 
 go-mail is an easy to use Go module for formating and sending mails. It uses idiomatic Go style and follows 
 best practice with sane defaults. The library only dependends on the Go Standard Library.

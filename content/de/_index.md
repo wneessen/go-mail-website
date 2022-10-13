@@ -14,7 +14,7 @@ geekdocAnchor: false
 [![REUSE status](https://api.reuse.software/badge/github.com/wneessen/go-mail)](https://api.reuse.software/info/github.com/wneessen/go-mail)
 <a href="https://ko-fi.com/D1D24V9IX"><img src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/5cbed8a4ae2b88347c06c923_BuyMeACoffee_blue.png" height="20" alt="buy ma a coffee"></a>
 
-<p align="center"><img src="./go-mail-2.svg" width="250" alt="go-mail logo"/></p>
+<p align="center"><img src="/go-mail-2.svg" width="250" alt="go-mail logo"/></p>
 
 go-mail ist ein einfach zu bedienendes Go-Modul zum Formatieren und Versenden von Mails. Es setzt auf einen
 idiomatischen Go-Stil und folgt "Best Practices" mit vernünftigen Voreinstellungen. Die Bibliothek hängt 
