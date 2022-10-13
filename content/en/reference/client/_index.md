@@ -1,11 +1,13 @@
 ---
-title: Client
+title: The mail delivery client
 ---
 
 In go-mail the `Client` is responsible for the mail delivery with remote mail servers that communicate via the
 SMTP protocol.
 
-## `NewClient()`
+{{< toc >}}
+
+## NewClient()
 
 {{< tabs "NewClient" >}}
 {{< tab "Signature" >}}
@@ -37,3 +39,21 @@ sending SMTP server. Optionally you can provide a list of `Option` funcionts. Th
 to override the default settings of the `Client`.
 
 Check the [Options](options) documentation for in-depth details to all available Options.
+
+## Client
+
+{{< tabs "Client" >}}
+{{< tab "Signature" >}}
+{{< highlight Go "linenos=table" >}}
+type Client struct {
+    // contains filtered or unexported fields
+}
+{{< /highlight >}}
+{{< /tab >}}
+{{< /tabs >}}
+
+### Close()
+
+### DialAndSend()
+
+### DialAndSendWithContext()
