@@ -23,3 +23,11 @@ main:
           en: Msg
           de: Msg
         ref: "/reference/msg"
+  - name:
+      en: Community
+      de: Community
+    sub:
+      - name:
+          en: Guide
+          de: Leitfaden
+        ref: "/community/guide"
