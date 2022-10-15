@@ -1,17 +1,17 @@
 ---
-title: Introduction
+title: Einführung
 weight: -20
 ---
 
-This short tutorial shows you how to get up and running with go-mail from installation to sending your first mail.
+Dieses kurze Tutorial zeigt Dir, die ersten Schritte von der Installation bis zum Versand Deiner ersten E-Mail.
 
 <!--more-->
 
 {{< toc >}}
 
-## Requirements
+## Voraussetzungen
 
-go-mail requires a working Go installation (Version 1.16+). Download Go from the [Go Downloads Page](https://go.dev/dl/).
+go-mail erfordert eine funktionierende Go-Installation (Version 1.16+). Lade Go von der [Download Seite](https://go.dev/dl/) runter.
 
 ## Installation
 
@@ -36,7 +36,7 @@ package main
 
 import ( "github.com/wneessen/go-mail" "log" )
 
-%s                    %s
+func main() { m := mail.NewMsg() if err := m.From("toni.sender@example.com"); err != nil { log.Fatalf("failed to set From address: %s", err) } if err := m.To("tina.recipient@example.com"); err != nil { log.Fatalf("failed to set To address: %s", err) } }
 {{< /highlight >}}
 
 In this little code snippet, first and foremost we import go-mail into our project. See the `import` statement in line 4. Next we create a new message in line 9. Lines 10 and 13 set the sender and recipient addresses. Since go-mail makes sure that you are providing valid mail addresses, we return an `error`. This way we can make sure that the provided address is accepted by go-mail and will not cause problems later on.
@@ -53,7 +53,7 @@ The first argument for `SetBodyString()` is a content type we need to provide. I
 Now that we have our mail message ready to go, let's bring it on the way and send it out. For this we'll use the `Client`, which handles the SMTP transmission.
 
 {{< highlight Go "linenos=table" >}}
-func main() { [...] %s
+func main() { [...] c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass")) if err != nil { log.Fatalf("failed to create mail client: %s", err) } }
 {{< /highlight >}}
 
 In this example we connect to the mail server with the hostname `smtp.example.com` and provide the `Client` with a couple of options like the port we want to connect to, the fact that we want to use `SMTP PLAIN` for authentication and the username and password.
