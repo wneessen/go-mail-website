@@ -13,6 +13,7 @@ enableGitInfo = true
 enableRobotsTXT = true
 
 defaultContentLanguage = "en"
+disableLanguages = ['de']
 
 [languages.en]
 languageName = "English"
