@@ -20,7 +20,7 @@ $ git clone git@github.com:wneessen/go-mail-website.git
 Change directories into the `go-mail-website` directory:
 
 ```shell
-$ cd tinygo-site
+$ cd go-mail-website
 ```
 
 Now you should be able to run the site locally:
