@@ -3,7 +3,7 @@ title: Einführung
 weight: -20
 ---
 
-Dieses kurze Tutorial zeigt Dir, die ersten Schritte von der Installation bis zum Versand Deiner ersten E-Mail.
+This short tutorial shows you how to get up and running with go-mail from installation to sending your first mail.
 
 <!--more-->
 
@@ -11,7 +11,7 @@ Dieses kurze Tutorial zeigt Dir, die ersten Schritte von der Installation bis zu
 
 ## Voraussetzungen
 
-go-mail erfordert eine funktionierende Go-Installation (Version 1.16+). Lade Go von der [Download Seite](https://go.dev/dl/) runter.
+go-mail erfordert eine funktionierende Go-Installation (Version 1.16+). Download Go from the [Go Downloads Page](https://go.dev/dl/).
 
 ## Installation
 

@@ -1,34 +1,34 @@
 ---
-title: Community Guide
+title: Community-Leitfaden
 ---
 
-The go-mail community is growing and if you're reading this, chances are that you want to join, too!
+Die go-mail-Community wächst und wenn Du dies liest, stehen die Chancen gut, dass Du auch mitmachen willst!
 
 {{< toc >}}
 
-## Resources
+## Ressourcen
 
-### Code of Conduct
+### Verhaltenskodex
 
-In our community, we follow our [Code of Conduct](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) and ask everybody who likes to participate to act accordingly.
+In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) und verlangen von jedem, der Teilnehmen möchte, sich ebenso zu verhalten.
 
-### Updates and announcements
+### Updates und Ankündigungen
 
 Find go-mail announcements in the  on GH
 
-### Support and annoucements
+### Support und Ankündigungen
 
-* [go-mail forum](https://github.com/wneessen/go-mail/discussions): Receive announcements and start discussions about go-mail.
-* [Github issues](https://github.com/wneessen/go-mail/issues): If you have a bug to report or feature to request, please use GitHub issues. Please respect the rules specified in each repository's issue template.
-* [Discord](https://discord.gg/zSUeBrsFPB): A place for go-mail devs and users to meet and chat in real time.
+* [go-mail Forum](https://github.com/wneessen/go-mail/discussions): Erhalte Ankündigungen und starte Diskussionen über go-mail.
+* [Github Tickets](https://github.com/wneessen/go-mail/issues): Wenn Du einen Bug melden oder ein Feature vorschlagen möchtest, benutze bitte die Github "Issues" Funktion. Bitte beachte die Regeln, die in jedem Projektarchiv-Template angegeben sind.
+* [Discord](https://discord.gg/zSUeBrsFPB): Ein Platz, wo go-mail Entwickler und Nutzer sich treffen können und in Echtzeit chatten können.
 
-## Contributing
+## Mitwirken
 
-go-mail is an open source, community driven project. We welcome anyone to join us in contributing to the project. This documentation is aimed at anyone wishing to get familiar with the project and the development processes.
+go-mail ist ein Open-Source-Projekt, das von der Community betrieben wird. Wir begrüßen jeden, der mit uns an diesem Projekt mitwirkt. Diese Dokumentation richtet sich an alle, die sich mit dem Projekt und den Entwicklungsprozessen vertraut machen möchten.
 
-* Developing new features
-* Fixing bugs
-* Testing
-* Documenting features
-* Writing tutorials / guides
-* Helping others on the issues + discussions boards
+* Entwicklung neuer Funktionen
+* Fehler beheben
+* Testen
+* Funktionen dokumentieren
+* Tutorials / Anleitungen schreiben
+* Anderen bei Problemen im Diskussionenboard helfen
