@@ -19,6 +19,7 @@ Find go-mail announcements in the  on GH
 
 ### Support and annoucements
 
+* [Twitter](https://twitter.com/gomail_dev): Follow us on Twitter to receive recent news about go-mail
 * [go-mail forum](https://github.com/wneessen/go-mail/discussions): Receive announcements and 
   start discussions about go-mail.
 * [Github issues](https://github.com/wneessen/go-mail/issues): If you have a bug to report or feature to request, please 
@@ -36,3 +37,5 @@ documentation is aimed at anyone wishing to get familiar with the project and th
 * Documenting features
 * Writing tutorials / guides
 * Helping others on the issues + discussions boards
+
+<!-- https://crwd.in/go-mail //-->
