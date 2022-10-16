@@ -1,8 +1,8 @@
 ---
-title: Community Guide
+title: Community-Leitfaden
 ---
 
-Die Go-Mail-Community wächst und wenn sie dies lesen, stehen die Chancen gut, dass sie auch beitreten wollen!
+Die go-mail-Community wächst und wenn Du dies liest, stehen die Chancen gut, dass Du auch mitmachen willst!
 
 {{< toc >}}
 
@@ -10,16 +10,16 @@ Die Go-Mail-Community wächst und wenn sie dies lesen, stehen die Chancen gut, d
 
 ### Verhaltenskodex
 
-In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) und verlangen von jedem, der Teil nehmen möchte, sich so zu verhalten.
+In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) und verlangen von jedem, der Teilnehmen möchte, sich ebenso zu verhalten.
 
 ### Updates und Ankündigungen
 
-Sie können go-mail Ankündigungen im GH finden
+Find go-mail announcements in the  on GH
 
 ### Support und Ankündigungen
 
 * [go-mail Forum](https://github.com/wneessen/go-mail/discussions): Erhalte Ankündigungen und starte Diskussionen über go-mail.
-* [Github Tickets](https://github.com/wneessen/go-mail/issues): Wenn sie einen Bug melden wollen oder ein Feature vorschlagen wollen, benutzen sie bitte Github Tickets. Bitte beachten Sie die Regeln, die in jedem Projektarchiv-Template angegeben sind.
+* [Github Tickets](https://github.com/wneessen/go-mail/issues): Wenn Du einen Bug melden oder ein Feature vorschlagen möchtest, benutze bitte die Github "Issues" Funktion. Bitte beachte die Regeln, die in jedem Projektarchiv-Template angegeben sind.
 * [Discord](https://discord.gg/zSUeBrsFPB): Ein Platz, wo go-mail Entwickler und Nutzer sich treffen können und in Echtzeit chatten können.
 
 ## Mitwirken
@@ -31,4 +31,4 @@ go-mail ist ein Open-Source-Projekt, das von der Community betrieben wird. Wir b
 * Testen
 * Funktionen dokumentieren
 * Tutorials / Anleitungen schreiben
-* Anderen beim Issue/Diskussionenboard helfen
+* Anderen bei Problemen im Diskussionenboard helfen
