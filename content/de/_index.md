@@ -1,5 +1,5 @@
 ---
-title: Welcome to the go-mail documentation
+title: Willkommen in der go-mail-Dokumentation
 geekdocNav: false
 #geekdocAlign: center
 geekdocAnchor: false
