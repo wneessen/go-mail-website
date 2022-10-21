@@ -22,7 +22,7 @@ go-mail can be installed using the Go module installation mechanism via the `go 
 To install the latest version of go-mail, enter your project folder and simply import the module by issuing 
 the following command:
 
-```Shell
+```shell
 $ go get github.com/wneessen/go-mail
 ```
 
@@ -61,12 +61,10 @@ Since go-mail makes sure that you are providing valid mail addresses, we return 
 make sure that the provided address is accepted by go-mail and will not cause problems later on.
 
 Next we want to set a subject line for our message and fill the mail body with some content.
+
 ```go
-func main() {
-	[...]
-	m.Subject("This is my first mail with go-mail!")
-	m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
-}
+m.Subject("This is my first mail with go-mail!")
+m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
 ```
 
 The first argument for `SetBodyString()` is a content type we need to provide. In our example the 
@@ -78,13 +76,10 @@ Now that we have our mail message ready to go, let's bring it on the way and sen
 use the `Client`, which handles the SMTP transmission.
 
 ```go
-func main() {
-	[...]
-	c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), 
-		mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
-	if err != nil {
-		log.Fatalf("failed to create mail client: %s", err)
-	}
+c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), 
+	mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
+if err != nil {
+	log.Fatalf("failed to create mail client: %s", err)
 }
 ```
 
@@ -95,11 +90,8 @@ In this example we connect to the mail server with the hostname `smtp.example.co
 Finally we tell the client to deliver the mail.
 
 ```go
-func main() {
-	[...]
-	if err := c.DialAndSend(m); err != nil {
-		log.Fatalf("failed to send mail: %s", err)
-	}
+if err := c.DialAndSend(m); err != nil {
+	log.Fatalf("failed to send mail: %s", err)
 }
 ```
 
