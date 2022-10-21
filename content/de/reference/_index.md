@@ -1,5 +1,5 @@
 ---
-title: Reference
+title: Referenz
 weight: -20
 ---
 
