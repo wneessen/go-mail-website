@@ -1,5 +1,5 @@
 ---
-title: Getting started
+title: Erste Schritte
 weight: -20
 ---
 
