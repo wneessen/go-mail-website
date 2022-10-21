@@ -36,7 +36,7 @@ care of the mail delivery via a SMTP service.
 First let's create a new `Msg` using the `NewMsg()` method and assign a sender address as well as a recipient
 address.
 
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
 import (
@@ -53,7 +53,7 @@ func main() {
 		log.Fatalf("failed to set To address: %s", err)
 	}
 }
-{{< /highlight >}}
+```
 
 In this little code snippet, first and foremost we import go-mail into our project. See the `import` statement 
 in line 4. Next we create a new message in line 9. Lines 10 and 13 set the sender and recipient addresses. 
