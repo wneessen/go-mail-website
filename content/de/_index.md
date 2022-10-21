@@ -10,41 +10,41 @@ geekdocAnchor: false
 
 <p align="center"><img src="/go-mail-2.svg" width="250" alt="go-mail logo"/></p>
 
-go-mail is an easy to use Go library for formating and sending mails. It uses idiomatic Go style and follows best practice with sane defaults. The library only dependends on the Go Standard Library.
+go-mail ist eine einfach zu benutzende Go-Bibliothek zum Formatieren und Versenden von E-Mails. Es verwerndet einen idomatischen Go-Stil und folgt "Best Practices" mit vernünftigen Standards. Die Bibliothek hängt nur von der Go-Standardbibliothek ab.
 
-go-mail works like a programatic email client and provides lots of methods and functionalities you would consider standard in a MUA.
+go-mail funktioniert wie ein programmatischer E-Mail-Client und bietet viele Methoden und Funktionalitäten, die Du als Standard in einem E-Mail-Programm betrachten würdest.
 
 <div class="btn-centered btn-huge">
-{{< button size="huge" relref="getting-started/introduction/" >}}Get started using go-mail{{< /button >}}
+{{< button size="huge" relref="getting-started/introduction/" >}Erste Schritte mit go-mail{{< /button >}}
 </div>
 
-## Feature highlights
+## Funktions-Highlights
 
 {{< columns >}}
 
-### Standard Library dependant
+### Nur abhängig von der Standard-Bibliothek
 
-go-mail does not require any third-party modules and only runs on the Go standard library
-
-<--->
-
-### Modern, idiomatic Go
-
-We are using modern and idiotmatic Go standards with this library and follow state-of-the-art best practices with sane defaults
+go-mail benötigt keine Module von Drittanbietern und basiert ausschließlich auf der Go-Standardbibliothek
 
 <--->
 
-### Full TLS support
+### Modern, idiomatisch
 
-go-mail supports implicit STARTTLS with different policies as well as explicit SSL/TLS for connections to sending mail servers
+Wir verwenden moderne und idiotmatische Go-Standards mit dieser Bibliothek und folgen den modernsten bewährten -Verfahren mit vernünftigen Standardeinstellungen
+
+<--->
+
+### Vollständiger TLS-Support
+
+go-mail unterstützt implizite STARTTLS mit verschiedenen Richtlinien sowie explizite SSL/TLS für Verbindungen zum Senden von Mail-Servern
 
 {{< /columns >}}
 
 {{< columns >}}
 
-### Contexts
+### Kontexte
 
-We make use of Go contexts for better control flow and timeout/cancelation handling
+Wir verwenden Go-Kontexte für einen besseren Kontrollfluss und die Handhabung von Timeouts/Abbrüchen
 
 <--->
 
