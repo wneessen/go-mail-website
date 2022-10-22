@@ -13,10 +13,6 @@ The go-mail community is growing and if you're reading this, chances are that yo
 In our community, we follow our [Code of Conduct](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) and
 ask everybody who likes to participate to act accordingly.
 
-### Updates and announcements
-
-Find go-mail announcements in the  on GH
-
 ### Support and annoucements
 
 * [Twitter](https://twitter.com/gomail_dev): Follow us on Twitter to receive recent news about go-mail
