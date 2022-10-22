@@ -69,7 +69,7 @@ m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
 ```
 
 The first argument for `SetBodyString()` is a content type we need to provide. In our example the 
-`mail.TypeTextPlain` basically represents a `text/plain` content time - meaning a plain text mail body.
+`mail.TypeTextPlain` basically represents a `text/plain` content type - meaning a plain text mail body.
 
 ### Sending the mail
 
