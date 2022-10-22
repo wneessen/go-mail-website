@@ -59,11 +59,11 @@ m.Subject("Das ist meine erste Mail mit go-mail!")
 m.SetBodyString(mail.TypeTextPlain, "Gefällt dir diese Mail? Mir auf jeden Fall!")
 ```
 
-Das erste Argument für `SetBodyString()` ist ein Inhaltstyp, den wir angeben müssen. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content type - meaning a plain text mail body.
+Das erste Argument für `SetBodyString()` ist ein Inhaltstyp, den wir angeben müssen. In unserem Beispiel repräsentiert der `mail.TypeTextPlain` einen `text/plain` Inhaltstyp - also einen reinen Textkörper.
 
-### Sending the mail
+### Versenden der Mail
 
-Now that we have our mail message ready to go, let's bring it on the way and send it out. For this we'll use the `Client`, which handles the SMTP transmission.
+Jetzt, wo wir unsere E-Mail-Nachricht versandfertig haben, können wir sie auf den Weg bringen und verschicken. Hierfür verwenden wir den `Client`, der die SMTP-Übertragung abwickelt.
 
 ```go
 c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), 
@@ -73,9 +73,9 @@ if err != nil {
 }
 ```
 
-In this example we connect to the mail server with the hostname `smtp.example.com` and provide the `Client` with a couple of options like the port we want to connect to, the fact that we want to use `SMTP PLAIN` for authentication and the username and password.
+In diesem Beispiel verbinden wir uns mit dem Mailserver hinter dem Hostnamen `smtp.example.com` und geben dem `Client` ein paar Optionen wie den Port, mit dem wir uns verbinden wollen, die Tatsache, dass wir `SMTP PLAIN` für die Authentifizierung verwenden wollen und den Benutzernamen und das Passwort, mit.
 
-Finally we tell the client to deliver the mail.
+Abschließend weisen wir den Client an, die Mail zuzustellen.
 
 ```go
 if err := c.DialAndSend(m); err != nil {
@@ -83,13 +83,13 @@ if err := c.DialAndSend(m); err != nil {
 }
 ```
 
-The `DialAndSend()` method takes care of establishing the connection and sending out the mail. You have the option to call them separately as well, but we won't need this for the quick example.
+Die Methode `DialAndSend()` kümmert sich um den Aufbau der Verbindung und den Versand der Mail. Du kannst sie auch separat aufrufen, aber das benötigen wir für dieses kurze Beispiel nicht.
 
-## Conclusion
+## Zusammenfassung
 
-That was quite simple, wasn't it? You successfully prepared a mail message and delivered it to the recipient via a 3rd party mail server. go-mail of course can do much more. Check out the in-depth documentation for all the features.
+Das war doch ganz einfach, oder? Du hast erfolgreich eine E-Mail-Nachricht vorbereitet und sie dem Empfänger über einen Mailserver eines Drittanbieters zugestellt. go-mail kann natürlich noch viel mehr. In der ausführlichen Dokumentation findest du alle Funktionen.
 
-## Full example code
+## Vollständiger Beispielcode
 
 ```go
 package main
@@ -108,7 +108,7 @@ func main() {
         log.Fatalf("failed to set To address: %s", err)
     }
     m.Subject("This is my first mail with go-mail!")
-    m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+    m.SetBodyString(mail.TypeTextPlain, "Gefällt dir diese Mail? Mir auf jeden Fall!")
     c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
         mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
     if err != nil {
