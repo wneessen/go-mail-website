@@ -50,16 +50,16 @@ func main() {
 }
 ```
 
-In diesem kleinen Codeschnipsel importieren wir zuallererst go-mail in unser Projekt. Siehe die `Import`-Anweisung in [Zeile 4](#hl-1-4). Als nächstes erstellen wir eine neue Nachricht in [Zeile 9](#hl-1-9). In den Zeilen [10](#hl-1-10) und [13](#hl-1-13) werden die Absender- und Empfängeradressen festgelegt. Da go-mail sicherstellt, dass du gültige Mailadressen angibst, geben wir einen `error` zurück. This way we can make sure that the provided address is accepted by go-mail and will not cause problems later on.
+In diesem kleinen Codeschnipsel importieren wir zuallererst go-mail in unser Projekt. Siehe die `Import`-Anweisung in [Zeile 4](#hl-1-4). Als nächstes erstellen wir eine neue Nachricht in [Zeile 9](#hl-1-9). In den Zeilen [10](#hl-1-10) und [13](#hl-1-13) werden die Absender- und Empfängeradressen festgelegt. Da go-mail sicherstellt, dass du gültige Mailadressen angibst, geben wir einen `error` zurück. Auf diese Weise können wir sicherstellen, dass die angegebene Adresse von go-mail akzeptiert wird und später keine Probleme verursacht.
 
-Next we want to set a subject line for our message and fill the mail body with some content.
+Als Nächstes wollen wir eine Betreffzeile für unsere Nachricht festlegen und den Mailtext mit einem Inhalt füllen.
 
 ```go
-m.Subject("This is my first mail with go-mail!")
-m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+m.Subject("Das ist meine erste Mail mit go-mail!")
+m.SetBodyString(mail.TypeTextPlain, "Gefällt dir diese Mail? Mir auf jeden Fall!")
 ```
 
-The first argument for `SetBodyString()` is a content type we need to provide. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content time - meaning a plain text mail body.
+Das erste Argument für `SetBodyString()` ist ein Inhaltstyp, den wir angeben müssen. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content type - meaning a plain text mail body.
 
 ### Sending the mail
 
