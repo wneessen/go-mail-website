@@ -99,7 +99,7 @@ Die Website wurde mit Hugo und dem Geekdocs-Theme erstellt. Es ist sehr einfach 
 
 ### Übersetzungen
 
-Die Standarddokumente des go-mail-Projekts sind englische Dokumente. Wir verwenden das Tool "Crowdin", um Dokumente in andere Sprachen zu übersetzen und sie mit der Website zu synchronisieren. You can [join our project](https://translations.go-mail.dev) and submit your translations to make contributions.
+Die Standarddokumente des go-mail-Projekts sind englische Dokumente. Wir verwenden das Tool "Crowdin", um Dokumente in andere Sprachen zu übersetzen und sie mit der Website zu synchronisieren. Du kannst [unserem Projekt beitreten](https://translations.go-mail.dev) und deine Übersetzungen einreichen, um einen Beitrag zu leisten.
 
 Derzeit ist die einzige unterstützte zweite Sprache Deutsch, aber wir sind daran interessiert, auch andere Sprachen hinzuzufügen. Bitte beantrage sie über ein Github-Problem im go-mail-website Repository.
 
