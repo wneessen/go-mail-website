@@ -83,27 +83,27 @@ Das Testen ist von entscheidender Bedeutung, um die Qualität des Projekts siche
 * Testen, ob ein Fehler auf deinem lokalen System reproduzierbar ist
 * PRs testen, um sicherzustellen, dass sie richtig funktionieren
 
-If you chose to test if someone's bug report is reproducible on your local system, then feel free to add a comment on the issue confirming this with the output of your test program.
+Wenn du testen möchtest, ob die Fehlermeldung eines anderen Nutzers auf deinem System reproduzierbar ist, kannst du einen Kommentar zu der Meldung hinzufügen, der dies mit der Ausgabe deines Testprogramms bestätigt.
 
-To test PRs, choose a PR to test and check if the PR description has the testing scenarios listed. If not, please ask the person who opened the PR to provide that list. Once you have determined a valid test scenario, please report your findings on the PR.
+Um PRs zu testen, wählst du einen PR zum Testen aus und überprüfst, ob in der PR-Beschreibung die Testszenarien aufgeführt sind. Wenn nicht, bitte die Person, die den PR eröffnet hat, diese Liste zur Verfügung zu stellen. Wenn du ein gültiges Testszenario ermittelt hast, melde deine Ergebnisse bitte in der PR.
 
-If you ever need more clarity or help on testing, please ask a question in the [Github forum](https://github.com/wneessen/go-mail/discussions) or on [Discord](https://discord.gg/zSUeBrsFPB).
+Wenn du mehr Informationen oder Hilfe beim Testen brauchst, kannst du im [Github-Forum](https://github.com/wneessen/go-mail/discussions) oder auf [Discord](https://discord.gg/zSUeBrsFPB) eine Frage stellen.
 
-### Documentation
+### Dokumentation
 
-While we require proper GoDoc documenation comments in the code, this website is meant as more in-depth documenation of features and the project itself.
+Während wir eine ordentliche GoDoc-Dokumentation mit Kommentaren im Code verlangen, ist diese Website für eine ausführlichere Dokumentation der Funktionen und des Projekts selbst gedacht.
 
-Since documenattion is hard and the website is still in an incomplete state, any contribution to this is greatly appreciated. Features without documentation are condidered "unfinished" to the project, it's as important as the code.
+Da das Thema "Dokumentation" immer schwierig ist und die Website noch unvollständig ist, ist jeder Beitrag dazu sehr willkommen. Funktionen ohne Dokumentation gelten für das Projekt als "unvollendet", sie sind genauso wichtig wie der Code.
 
-The website is built on Hugo using the Geekdocs theme. It's very simple and basically consists of markdown files. There are instructions on how to install the website on your local computer in the [website's repository](https://github.com/wneessen/go-mail-website).
+Die Website wurde mit Hugo und dem Geekdocs-Theme erstellt. Es ist sehr einfach und besteht im Wesentlichen aus Markdown-Dateien. Im [Repository der Website](https://github.com/wneessen/go-mail-website) findest du eine Anleitung, wie du die Website auf deinem lokalen Computer installieren kannst.
 
-### Translation
+### Übersetzungen
 
-The default documents of the go-mail project are English documents. We use the "Crowdin" tool to translate documents in other languages and synchronize them to the website. You can [join our project](https://crwd.in/go-mail) and submit your translations to make contributions.
+Die Standarddokumente des go-mail-Projekts sind englische Dokumente. Wir verwenden das Tool "Crowdin", um Dokumente in andere Sprachen zu übersetzen und sie mit der Website zu synchronisieren. Du kannst [unserem Projekt](https://crwd.in/go-mail) beitreten und deine Übersetzungen einreichen, um Beiträge zu leisten.
 
-Currently the only supported 2nd language is German, but we are keen to add other languages as well. Please request them via a Github issue in the go-mail-website repository.
+Derzeit ist die einzige unterstützte zweite Sprache Deutsch, aber wir sind daran interessiert, auch andere Sprachen hinzuzufügen. Bitte beantrage sie über ein Github-Problem im go-mail-website Repository.
 
-### Support
+### Unterstützen
 
-A great way to contribute to the project is to help others who are experiencing difficulty. This is normally reported as a issue or a message on the `#go-mail` [Discord channel](https://discord.gg/zSUeBrsFPB). Even just clarifying the issue can really help out. Sometimes, when an issue is discussed and gets resolved, we create a guide out of it to help others who face the same issues.
+Eine gute Möglichkeit, zum Projekt beizutragen, ist es, anderen zu helfen, die Schwierigkeiten haben. Dies wird normalerweise als GH-Issue oder als Nachricht im `#go-mail` [Discord-Kanal](https://discord.gg/zSUeBrsFPB) gemeldet. Schon die Klärung des Problems kann sehr hilfreich sein. Manchmal, wenn ein Problem diskutiert und gelöst wird, erstellen wir daraus einen Leitfaden, um anderen zu helfen, die mit den gleichen Problemen konfrontiert sind.
 
