@@ -3,7 +3,7 @@ title: Einführung
 weight: -20
 ---
 
-This short tutorial shows you how to get up and running with go-mail from installation to sending your first mail.
+Diese kurze Anleitung zeigt dir, wie du go-mail von der Installation bis zum Versand deiner ersten Mail nutzen kannst.
 
 <!--more-->
 
@@ -11,25 +11,25 @@ This short tutorial shows you how to get up and running with go-mail from instal
 
 ## Voraussetzungen
 
-go-mail erfordert eine funktionierende Go-Installation (Version 1.16+). Download Go from the [Go Downloads Page](https://go.dev/dl/).
+go-mail erfordert eine funktionierende Go-Installation (Version 1.16+). Lade Go von der [Go Downloads Seite](https://go.dev/dl/).
 
 ## Installation
 
-go-mail can be installed using the Go module installation mechanism via the `go get` command.
+go-mail kann über den Go-Modul-Installationsmechanismus mit dem Befehl `go get` installiert werden.
 
-To install the latest version of go-mail, enter your project folder and simply import the module by issuing the following command:
+Um die neueste Version von go-mail zu installieren, gehst du in deinen Projektordner und importierst das Modul einfach mit dem folgenden Befehl:
 
 ```shell
 $ go get github.com/wneessen/go-mail
 ```
 
-## Sending your first mail
+## Deine erste Mail verschicken
 
-go-mail consists of two main components. The `Msg` which represents the mail message and the `Client` which takes care of the mail delivery via a SMTP service.
+go-mail besteht aus zwei Hauptkomponenten. Die `Msg`, die die Mail-Nachricht darstellt und der `Client`, der sich um die Mail-Zustellung über einen SMTP-Dienst kümmert.
 
-### Create a new message
+### Eine neue Nachricht erstellen
 
-First let's create a new `Msg` using the `NewMsg()` method and assign a sender address as well as a recipient address.
+Zuerst erstellen wir eine neue `Msg` mit der Methode `NewMsg()` und weisen eine Absender- und eine Empfängeradresse zu.
 
 ```go
 package main
@@ -50,20 +50,20 @@ func main() {
 }
 ```
 
-In this little code snippet, first and foremost we import go-mail into our project. See the `import` statement in [line 4](#hl-1-4). Next we create a new message in [line 9](#hl-1-9). Lines [10](#hl-1-10) and [13](#hl-1-13) set the sender and recipient addresses. Since go-mail makes sure that you are providing valid mail addresses, we return an `error`. This way we can make sure that the provided address is accepted by go-mail and will not cause problems later on.
+In diesem kleinen Codeschnipsel importieren wir zuallererst go-mail in unser Projekt. Siehe die `Import`-Anweisung in [Zeile 4](#hl-1-4). Als nächstes erstellen wir eine neue Nachricht in [Zeile 9](#hl-1-9). In den Zeilen [10](#hl-1-10) und [13](#hl-1-13) werden die Absender- und Empfängeradressen festgelegt. Da go-mail sicherstellt, dass du gültige Mailadressen angibst, geben wir einen `error` zurück. Auf diese Weise können wir sicherstellen, dass die angegebene Adresse von go-mail akzeptiert wird und später keine Probleme verursacht.
 
-Next we want to set a subject line for our message and fill the mail body with some content.
+Als Nächstes wollen wir eine Betreffzeile für unsere Nachricht festlegen und den Mailtext mit einem Inhalt füllen.
 
 ```go
-m.Subject("This is my first mail with go-mail!")
-m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+m.Subject("Das ist meine erste Mail mit go-mail!")
+m.SetBodyString(mail.TypeTextPlain, "Gefällt dir diese Mail? Mir auf jeden Fall!")
 ```
 
-The first argument for `SetBodyString()` is a content type we need to provide. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content time - meaning a plain text mail body.
+Das erste Argument für `SetBodyString()` ist ein Inhaltstyp, den wir angeben müssen. In unserem Beispiel repräsentiert der `mail.TypeTextPlain` einen `text/plain` Inhaltstyp - also einen reinen Textkörper.
 
-### Sending the mail
+### Versenden der Mail
 
-Now that we have our mail message ready to go, let's bring it on the way and send it out. For this we'll use the `Client`, which handles the SMTP transmission.
+Jetzt, wo wir unsere E-Mail-Nachricht versandfertig haben, können wir sie auf den Weg bringen und verschicken. Hierfür verwenden wir den `Client`, der die SMTP-Übertragung abwickelt.
 
 ```go
 c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), 
@@ -73,9 +73,9 @@ if err != nil {
 }
 ```
 
-In this example we connect to the mail server with the hostname `smtp.example.com` and provide the `Client` with a couple of options like the port we want to connect to, the fact that we want to use `SMTP PLAIN` for authentication and the username and password.
+In diesem Beispiel verbinden wir uns mit dem Mailserver hinter dem Hostnamen `smtp.example.com` und geben dem `Client` ein paar Optionen wie den Port, mit dem wir uns verbinden wollen, die Tatsache, dass wir `SMTP PLAIN` für die Authentifizierung verwenden wollen und den Benutzernamen und das Passwort, mit.
 
-Finally we tell the client to deliver the mail.
+Abschließend weisen wir den Client an, die Mail zuzustellen.
 
 ```go
 if err := c.DialAndSend(m); err != nil {
@@ -83,13 +83,13 @@ if err := c.DialAndSend(m); err != nil {
 }
 ```
 
-The `DialAndSend()` method takes care of establishing the connection and sending out the mail. You have the option to call them separately as well, but we won't need this for the quick example.
+Die Methode `DialAndSend()` kümmert sich um den Aufbau der Verbindung und den Versand der Mail. Du kannst sie auch separat aufrufen, aber das benötigen wir für dieses kurze Beispiel nicht.
 
-## Conclusion
+## Zusammenfassung
 
-That was quite simple, wasn't it? You successfully prepared a mail message and delivered it to the recipient via a 3rd party mail server. go-mail of course can do much more. Check out the in-depth documentation for all the features.
+Das war doch ganz einfach, oder? Du hast erfolgreich eine E-Mail-Nachricht vorbereitet und sie dem Empfänger über einen Mailserver eines Drittanbieters zugestellt. go-mail kann natürlich noch viel mehr. In der ausführlichen Dokumentation findest du alle Funktionen.
 
-## Full example code
+## Vollständiger Beispielcode
 
 ```go
 package main
@@ -108,7 +108,7 @@ func main() {
         log.Fatalf("failed to set To address: %s", err)
     }
     m.Subject("This is my first mail with go-mail!")
-    m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+    m.SetBodyString(mail.TypeTextPlain, "Gefällt dir diese Mail? Mir auf jeden Fall!")
     c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
         mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
     if err != nil {
