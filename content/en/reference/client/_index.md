@@ -11,12 +11,12 @@ SMTP protocol.
 
 {{< tabs "NewClient" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 func NewClient(string, ...Option) (*Client, error)
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< tab "Example" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
 import (
@@ -30,7 +30,7 @@ func main() {
         log.Fatal(err)
     }
 }
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -44,11 +44,11 @@ Check the [Options](options) documentation for in-depth details to all available
 
 {{< tabs "Client" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 type Client struct {
     // contains filtered or unexported fields
 }
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 

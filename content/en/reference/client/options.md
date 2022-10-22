@@ -8,9 +8,9 @@ title: Client options
 
 {{< tabs "Options" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 type Option func(*Client) error
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -21,12 +21,12 @@ default vaules of the returned `Client`.
 
 {{< tabs "WithDSN" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 func WithDSN() Option
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< tab "Example" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
 import (
@@ -40,7 +40,7 @@ func main() {
         log.Fatal(err)
     }
 }
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -66,12 +66,12 @@ By default `WithDSN()` sets the `FULL` *Mail From Return Option* and the `SUCCES
 ### WithDSNMailReturnType()
 {{< tabs "WithDSNMailReturnType" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 func WithDSNMailReturnType(DSNMailReturnOption) Option
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< tab "Example" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
 import (
@@ -85,7 +85,7 @@ func main() {
         log.Fatal(err)
     }
 }
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -105,12 +105,12 @@ go-mail has the following two `DSNMailReturnOption` type already built-in:
 
 {{< tabs "WithDSNRcptNotifyType" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 func WithDSNRcptNotifyType(...DSNRcptNotifyOption) Option
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< tab "Example" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
 import (
@@ -120,12 +120,13 @@ import (
 
 func main() {
     c, err := mail.NewClient("mail.example.com",
-        mail.WithDSNRcptNotifyType(mail.DSNRcptNotifyFailure, mail.DSNRcptNotifyDelay, mail.DSNRcptNotifySuccess))
+        mail.WithDSNRcptNotifyType(mail.DSNRcptNotifyFailure, mail.DSNRcptNotifyDelay,
+			mail.DSNRcptNotifySuccess))
     if err != nil {
         log.Fatal(err)
     }
 }
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -152,12 +153,12 @@ go-mail has the following `DSNRcptNotifyOption` types already built-in:
 
 {{< tabs "WithHELO" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 func WithHELO(string) Option
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< tab "Example" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
 import (
@@ -171,7 +172,7 @@ func main() {
         log.Fatal(err)
     }
 }
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< /tabs >}}
 

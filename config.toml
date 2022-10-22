@@ -26,9 +26,13 @@ contentDir = "content/de"
 weight = 20
 
 [markup]
-[markup.goldmark.renderer]
-# Needed for mermaid shortcode
-unsafe = true
+[markup.highlight]
+anchorLineNos = true
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+noClasses = true
+tabWidth = 4
 [markup.tableOfContents]
 startLevel = 1
 endLevel = 9
