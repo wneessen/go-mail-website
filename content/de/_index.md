@@ -15,7 +15,7 @@ go-mail ist eine einfach zu benutzende Go-Bibliothek zum Formatieren und Versend
 go-mail funktioniert wie ein programmatischer E-Mail-Client und bietet viele Methoden und Funktionalitäten, die Du als Standard in einem E-Mail-Programm betrachten würdest.
 
 <div class="btn-centered btn-huge">
-{{< button size="huge" relref="getting-started/introduction/" >}Erste Schritte mit go-mail{{< /button >}}
+{{< button size="huge" relref="getting-started/introduction/" >}}Erste Schritte mit go-mail{{< /button >}}
 </div>
 
 ## Funktions-Highlights

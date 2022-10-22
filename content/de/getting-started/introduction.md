@@ -50,7 +50,7 @@ func main() {
 }
 ```
 
-In this little code snippet, first and foremost we import go-mail into our project. See the `import` statement in line 4. Next we create a new message in line 9. Lines 10 and 13 set the sender and recipient addresses. Since go-mail makes sure that you are providing valid mail addresses, we return an `error`. This way we can make sure that the provided address is accepted by go-mail and will not cause problems later on.
+In this little code snippet, first and foremost we import go-mail into our project. See the `import` statement in [line 4](#hl-1-4). Next we create a new message in [line 9](#hl-1-9). Lines [10](#hl-1-10) and [13](#hl-1-13) set the sender and recipient addresses. Since go-mail makes sure that you are providing valid mail addresses, we return an `error`. This way we can make sure that the provided address is accepted by go-mail and will not cause problems later on.
 
 Next we want to set a subject line for our message and fill the mail body with some content.
 
