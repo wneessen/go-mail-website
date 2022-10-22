@@ -10,18 +10,26 @@ In go-mail the `Client` is responsible for the mail delivery with remote mail se
 
 {{< tabs "NewClient" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 func NewClient(string, ...Option) (*Client, error)
-{{< /highlight >}}
+```
 {{< /tab >}}
 {{< tab "Example" >}}
-{{< highlight Go "linenos=table" >}}
+```go
 package main
 
-import ( "github.com/wneessen/go-mail" "log" )
+import (
+    "github.com/wneessen/go-mail"
+    "log"
+)
 
-func main() { c, err := mail.NewClient("mail.example.com") if err != nil { log.Fatal(err) } }
-{{< /highlight >}}
+func main() {
+    c, err := mail.NewClient("mail.example.com")
+    if err != nil {
+        log.Fatal(err)
+    }
+}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
@@ -33,9 +41,11 @@ Check the [Options](options) documentation for in-depth details to all available
 
 {{< tabs "Client" >}}
 {{< tab "Signature" >}}
-{{< highlight Go "linenos=table" >}}
-type Client struct { // contains filtered or unexported fields }
-{{< /highlight >}}
+```go
+type Client struct {
+    // contains filtered or unexported fields
+}
+```
 {{< /tab >}}
 {{< /tabs >}}
 
