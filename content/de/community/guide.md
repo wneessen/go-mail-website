@@ -12,7 +12,7 @@ Die go-mail-Community wächst und wenn Du dies liest, stehen die Chancen gut, da
 
 In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) und verlangen von jedem, der Teilnehmen möchte, sich ebenso zu verhalten.
 
-### Support- and annoucement channels
+### Support- und Ankündigungskanäle
 
 * [Twitter](https://twitter.com/gomail_dev): Folge uns auf Twitter, um aktuelle Nachrichten über go-mail zu erhalten
 * [go-mail Forum](https://github.com/wneessen/go-mail/discussions): Erhalte Ankündigungen und starte Diskussionen über go-mail.
@@ -24,66 +24,66 @@ In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneesse
 go-mail ist ein Open-Source-Projekt, das von der Community betrieben wird. Wir begrüßen jeden, der mit uns an diesem Projekt mitwirkt. Diese Dokumentation richtet sich an alle, die sich mit dem Projekt und den Entwicklungsprozessen vertraut machen möchten.
 
 * [Entwicklung neuer Funktionen](#developing-new-features)
-* [Fixing bugs](#fixing-bugs)
-* [Testing](#testing)
-* [Documenation](#documentation)
-* [Translation](#translation)
-* [Support](#support)
+* [Fehler beheben](#fixing-bugs)
+* [Testen](#testing)
+* [Dokumentation](#documentation)
+* [Übersetzungen](#translation)
+* [Unterstützen](#support)
 
 <!-- https://crwd.in/go-mail //-->
 
-### Developing New Features
+### Entwicklung neuer Funktionen
 
-We are always keen to add features to go-mail. The process for adding new features are as follows:
+Wir sind immer daran interessiert, Funktionen zu go-mail hinzuzufügen. Der Prozess zum Hinzufügen neuer Funktionen lautet wie folgt:
 
-* Check the [issue section on Github](https://github.com/wneessen/go-mail/issues) for available issues with the "TODO" or "help wanted" tag
-* If no open "TODO"/"help wanted" issue is found or the feature you have in mind is not covered, please open a proposal issue for that specific feature and wait for the "OK" from the project maintainers
-* Before developing, check that the issue includes the following information:
-  * The purpose of the enhancement
-  * What is out of scope for the enhancement
-* If the issue does not include this information, feel free to request the information from the person who opened the issue. Sometimes placeholder issues are created and require more details
-* Comment on the issue stating if you wish to develop the feature
-* Clone the repository and create a branch with the format `feature/<issue_number>_<issue_title>`
-* New features often require documentation so please ensure you have also added or updated the documentation as part of the changes
-* Please make sure that your code has the required test coverage
-* Once the feature is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested
-* Once all the testing is completed, please update the status of the PR from draft and leave a message
+* Schau im [Issue-Bereich auf Github](https://github.com/wneessen/go-mail/issues) nach verfügbaren Issues mit dem Tag "TODO" oder "help wanted"
+* Wenn kein offenes "TODO"/"Hilfe gesucht"-Thema gefunden wird oder die Funktion, die du im Sinn hast, nicht abgedeckt ist, mach bitte ein Issue für diese spezielle Funktion auf und warte auf das "OK" der Maintainers
+* Überprüfe vor der Entwicklung, ob die Ausgabe die folgenden Informationen enthält:
+  * Der Zweck der Erweiterung
+  * Was für die Verbesserung nicht in Frage kommt
+* Wenn das Issue diese Informationen nicht enthält, kannst du sie bei der Person, die das Issue eröffnet hat, anfordern. Manchmal werden Platzhalterausgaben erstellt und erfordern mehr Details
+* Kommentiere das Thema und gib an, ob du die Funktion entwickeln möchtest
+* Klone das Repository und erstelle einen Zweig mit dem Format `feature/<issue_number>_<issue_title>`
+* Neue Funktionen erfordern oft eine Dokumentation, also stelle bitte sicher, dass du die Dokumentation als Teil der Änderungen auch hinzugefügt oder aktualisiert hast
+* Bitte stelle sicher, dass dein Code die erforderliche Testabdeckung hat
+* Sobald die Funktion zum Testen bereit ist, erstellst du einen PR-Entwurf. Bitte stelle sicher, dass in der PR-Beschreibung die Testszenarien und Testfälle mit Häkchen aufgeführt sind, damit andere wissen, was noch getestet werden muss
+* Sobald alle Tests abgeschlossen sind, aktualisiere bitte den Status des PR von Entwurf und hinterlasse eine Nachricht
 
 {{< hint type=important >}}
-Any PRs opened without a corresponding issue may be rejected.
+Alle PRs, die ohne eine entsprechende Ausgabe eröffnet werden, können abgelehnt werden.
 {{< /hint >}}
 
 ### Fehler beheben
 
-The process for fixing bugs are as follows:
+Das Verfahren zur Behebung von Fehlern ist wie folgt:
 
-* Check the [Github issues](https://github.com/wneessen/go-mail/issues) and select a bug to fix
-* Before developing, check that the issue includes the following information:
-  * The scope of the issue including platforms affected
-  * The steps to reproduce. Sometimes bugs are opened that are not go-mail issues and the onus is on the reporter to prove that it is a go-mail issue with a minimal reproducible example
-* If the issue does not include this information, feel free to request the information from the person who opened the issue
-* Comment on the issue stating you wish to develop a fix
-* Clone the repository and create a branch with the format `bugfix/<issue_number>_<issue_title>`
-* Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested
-* Once all the testing is completed, please update the status of the PR from draft and leave a message.
+* Überprüfe die [Github Issues](https://github.com/wneessen/go-mail/issues) und wähle einen Fehler zum Beheben aus
+* Überprüfe vor der Entwicklung, ob das Issue die folgenden Informationen enthält:
+  * Der Umfang des Problems einschließlich der betroffenen Plattformen
+  * Die Schritte zum Reproduzieren. Manchmal werden Bugs geöffnet, die keine go-mail Probleme sind, und der Berichterstatter muss anhand eines minimalen, reproduzierbaren Beispiels beweisen, dass es sich um ein go-mail Problem handelt
+* Wenn das Problem diese Informationen nicht enthält, kannst du sie bei der Person, die das Problem eröffnet hat, anfordern
+* Kommentiere das Issue und gib an, dass du eine Lösung entwickeln möchtest
+* Klone das Repository und erstelle einen Branch mit dem Format `bugfix/<issue_number>_<issue_title>`
+* Sobald die Korrektur zum Testen bereit ist, erstellst du einen PR-Entwurf. Bitte stelle sicher, dass in der PR-Beschreibung die Testszenarien und Testfälle mit Häkchen aufgeführt sind, damit andere wissen, was noch getestet werden muss
+* Sobald alle Tests abgeschlossen sind, aktualisiere bitte den Status des PR von Entwurf und hinterlasse eine Nachricht.
 
 {{< hint type=note >}}
-There is nothing stopping you from opening a issue and working on it yourself, but please be aware that all bugfixes should be discussed as the approach may have unintended side effects.
+Es hält dich nichts davon ab, ein Issue zu öffnen und selbst daran zu arbeiten, aber sei dir bitte bewusst, dass alle Fehlerbehebungen besprochen werden sollten, da der Ansatz unbeabsichtigte Nebenwirkungen haben kann.
 {{< /hint >}}
 
 {{< hint type=important >}}
-Any PRs opened without a corresponding issue may be rejected.
+Alle PRs, die ohne eine entsprechende Ausgabe eröffnet werden, können abgelehnt werden.
 {{< /hint >}}
 
 
 ### Testen
 
-Testing is vitally important to ensure quality in the project. There are a couple of scenarios where testing can really help the project:
+Das Testen ist von entscheidender Bedeutung, um die Qualität des Projekts sicherzustellen. Es gibt ein paar Szenarien, in denen das Testen dem Projekt wirklich helfen kann:
 
-* Testing if a bug is reproducible on your local system
-* Testing PRs to ensure that they work correctly
+* Testen, ob ein Fehler auf deinem lokalen System reproduzierbar ist
+* PRs testen, um sicherzustellen, dass sie richtig funktionieren
 
-If you chose to test if someone's bug report is reproducible on your local system, then feel free to add a comment on the issue confirming this with the output of wails doctor.
+If you chose to test if someone's bug report is reproducible on your local system, then feel free to add a comment on the issue confirming this with the output of your test program.
 
 To test PRs, choose a PR to test and check if the PR description has the testing scenarios listed. If not, please ask the person who opened the PR to provide that list. Once you have determined a valid test scenario, please report your findings on the PR.
 
