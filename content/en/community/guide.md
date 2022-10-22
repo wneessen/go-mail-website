@@ -122,7 +122,7 @@ the [website's repository](https://github.com/wneessen/go-mail-website).
 ### Translation
 
 The default documents of the go-mail project are English documents. We use the "Crowdin" tool to translate documents in
-other languages and synchronize them to the website. You can [join our project](https://crwd.in/go-mail) and submit 
+other languages and synchronize them to the website. You can [join our project](https://translations.go-mail.dev) and submit 
 your translations to make contributions.
 
 Currently the only supported 2nd language is German, but we are keen to add other languages as well. Please request
