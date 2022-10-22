@@ -12,10 +12,6 @@ Die go-mail-Community wächst und wenn Du dies liest, stehen die Chancen gut, da
 
 In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md) und verlangen von jedem, der Teilnehmen möchte, sich ebenso zu verhalten.
 
-### Updates und Ankündigungen
-
-Find go-mail announcements in the  on GH
-
 ### Support und Ankündigungen
 
 * [Twitter](https://twitter.com/gomail_dev): Folge uns auf Twitter, um aktuelle Nachrichten über go-mail zu erhalten
