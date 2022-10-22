@@ -33,6 +33,9 @@ lineNos = true
 lineNumbersInTable = true
 noClasses = true
 tabWidth = 4
+[markup.goldmark.renderer]
+# Needed for mermaid shortcode
+unsafe = true
 [markup.tableOfContents]
 startLevel = 1
 endLevel = 9
