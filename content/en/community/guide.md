@@ -98,7 +98,7 @@ help the project:
 * Testing PRs to ensure that they work correctly
 
 If you chose to test if someone's bug report is reproducible on your local system, then feel free to add a comment on
-the issue confirming this with the output of wails doctor.
+the issue confirming this with the output of your test program.
 
 To test PRs, choose a PR to test and check if the PR description has the testing scenarios listed. If not, please ask
 the person who opened the PR to provide that list. Once you have determined a valid test scenario, please report your
