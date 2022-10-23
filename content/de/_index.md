@@ -48,53 +48,53 @@ Wir verwenden Go-Kontexte für einen besseren Kontrollfluss und die Handhabung v
 
 <--->
 
-### SMTP Authentication
+### SMTP-Authentifizierung
 
-Support for three common SMTP authentication mechanisms (LOGIN, PLAIN, CRAM-MD5) as well as custom authentications.
+Unterstützung für drei gängige SMTP-Authentifizierungsmechanismen (LOGIN, PLAIN, CRAM-MD5) sowie für benutzerdefinierte Authentifizierungen.
 
 <--->
 
-### Mail address validation
+### Überprüfung von E-Mail-Adressen
 
-go-mail follows RFC5322 and validates the provided mail addresses
+go-mail folgt RFC5322 und validiert die angegebenen Mailadressen
 
 {{< /columns >}}
 
 {{< columns >}}
 
-### Common mail header support
+### Unterstützung allgemeiner Mail-Header
 
-go-mail brings generators for lots of common mail headers (Message-ID, Date, Bulk-Precedence, Priority, etc.)
-
-<--->
-
-### Connection reusing
-
-You can send mulitple mails over the same SMTP connection
+go-mail bringt Generatoren für viele gängige Mail-Header mit (Message-ID, Datum, Bulk-Precedence, Priority, etc.)
 
 <--->
 
-### Attachments/Embeds
+### Wiederverwendung von Verbindungen
 
-Full support for attachments and inline embeds from different sources (local file system, `io.Reader` or `embed.FS`)
+Du kannst mehrere Mails über dieselbe SMTP-Verbindung senden
+
+<--->
+
+### Anhänge/Einbettungen
+
+Volle Unterstützung für Anhänge und Inline-Einbettungen aus verschiedenen Quellen (lokales Dateisystem, `io.Reader` oder `embed.FS`)
 
 {{< /columns >}}
 
 {{< columns >}}
 
-### Encodings and content types
+### Kodierungen und Inhaltsarten
 
-go-mail supports different encondings and content types out of the box
+go-mail unterstützt standardmäßig verschiedene Kodierungen und Inhaltstypen
 
 <--->
 
 ### Middlewares
 
-Middleware support for 3rd-party libraries to alter mail message to their need
+Middleware-Unterstützung für Bibliotheken von Drittanbietern, um E-Mail-Nachrichten an ihre Bedürfnisse anzupassen
 
 <--->
 
-### Sendmail and file storage
+### Sendmail und Dateispeicherung
 
 Support for sending mail messages through a local sendmail installation as well as output to local files (e. g. as `.eml` files to disk to open them in a MUA)
 
