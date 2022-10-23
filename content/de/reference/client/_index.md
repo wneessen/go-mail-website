@@ -1,8 +1,8 @@
 ---
-title: The mail delivery client
+title: Der Client für die Mailzustellung
 ---
 
-In go-mail the `Client` is responsible for the mail delivery with remote mail servers that communicate via the SMTP protocol.
+In go-mail ist der `Client` für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.
 
 {{< toc >}}
 
@@ -37,9 +37,9 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-To create a new `Client`, you can use the `NewClient()` method. As first argument it requires the hostname of the sending SMTP server. Optionally you can provide a list of `Option` funcionts. These option functions can be used to override the default settings of the `Client`.
+Um einen neuen `Client` zu erstellen, kannst du die Methode `NewClient()` verwenden. Als erstes Argument benötigt er den Hostnamen des sendenden SMTP-Servers. Optional kannst du eine Liste von `Option`-Funktionen angeben. Diese Optionsfunktionen können verwendet werden, um die Standardeinstellungen des `Client` zu überschreiben.
 
-Check the [Options](options) documentation for in-depth details to all available Options.
+In der [Optionen](options) Dokumentation findest du ausführliche Informationen zu allen verfügbaren Optionen.
 
 ## Client
 
