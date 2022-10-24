@@ -87,7 +87,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`Close()` closes the connection to the SMTP server the `Client` is connected to. It returns an `error` in case the `Client` has no active connection or if closing the connection fails.
+`Close()` schließt die Verbindung zu dem SMTP-Server, mit dem der `Client` verbunden ist. Sie gibt einen `error` zurück, wenn der `Client` keine aktive Verbindung hat oder wenn das Schließen der Verbindung fehlschlägt.
 
 ### DialAndSend()
 
@@ -141,7 +141,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSend()` method is an alias for [DialAndSendWithContext()](#dialandsendwithcontext) with a default `context.Background` context. `DialAndSend()` takes a list of `Msg` pointer as argument(s) and returns an `error` in case any of the performed actions fails.
+Die Methode `DialAndSend()` ist ein Alias für [DialAndSendWithContext()](#dialandsendwithcontext) mit einem Standardkontext `context.Background`. `DialAndSend()` nimmt eine Liste von `Msg` Pointern als Argument(e) und gibt einen `error` zurück, wenn eine der durchgeführten Aktionen fehlschlägt.
 
 ### DialAndSendWithContext()
 
