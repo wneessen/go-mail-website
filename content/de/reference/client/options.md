@@ -145,4 +145,4 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`WithHELO` weist den `Client` an, die angegebene Zeichenkette als HELO/EHLO Begrüßungshost zu verwenden. Standardmäßig verwendet der `Client` die Methode `os.Hostname()` von Go, um den lokalen Hostnamen zu ermitteln und diesen für die HELO/EHLO-Begrüßung zu verwenden. `WithHELO` will override this.
+`WithHELO` weist den `Client` an, die angegebene Zeichenkette als HELO/EHLO Begrüßungshost zu verwenden. Standardmäßig verwendet der `Client` die Methode `os.Hostname()` von Go, um den lokalen Hostnamen zu ermitteln und diesen für die HELO/EHLO-Begrüßung zu verwenden. `WithHELO` wird dies außer Kraft setzen.
