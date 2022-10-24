@@ -1,5 +1,5 @@
 ---
-title: Client options
+title: Client-Optionen
 ---
 
 {{< toc >}}
@@ -14,7 +14,7 @@ type Option func(*Client) error
 {{< /tab >}}
 {{< /tabs >}}
 
-Client `Option` are functions that can be used as optional arguments for the `NewClient()` methods to override the default vaules of the returned `Client`.
+Client `Option` sind Funktionen, die als optionale Argumente für die `NewClient()` Methoden verwendet werden können, um die Standardeinstellungen des zurückgegebenen `Client` zu überschreiben.
 
 ### WithDSN()
 
@@ -40,16 +40,16 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `WithDSN` option function tells the `Client` to request DSNs (if the server supports it) as described in [RFC 1891](https://rfc-editor.org/rfc/rfc1891.html).
+Die `WithDSN` Optionsfunktion weist den `Client` an, DSNs anzufordern (wenn der Server sie unterstützt), wie in [RFC 1891](https://rfc-editor.org/rfc/rfc1891.html) beschrieben.
 
-DSNs (Delivery Status Notification) are an extension to the SMTP protocol and need to be supported by the sending server. The RFC for DSNs defines different parameters of which we've implemented the once which we think make most sense for go-mail:
+DSNs (Delivery Status Notification) sind eine Erweiterung des SMTP-Protokolls und müssen von dem sendenden Server unterstützt werden. Der RFC für DSNs definiert verschiedene Parameter, von denen wir einmal die implementiert haben, die wir für go-mail für am sinnvollsten halten:
 
-* The `RET` extension for the `MAIL FROM` command, to let the user specify if a DSN should contain the full mail (`FULL`) or only headers (`HDRS`) of the sent mail.
-* The `NOTIFY` extension that allows the user to request a DSN for the different types of allowed situations: `NEVER`, `SUCCESS`, `FAILURE` and `DELAY`
+* Die `RET`-Erweiterung für den `MAIL FROM`-Befehl, damit der Benutzer angeben kann, ob ein DSN die vollständige Mail (`FULL`) oder nur die Kopfzeilen (`HDRS`) der gesendeten Mail enthalten soll.
+* Die `NOTIFY`-Erweiterung, die es dem Benutzer ermöglicht, einen DSN für die verschiedenen Arten von erlaubten Situationen anzufordern: `NEVER`, `SUCCESS`, `FAILURE` und `DELAY`
 
-`ENVID` and `ORCPT` are currently not supported but might follow in a later relaese (please open an [issue](https://github.com/wneessen/go-mail/issues/new/choose) if you see usefulness in this).
+`ENVID` und `ORCPT` werden derzeit nicht unterstützt, könnten aber in einer späteren Version folgen (bitte eröffne ein [Issue](https://github.com/wneessen/go-mail/issues/new/choose), wenn du darin einen Nutzen siehst).
 
-By default `WithDSN()` sets the `FULL` *Mail From Return Option* and the `SUCCESS` and `FAILURE` *Recipient Notify Options*. If you like to use other settings for the DSN, please see the documentation for [WithDSNMailReturnType](#withdsnmailreturntype) and [WithDSNRcptNotifyType](#withdsnrcptnotifytype)
+Standardmäßig setzt `WithDSN()` die `FULL` *Mail From Return Option* und die `SUCCESS` und `FAILURE` *Recipient Notify Optionen*. Wenn du andere Einstellungen für den DSN verwenden möchtest, lies bitte die Dokumentation für [WithDSNMailReturnType](#withdsnmailreturntype) und [WithDSNRcptNotifyType](#withdsnrcptnotifytype)
 
 ### WithDSNMailReturnType()
 {{< tabs "WithDSNMailReturnType" >}}
@@ -74,14 +74,14 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`WithDSNMailReturnType` enables the `Client` to request DSNs (if the server supports it) as described in the [RFC 1891](https://www.rfc-editor.org/rfc/rfc1891) and set the `MAIL FROM` Return option type to the given `DSNMailReturnOption`
+`WithDSNMailReturnType` ermöglicht es dem `Client`, DSNs anzufordern (wenn der Server es unterstützt), wie in der [RFC 1891](https://www.rfc-editor.org/rfc/rfc1891) beschrieben und den `MAIL FROM` Rückgabeoptionstyp auf die angegebene `DSNMailReturnOption`
 
-go-mail has the following two `DSNMailReturnOption` type already built-in:
+go-mail hat die folgenden zwei `DSNMailReturnOption` Typen bereits eingebaut:
 
-* `DSNMailReturnHeadersOnly`: requests that only the headers of the message be returned. \
-  See: [RFC 1891, Section 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
-* `DSNMailReturnFull`: requests that the entire message be returned in any "failed" delivery status notification issued for this recipient \
-  See: [RFC 1891, Section 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
+* `DSNMailReturnHeadersOnly`: verlangt, dass nur die Kopfzeilen der Nachricht zurückgegeben werden. \
+  Siehe: [RFC 1891, Abschnitt 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
+* `DSNMailReturnFull`: fordert an, dass die gesamte Nachricht in jeder "fehlgeschlagenen" Zustellungsstatus-Benachrichtigung, die für diesen Empfänger ausgegeben wird, zurückgegeben wird \
+  Siehe: [RFC 1891, Abschnitt 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
 
 ### WithDSNRcptNotifyType()
 
@@ -109,17 +109,17 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`WithDSNRcptNotifyType` enables the `Client` to request DSNs as described in [RFC 1891](https://www.rfc-editor.org/rfc/rfc1891) and sets the `RCPT TO` notify options to the given list of `DSNRcptNotifyOption`
+`WithDSNRcptNotifyType` ermöglicht dem `Client`, DSNs wie in [RFC 1891](https://www.rfc-editor.org/rfc/rfc1891) beschrieben anzufordern und setzt die `RCPT TO` Notify-Optionen auf die angegebene Liste von `DSNRcptNotifyOption`
 
-go-mail has the following `DSNRcptNotifyOption` types already built-in:
+go-mail hat die folgenden `DSNRcptNotifyOption` Typen bereits eingebaut:
 
-* `DSNRcptNotifyNever`: requests that a DSN not be returned to the sender under any conditions. \
-  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
-* `DSNRcptNotifySuccess`: requests that a DSN be issued on successful delivery \
-  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
-* `DSNRcptNotifyFailure`: requests that a DSN be issued on delivery failure \
-  See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
-* `DSNRcptNotifyDelay`: indicates the sender's willingness to receive "delayed" DSNs. Delayed DSNs may be issued if delivery of a message has been delayed for an unusual amount of time (as determined by the MTA at which the message is delayed), but the final delivery status (whether successful or failure) cannot be determined. The absence of the DELAY keyword in a NOTIFY parameter requests that a "delayed" DSN NOT be issued under any conditions. See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifyNever`: fordert, dass ein DSN unter keinen Umständen an den Absender zurückgeschickt wird. \
+  Siehe: [RFC 1891, Abschnitt 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifySuccess`: fordert an, dass ein DSN bei erfolgreicher Übergabe ausgegeben wird \
+  Siehe: [RFC 1891, Abschnitt 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifyFailure`: fordert an, dass ein DSN bei Zustellungsfehler ausgegeben wird \
+  Siehe: [RFC 1891, Abschnitt 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
+* `DSNRcptNotifyDelay`: gibt die Bereitschaft des Senders an, "verzögerte" DSNs zu empfangen. Verspätete DSNs können ausgestellt werden, wenn sich die Zustellung einer Nachricht um eine ungewöhnliche Zeitspanne verzögert hat (wie vom MTA bestimmt, bei dem die Nachricht verzögert wurde), aber der endgültige Zustellungsstatus (ob erfolgreich oder nicht) nicht ermittelt werden kann. Das Fehlen des Schlüsselworts DELAY in einem NOTIFY-Parameter bedeutet, dass unter keinen Umständen ein "verzögerter" DSN ausgegeben werden darf. Siehe: [RFC 1891, Abschnitt 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
 
 ### WithHELO()
 
@@ -145,4 +145,4 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`WithHELO` instructs the `Client` to use the provided string as HELO/EHLO greeting host. By default the `Client` will use Go's `os.Hostname()` method to get the local hostname and use that for the HELO/EHLO greeting. `WithHELO` will override this.
+`WithHELO` weist den `Client` an, die angegebene Zeichenkette als HELO/EHLO Begrüßungshost zu verwenden. Standardmäßig verwendet der `Client` die Methode `os.Hostname()` von Go, um den lokalen Hostnamen zu ermitteln und diesen für die HELO/EHLO-Begrüßung zu verwenden. `WithHELO` will override this.
