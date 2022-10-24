@@ -127,7 +127,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSend()` method is an alias for [DialAndSendWithContext()](#dialandsendwithcontext) with a default `context.Background` context. `DialAndSend()` takes a list of `Msg` pointer as argument(s) and returns an `error` in case any of the performed actions fails.
+Die Methode `DialAndSend()` ist ein Alias für [DialAndSendWithContext()](#dialandsendwithcontext) mit einem Standardkontext `context.Background`. `DialAndSend()` nimmt eine Liste von `Msg` Pointern als Argument(e) und gibt einen `error` zurück, wenn eine der durchgeführten Aktionen fehlschlägt.
 
 ### DialAndSendWithContext()
 
@@ -174,6 +174,6 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSendWithContext()` is a one-for-all shortcut method on the `Client`. Once the `Client` is created, calling the `DialAndSendWithContext()` method will have it connect to the configured server, send out the given mail `Msg` and finalize by closing the connection again.
+Die `WählenUndSendenMitKontext()` ist eine Abkürzungsmethode für den `Client`. Sobald der `Client` erstellt ist, wird er sich durch den Aufruf der Methode `DialAndSendWithContext()` mit dem konfigurierten Server verbinden, die angegebene Mail `Msg` verschicken und zum Schluss die Verbindung wieder schließen.
 
-The first argument of the method is a `context.Context` followed by a list of one or more `Msg` pointers. `DialAndSendWithContext()` does return an `error` in case any of the performed actions fails.
+Das erste Argument der Methode ist ein `context.Context`, gefolgt von einer Liste von einem oder mehreren `Msg` Pointern. `DialAndSendWithContext()` gibt einen `error` zurück, wenn eine der durchgeführten Aktionen fehlschlägt.
