@@ -28,15 +28,12 @@ func WithDSN() Option
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     c, err := mail.NewClient("mail.example.com", mail.WithDSN())
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 }
 ```
@@ -65,15 +62,12 @@ func WithDSNMailReturnType(DSNMailReturnOption) Option
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     c, err := mail.NewClient("mail.example.com", mail.WithDSNMailReturnType(mail.DSNMailReturnFull))
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 }
 ```
@@ -101,17 +95,14 @@ func WithDSNRcptNotifyType(...DSNRcptNotifyOption) Option
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     c, err := mail.NewClient("mail.example.com",
         mail.WithDSNRcptNotifyType(mail.DSNRcptNotifyFailure, mail.DSNRcptNotifyDelay,
             mail.DSNRcptNotifySuccess))
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 }
 ```
@@ -142,15 +133,12 @@ func WithHELO(string) Option
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     c, err := mail.NewClient("mail.example.com", mail.WithHELO("test.example.com"))
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 }
 ```
