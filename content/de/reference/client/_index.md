@@ -21,15 +21,12 @@ func NewClient(string, ...Option) (*Client, error)
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     c, err := mail.NewClient("mail.example.com")
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
 }
 ```
@@ -70,15 +67,12 @@ func (*Client) Close() error
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     c, err := mail.NewClient("mail.example.com")
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
     defer c.Close()
 }
@@ -87,7 +81,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`Close()` closes the connection to the SMTP server the `Client` is connected to. It returns an `error` in case the `Client` has no active connection or if closing the connection fails.
+`Close()` schließt die Verbindung zu dem SMTP-Server, mit dem der `Client` verbunden ist. Sie gibt einen `error` zurück, wenn der `Client` keine aktive Verbindung hat oder wenn das Schließen der Verbindung fehlschlägt.
 
 ### DialAndSend()
 
@@ -104,10 +98,7 @@ func (*Client) DialAndSend(...*Msg) error
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     from := "Toni Tester <toni@example.com>"
@@ -116,32 +107,27 @@ func main() {
 
     m := mail.NewMsg()
     if err := m.From(from); err != nil {
-        fmt.Printf("failed to set FROM address: %s", err)
-        os.Exit(1)
+        panic(err)
     }
     if err := m.To(to); err != nil {
-        fmt.Printf("failed to set TO address: %s", err)
-        os.Exit(1)
+        panic(err)
     }
     m.Subject("This is a great subject")
 
     c, err := mail.NewClient(server)
     if err != nil {
-        fmt.Printf("failed to create mail client: %s", err)
-        os.Exit(1)
+        panic(err)
     }
     if err := c.DialAndSend(m); err != nil {
-        fmt.Printf("failed to send mail: %s", err)
-        os.Exit(1)
+        panic(err)
     }
-
 }
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSend()` method is an alias for [DialAndSendWithContext()](#dialandsendwithcontext) with a default `context.Background` context. `DialAndSend()` takes a list of `Msg` pointer as argument(s) and returns an `error` in case any of the performed actions fails.
+Die Methode `DialAndSend()` ist ein Alias für [DialAndSendWithContext()](#dialandsendwithcontext) mit einem Standardkontext `context.Background`. `DialAndSend()` nimmt eine Liste von `Msg` Pointern als Argument(e) und gibt einen `error` zurück, wenn eine der durchgeführten Aktionen fehlschlägt.
 
 ### DialAndSendWithContext()
 
@@ -158,10 +144,7 @@ func (*Client) DialAndSendWithContext(context.Context, ...*Msg) error
 ```go
 package main
 
-import (
-    "github.com/wneessen/go-mail"
-    "log"
-)
+import "github.com/wneessen/go-mail"
 
 func main() {
     from := "Toni Tester <toni@example.com>"
@@ -170,32 +153,27 @@ func main() {
 
     m := mail.NewMsg()
     if err := m.From(from); err != nil {
-        fmt.Printf("failed to set FROM address: %s", err)
-        os.Exit(1)
+        panic(err)
     }
     if err := m.To(to); err != nil {
-        fmt.Printf("failed to set TO address: %s", err)
-        os.Exit(1)
+        panic(err)
     }
     m.Subject("This is a great subject")
 
     c, err := mail.NewClient(server)
     if err != nil {
-        fmt.Printf("failed to create mail client: %s", err)
-        os.Exit(1)
+        panic(err)
     }
     ctx := context.Background()
     if err := c.DialAndSendWithContext(ctx, m); err != nil {
-        fmt.Printf("failed to send mail: %s", err)
-        os.Exit(1)
+        panic(err)
     }
-
 }
 ```
 
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSendWithContext()` is a one-for-all shortcut method on the `Client`. Once the `Client` is created, calling the `DialAndSendWithContext()` method will have it connect to the configured server, send out the given mail `Msg` and finalize by closing the connection again.
+Die `WählenUndSendenMitKontext()` ist eine Abkürzungsmethode für den `Client`. Sobald der `Client` erstellt ist, wird er sich durch den Aufruf der Methode `DialAndSendWithContext()` mit dem konfigurierten Server verbinden, die angegebene Mail `Msg` verschicken und zum Schluss die Verbindung wieder schließen.
 
-The first argument of the method is a `context.Context` followed by a list of one or more `Msg` pointers. `DialAndSendWithContext()` does return an `error` in case any of the performed actions fails.
+Das erste Argument der Methode ist ein `context.Context`, gefolgt von einer Liste von einem oder mehreren `Msg` Pointern. `DialAndSendWithContext()` gibt einen `error` zurück, wenn eine der durchgeführten Aktionen fehlschlägt.
