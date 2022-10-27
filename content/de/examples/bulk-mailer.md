@@ -1,8 +1,8 @@
 ---
-title: Bulk Mailer Example
+title: Beispiel für Massenmailer
 ---
 
-In this example we create a small bulk mailer for sending out the same mail to a bigger list of recipients. It is important for us to address the recipient directly in the mail, therefore we will make use of Go's `html/template` and `text/template` system together with placeholders.
+In diesem Beispiel erstellen wir einen kleinen Massenversender, um die gleiche Mail an eine größere Liste von Empfängern zu versenden. Für uns ist es wichtig, den Empfänger in der Mail direkt anzusprechen. Deshalb werden wir das `html/template` und `text/template` System von Go zusammen mit Platzhaltern verwenden.
 
 ```go
 package main
@@ -112,16 +112,16 @@ func main() {
 }
 ```
 
-Let's take the example apart to look at some details...
+Nehmen wir das Beispiel mal auseinander, um uns ein paar Details anzuschauen...
 
-At first, in [line 15](#hl-0-15), we define a new type for our users that we want to address. This is totally optional and is only done so we can easily work with a list of users and address them later on in our text template. How you handle this, is totally up to you and not mandatory for this to work.
+Zuerst, in [Zeile 15](#hl-0-15), definieren wir einen neuen Typ für unsere Nutzer, die wir ansprechen wollen. Das ist völlig optional und wird nur gemacht, damit wir mit einer Liste von Benutzern arbeiten und sie später in unserer Textvorlage ansprechen können. Wie du das handhabst, liegt ganz bei dir und ist nicht zwingend notwendig, damit es funktioniert.
 
-In [line 28](#hl-0-28) thru [48](#hl-0-48) we set up a simple text and HTML template mail body with placeholders that can be used with Go's `html/template` and `text/template`.
+In [Zeile 28](#hl-0-28) bis [48](#hl-0-48) haben wir einen einfachen Text- und HTML-Template-Mailkörper mit Platzhaltern eingerichtet, der mit Go's `html/template` und `text/template` verwendet werden kann.
 
-Next we set up a list of users, we want to send our great bulk mailing to. [Line 52](#hl-0-52) uses the `User` type for this. With the preparation work done, we will start looping over all of our users in [line 70](#hl-0-70). For each user we create a new `*mail.Msg`.
+Als Nächstes erstellen wir eine Liste von Nutzern, an die wir unser tolles Massenmailing schicken wollen. [Zeile 52](#hl-0-52) verwendet dafür den Typ `User`. Nachdem wir die Vorbereitungen getroffen haben, beginnen wir in [Zeile 70](#hl-0-70) mit einer Schleife über alle unsere Benutzer. Für jeden Benutzer erstellen wir eine neue `*mail.Msg`.
 
-For bulk mailings it is common that the `ENVELOPE FROM` and the `MAIL FROM` differ, so that bounce mails are sent to some system that can mark those bounces in the local system as bounced. Therefore we set both of those from addresses in [line 73](#hl-0-73) and [line 76](#hl-0-76). The lines [79](#hl-0-79) to [85](#hl-0-85) should be of no surprise to you, if you already used go-mail before.
+Bei Massenmails ist es üblich, dass die `ENVELOPE FROM` und die `MAIL FROM` unterschiedlich sind, so dass Bounce-Mails an ein System gesendet werden, das diese Bounces im lokalen System als gebounced markieren kann. Deshalb setzen wir diese beiden von Adressaten in [Zeile 73](#hl-0-73) und [Zeile 76](#hl-0-76). Die Zeilen [79](#hl-0-79) bis [85](#hl-0-85) sollten dich nicht überraschen, wenn du go-mail schon einmal benutzt hast.
 
-One more interesting thing happens in [lines 86](#hl-0-86) thru [91](#hl-0-91) in which we use our prepared `html/template` and `text/template` templates and apply it to our mail message using `m.SetBodyHTMLTemplate` and `m.AddAlternativeTextTemplate`. We provide the whole user struct as data to that methods, so that `html/template` and `text/template` can take care of replacing placeholders in the mail body. Go-mail will take care of all the bells and whistles with the template handling for you. With our mail message now complete, we append it to our mail message slice in [line 93](#hl-0-93).
+Eine weitere wichtige Sache passiert in [Zeilen 86](#hl-0-86) bis [91](#hl-0-91), in denen wir unsere vorbereiteten `html/template` und `text/template` Vorlagen verwenden und sie mit `m.SetBodyHTMLTemplate` und `m.AddAlternativeTextTemplate` auf unsere E-Mail-Nachricht anwenden. Wir stellen dieser Methode die gesamte Benutzerstruktur als Daten zur Verfügung, so dass `html/template` und `text/template` sich um das Ersetzen der Platzhalter im Mailkörper kümmern können. Go-mail kümmert sich um den ganzen Schnickschnack mit der Vorlagenbearbeitung für dich. Da unsere Mailnachricht nun vollständig ist, fügen wir sie in [Zeile 93](#hl-0-93) an unsere Mailnachrichtenscheibe an.
 
-Finally we create a new [Client](/reference/client/) and send out all of our prepared messages in one go by providing the whole slice of messages to `Client.DialAndSend`.
+Zum Schluss erstellen wir einen neuen [Client](/reference/client/) und senden alle unsere vorbereiteten Nachrichten in einem Rutsch, indem wir die gesamte Nachrichtenscheibe an `Client.DialAndSend` übergeben.
