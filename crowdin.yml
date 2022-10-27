@@ -9,3 +9,5 @@ files:
     translation: /content/%two_letters_code%/reference/%original_file_name%
   - source: /content/en/reference/client
     translation: /content/%two_letters_code%/reference/client/%original_file_name%
+  - source: /content/en/examples
+    translation: /content/%two_letters_code%/examples/%original_file_name%
