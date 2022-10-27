@@ -11,12 +11,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/wneessen/go-mail"
 	"log"
 	"math/rand"
 	"os"
 	"text/template"
 	"time"
+
+	"github.com/wneessen/go-mail"
 )
 
 // User is a simple type allowing us to set a firstname, lastname and mail address
@@ -92,30 +93,30 @@ func main() {
 
 Let's take the example apart to look at some details...
 
-At first, in [line 14](#hl-0-14), we define a new type for our users that we want to address. This is totally 
+At first, in [line 15](#hl-0-15), we define a new type for our users that we want to address. This is totally 
 optional and is only done so we can easily work with a list of users and address them later on in our text 
 template. How you handle this, is totally up to you and not mandatory for this to work.
 
-In [line 26](#hl-0-26) we set up a simple text template mail body with placeholders that can be used with 
+In [line 27](#hl-0-27) we set up a simple text template mail body with placeholders that can be used with 
 Go's `text/template`. If you like you can also do this in HTML and use `html/template` instead. In this case
-you would use `m.SetBodyHTMLTemplate` instead of `m.SetBodyTextTemplate` in [line 66](#hl-0-66). Of course both
+you would use `m.SetBodyHTMLTemplate` instead of `m.SetBodyTextTemplate` in [line 67](#hl-0-67). Of course both
 can be combined as well. For this we have the `Msg.AddAlternativeHTMLTemplate` and `Msg.AddAlternativeTextTemplate`
 methods.
 
-Next we set up a list of users, we want to send our great bulk mailing to. [Line 38](#hl-0-38) uses the `User`
-type for this. With the preparation work done, we will start looping over all of our users in [line 48](#hl-0-48).
+Next we set up a list of users, we want to send our great bulk mailing to. [Line 39](#hl-0-39) uses the `User`
+type for this. With the preparation work done, we will start looping over all of our users in [line 51](#hl-0-51).
 For each user we create a new `*mail.Msg`.
 
 For bulk mailings it is common that the `ENVELOPE FROM` and the `MAIL FROM` differ, so that bounce mails are sent
 to some system that can mark those bounces in the local system as bounced. Therefore we set both of those from
-addresses in [line 53](#hl-0-53) and [line 56](#hl-0-56). The lines 59 to 65 should be of no surprise to you, if
+addresses in [line 54](#hl-0-54) and [line 57](#hl-0-57). The lines 60 to 66 should be of no surprise to you, if
 you already used go-mail before.
 
-One more interesting thing happens in [line 66](#hl-0-66) in which we use our prepared `text/template` and apply
+One more interesting thing happens in [line 67](#hl-0-67) in which we use our prepared `text/template` and apply
 it to our mail message using `m.SetBodyTextTemplate`. We provide the whole user struct as data to that method, so
 that `text/template` can take care of replacing placeholders in the mail body. Go-mail will take care of all the 
 bells and whistles with the template handling for you. With our mail message now complete, we append it to our 
-mail message slice in [line 70](#hl-0-70).
+mail message slice in [line 71](#hl-0-71).
 
 Finally we create a new [Client](/reference/client/) and send out all of our prepared messages in one go by
 providing the whole slice of messages to `Client.DialAndSend`.
