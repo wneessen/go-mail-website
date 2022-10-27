@@ -114,9 +114,9 @@ Unterstützung für Go's `html/template` und `text/template` (als Nachrichtentex
 
 <--->
 
-### DKIM support
+### DKIM Unterstützung
 
-DKIM signature support via the [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim) middleware
+DKIM-Signatur-Unterstützung über die [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim) Middleware
 
 
 {{< /columns >}}
