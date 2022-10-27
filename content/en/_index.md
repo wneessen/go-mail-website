@@ -126,6 +126,12 @@ Support for Go's `html/template` and `text/template` (as message body, alternati
 
 <--->
 
+### DKIM support
+
+DKIM signature support via the [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim)
+middleware
+
+
 {{< /columns >}}
 
 ## Support
