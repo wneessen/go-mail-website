@@ -1,4 +1,4 @@
-<!doctype html><html lang=de class=color-toggle-hidden><head><meta charset=utf-8><meta name=referrer content="no-referrer"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=generator content="Hugo 0.104.3"><meta name=description content="In go-mail ist der Client für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.
+<!doctype html><html lang=de class=color-toggle-hidden><head><meta charset=utf-8><meta name=referrer content="no-referrer"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=generator content="Hugo 0.109.0"><meta name=description content="In go-mail ist der Client für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.
 NewClient() Client Close() DialAndSend() DialAndSendWithContext() NewClient() Signature 1 func NewClient(string, ...Option) (*Client, error) Example 1 2 3 4 5 6 7 8 9 10 package main import &#34;github.com/wneessen/go-mail&#34; func main() { c, err := mail.NewClient(&#34;mail.example.com&#34;) if err != nil { panic(err) } } Um einen neuen Client zu erstellen, kannst du die Methode NewClient() verwenden."><title>Der Client für die Mailzustellung | go-mail</title><link rel=icon type=image/svg+xml href=/favicon/favicon.svg><link rel=icon type=image/png sizes=32x32 href=/favicon/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon/favicon-16x16.png><meta property="og:title" content="Der Client für die Mailzustellung"><meta property="og:site_name" content="go-mail"><meta property="og:description" content="In go-mail ist der Client für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.
 NewClient() Client Close() DialAndSend() DialAndSendWithContext() NewClient() Signature 1 func NewClient(string, ...Option) (*Client, error) Example 1 2 3 4 5 6 7 8 9 10 package main import &#34;github.com/wneessen/go-mail&#34; func main() { c, err := mail.NewClient(&#34;mail.example.com&#34;) if err != nil { panic(err) } } Um einen neuen Client zu erstellen, kannst du die Methode NewClient() verwenden."><meta property="og:type" content="article"><meta property="og:url" content="https://go-mail.dev/de/reference/client/"><meta property="article:section" content="Reference"><meta property="article:modified_time" content="2022-10-24T14:39:52+02:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Der Client für die Mailzustellung"><meta name=twitter:description content="In go-mail ist der Client für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.
 NewClient() Client Close() DialAndSend() DialAndSendWithContext() NewClient() Signature 1 func NewClient(string, ...Option) (*Client, error) Example 1 2 3 4 5 6 7 8 9 10 package main import &#34;github.com/wneessen/go-mail&#34; func main() { c, err := mail.NewClient(&#34;mail.example.com&#34;) if err != nil { panic(err) } } Um einen neuen Client zu erstellen, kannst du die Methode NewClient() verwenden."><script type=application/ld+json>{"@context":"http://schema.org","@type":"TechArticle","articleSection":"Reference","name":"Der Client für die Mailzustellung","url":"https://go-mail.dev/de/reference/client/","headline":"Der Client für die Mailzustellung","description":"In go-mail ist der Client für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.\nNewClient() Client Close() DialAndSend() DialAndSendWithContext() NewClient() Signature 1 func NewClient(string, ...Option) (*Client, error) Example 1 2 3 4 5 6 7 8 9 10 package main import \u0022github.com\/wneessen\/go-mail\u0022 func main() { c, err := mail.NewClient(\u0022mail.example.com\u0022) if err != nil { panic(err) } } Um einen neuen Client zu erstellen, kannst du die Methode NewClient() verwenden.","wordCount":"514","inLanguage":"de","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https://go-mail.dev/de/reference/client/"},"copyrightHolder":"go-mail","copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"2022-10-24T14:39:52.00Z","publisher":{"@type":"Organization","name":"go-mail","url":"https://go-mail.dev","logo":{"@type":"ImageObject","url":"https://go-mail.dev/brand.svg","width":"32","height":"32"}}}</script><script src=/js/main-902b82d5.bundle.min.js></script>
@@ -14,19 +14,19 @@ NewClient() Client Close() DialAndSend() DialAndSendWithContext() NewClient() Si
 <label><span class=flex><svg class="gdoc-icon gdoc_github"><use xlink:href="#gdoc_github"/></svg><a href=https://github.com/wneessen/go-mail class=gdoc-nav__entry>View Source</a></span></label></li></ul></section></nav></aside><div class=gdoc-page><div class="gdoc-page__header flex flex-wrap
 justify-end" itemprop=breadcrumb><div><span class=editpage><svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"/></svg><a href=https://github.com/wneessen/go-mail-website/edit/main/content/de/reference/client/_index.md>Seite bearbeiten</a></span></div></div><article class="gdoc-markdown gdoc-markdown__align--left"><h1>Der Client für die Mailzustellung</h1><p>In go-mail ist der <code>Client</code> für die Mailzustellung mit entfernten Mailservern zuständig, die über das SMTP-Protokoll kommunizieren.</p><div class="gdoc-toc gdoc-toc__level--3"><nav id=TableOfContents><ul><li><a href=#newclient>NewClient()</a></li><li><a href=#client>Client</a><ul><li><a href=#close>Close()</a></li><li><a href=#dialandsend>DialAndSend()</a></li><li><a href=#dialandsendwithcontext>DialAndSendWithContext()</a></li></ul></li></ul></nav><hr></div><div class=gdoc-page__anchorwrap><h2 id=newclient>NewClient()
 <a data-clipboard-text=https://go-mail.dev/de/reference/client/#newclient class="gdoc-page__anchor clip flex align-center" title="Link zu: NewClient()" aria-label="Link zu: NewClient()" href=#newclient><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h2></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-NewClient id=tabs-NewClient-0 checked>
-<label for=tabs-NewClient-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-NewClient-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>NewClient</span><span class=p>(</span><span class=kt>string</span><span class=p>,</span> <span class=o>...</span><span class=nx>Option</span><span class=p>)</span> <span class=p>(</span><span class=o>*</span><span class=nx>Client</span><span class=p>,</span> <span class=kt>error</span><span class=p>)</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-NewClient id=tabs-NewClient-1>
-<label for=tabs-NewClient-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
+<label for=tabs-NewClient-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
@@ -39,28 +39,28 @@ justify-end" itemprop=breadcrumb><div><span class=editpage><svg class="gdoc-icon
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div></div></div><p>Um einen neuen <code>Client</code> zu erstellen, kannst du die Methode <code>NewClient()</code> verwenden. Als erstes Argument benötigt er den Hostnamen des sendenden SMTP-Servers. Optional kannst du eine Liste von <code>Option</code>-Funktionen angeben. Diese Optionsfunktionen können verwendet werden, um die Standardeinstellungen des <code>Client</code> zu überschreiben.</p><p>In der <a class=gdoc-markdown__link href=options>Optionen</a> Dokumentation findest du ausführliche Informationen zu allen verfügbaren Optionen.</p><div class=gdoc-page__anchorwrap><h2 id=client>Client
 <a data-clipboard-text=https://go-mail.dev/de/reference/client/#client class="gdoc-page__anchor clip flex align-center" title="Link zu: Client" aria-label="Link zu: Client" href=#client><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h2></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-Client id=tabs-Client-0 checked>
-<label for=tabs-Client-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2>2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3>3</a>
+<label for=tabs-Client-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2>2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3>3</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Client</span> <span class=kd>struct</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl><span class=c1>// contains filtered or unexported fields
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div></div></div><div class=gdoc-page__anchorwrap><h3 id=close>Close()
 <a data-clipboard-text=https://go-mail.dev/de/reference/client/#close class="gdoc-page__anchor clip flex align-center" title="Link zu: Close()" aria-label="Link zu: Close()" href=#close><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-Close id=tabs-Close-0 checked>
-<label for=tabs-Close-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-Close-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=o>*</span><span class=nx>Client</span><span class=p>)</span> <span class=nf>Close</span><span class=p>()</span> <span class=kt>error</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-Close id=tabs-Close-1>
-<label for=tabs-Close-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
-</span><span class=lnt id=hl-0-11><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-11>11</a>
+<label for=tabs-Close-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
+</span><span class=lnt id=hl-0-11><a class=lnlinks href=#hl-0-11>11</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
@@ -74,35 +74,35 @@ justify-end" itemprop=breadcrumb><div><span class=editpage><svg class="gdoc-icon
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div></div></div><p><code>Close()</code> schließt die Verbindung zu dem SMTP-Server, mit dem der <code>Client</code> verbunden ist. Sie gibt einen <code>error</code> zurück, wenn der <code>Client</code> keine aktive Verbindung hat oder wenn das Schließen der Verbindung fehlschlägt.</p><div class=gdoc-page__anchorwrap><h3 id=dialandsend>DialAndSend()
 <a data-clipboard-text=https://go-mail.dev/de/reference/client/#dialandsend class="gdoc-page__anchor clip flex align-center" title="Link zu: DialAndSend()" aria-label="Link zu: DialAndSend()" href=#dialandsend><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-DialAndSend id=tabs-DialAndSend-0 checked>
-<label for=tabs-DialAndSend-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-DialAndSend-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=o>*</span><span class=nx>Client</span><span class=p>)</span> <span class=nf>DialAndSend</span><span class=p>(</span><span class=o>...*</span><span class=nx>Msg</span><span class=p>)</span> <span class=kt>error</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-DialAndSend id=tabs-DialAndSend-1>
-<label for=tabs-DialAndSend-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
-</span><span class=lnt id=hl-0-11><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-11>11</a>
-</span><span class=lnt id=hl-0-12><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-12>12</a>
-</span><span class=lnt id=hl-0-13><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-13>13</a>
-</span><span class=lnt id=hl-0-14><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-14>14</a>
-</span><span class=lnt id=hl-0-15><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-15>15</a>
-</span><span class=lnt id=hl-0-16><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-16>16</a>
-</span><span class=lnt id=hl-0-17><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-17>17</a>
-</span><span class=lnt id=hl-0-18><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-18>18</a>
-</span><span class=lnt id=hl-0-19><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-19>19</a>
-</span><span class=lnt id=hl-0-20><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-20>20</a>
-</span><span class=lnt id=hl-0-21><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-21>21</a>
-</span><span class=lnt id=hl-0-22><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-22>22</a>
-</span><span class=lnt id=hl-0-23><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-23>23</a>
-</span><span class=lnt id=hl-0-24><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-24>24</a>
-</span><span class=lnt id=hl-0-25><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-25>25</a>
-</span><span class=lnt id=hl-0-26><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-26>26</a>
+<label for=tabs-DialAndSend-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
+</span><span class=lnt id=hl-0-11><a class=lnlinks href=#hl-0-11>11</a>
+</span><span class=lnt id=hl-0-12><a class=lnlinks href=#hl-0-12>12</a>
+</span><span class=lnt id=hl-0-13><a class=lnlinks href=#hl-0-13>13</a>
+</span><span class=lnt id=hl-0-14><a class=lnlinks href=#hl-0-14>14</a>
+</span><span class=lnt id=hl-0-15><a class=lnlinks href=#hl-0-15>15</a>
+</span><span class=lnt id=hl-0-16><a class=lnlinks href=#hl-0-16>16</a>
+</span><span class=lnt id=hl-0-17><a class=lnlinks href=#hl-0-17>17</a>
+</span><span class=lnt id=hl-0-18><a class=lnlinks href=#hl-0-18>18</a>
+</span><span class=lnt id=hl-0-19><a class=lnlinks href=#hl-0-19>19</a>
+</span><span class=lnt id=hl-0-20><a class=lnlinks href=#hl-0-20>20</a>
+</span><span class=lnt id=hl-0-21><a class=lnlinks href=#hl-0-21>21</a>
+</span><span class=lnt id=hl-0-22><a class=lnlinks href=#hl-0-22>22</a>
+</span><span class=lnt id=hl-0-23><a class=lnlinks href=#hl-0-23>23</a>
+</span><span class=lnt id=hl-0-24><a class=lnlinks href=#hl-0-24>24</a>
+</span><span class=lnt id=hl-0-25><a class=lnlinks href=#hl-0-25>25</a>
+</span><span class=lnt id=hl-0-26><a class=lnlinks href=#hl-0-26>26</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
@@ -131,36 +131,36 @@ justify-end" itemprop=breadcrumb><div><span class=editpage><svg class="gdoc-icon
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span></code></pre></td></tr></table></div></div></div></div><p>Die Methode <code>DialAndSend()</code> ist ein Alias für <a class=gdoc-markdown__link href=#dialandsendwithcontext>DialAndSendWithContext()</a> mit einem Standardkontext <code>context.Background</code>. <code>DialAndSend()</code> nimmt eine Liste von <code>Msg</code> Pointern als Argument(e) und gibt einen <code>error</code> zurück, wenn eine der durchgeführten Aktionen fehlschlägt.</p><div class=gdoc-page__anchorwrap><h3 id=dialandsendwithcontext>DialAndSendWithContext()
 <a data-clipboard-text=https://go-mail.dev/de/reference/client/#dialandsendwithcontext class="gdoc-page__anchor clip flex align-center" title="Link zu: DialAndSendWithContext()" aria-label="Link zu: DialAndSendWithContext()" href=#dialandsendwithcontext><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-DialAndSendWithContext id=tabs-DialAndSendWithContext-0 checked>
-<label for=tabs-DialAndSendWithContext-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-DialAndSendWithContext-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=p>(</span><span class=o>*</span><span class=nx>Client</span><span class=p>)</span> <span class=nf>DialAndSendWithContext</span><span class=p>(</span><span class=nx>context</span><span class=p>.</span><span class=nx>Context</span><span class=p>,</span> <span class=o>...*</span><span class=nx>Msg</span><span class=p>)</span> <span class=kt>error</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-DialAndSendWithContext id=tabs-DialAndSendWithContext-1>
-<label for=tabs-DialAndSendWithContext-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
-</span><span class=lnt id=hl-0-11><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-11>11</a>
-</span><span class=lnt id=hl-0-12><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-12>12</a>
-</span><span class=lnt id=hl-0-13><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-13>13</a>
-</span><span class=lnt id=hl-0-14><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-14>14</a>
-</span><span class=lnt id=hl-0-15><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-15>15</a>
-</span><span class=lnt id=hl-0-16><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-16>16</a>
-</span><span class=lnt id=hl-0-17><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-17>17</a>
-</span><span class=lnt id=hl-0-18><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-18>18</a>
-</span><span class=lnt id=hl-0-19><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-19>19</a>
-</span><span class=lnt id=hl-0-20><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-20>20</a>
-</span><span class=lnt id=hl-0-21><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-21>21</a>
-</span><span class=lnt id=hl-0-22><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-22>22</a>
-</span><span class=lnt id=hl-0-23><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-23>23</a>
-</span><span class=lnt id=hl-0-24><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-24>24</a>
-</span><span class=lnt id=hl-0-25><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-25>25</a>
-</span><span class=lnt id=hl-0-26><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-26>26</a>
-</span><span class=lnt id=hl-0-27><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-27>27</a>
+<label for=tabs-DialAndSendWithContext-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
+</span><span class=lnt id=hl-0-11><a class=lnlinks href=#hl-0-11>11</a>
+</span><span class=lnt id=hl-0-12><a class=lnlinks href=#hl-0-12>12</a>
+</span><span class=lnt id=hl-0-13><a class=lnlinks href=#hl-0-13>13</a>
+</span><span class=lnt id=hl-0-14><a class=lnlinks href=#hl-0-14>14</a>
+</span><span class=lnt id=hl-0-15><a class=lnlinks href=#hl-0-15>15</a>
+</span><span class=lnt id=hl-0-16><a class=lnlinks href=#hl-0-16>16</a>
+</span><span class=lnt id=hl-0-17><a class=lnlinks href=#hl-0-17>17</a>
+</span><span class=lnt id=hl-0-18><a class=lnlinks href=#hl-0-18>18</a>
+</span><span class=lnt id=hl-0-19><a class=lnlinks href=#hl-0-19>19</a>
+</span><span class=lnt id=hl-0-20><a class=lnlinks href=#hl-0-20>20</a>
+</span><span class=lnt id=hl-0-21><a class=lnlinks href=#hl-0-21>21</a>
+</span><span class=lnt id=hl-0-22><a class=lnlinks href=#hl-0-22>22</a>
+</span><span class=lnt id=hl-0-23><a class=lnlinks href=#hl-0-23>23</a>
+</span><span class=lnt id=hl-0-24><a class=lnlinks href=#hl-0-24>24</a>
+</span><span class=lnt id=hl-0-25><a class=lnlinks href=#hl-0-25>25</a>
+</span><span class=lnt id=hl-0-26><a class=lnlinks href=#hl-0-26>26</a>
+</span><span class=lnt id=hl-0-27><a class=lnlinks href=#hl-0-27>27</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>

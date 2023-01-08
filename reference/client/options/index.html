@@ -1,4 +1,4 @@
-<!doctype html><html lang=en class=color-toggle-hidden><head><meta charset=utf-8><meta name=referrer content="no-referrer"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=generator content="Hugo 0.104.3"><meta name=description content="Option WithDSN() WithDSNMailReturnType() WithDSNRcptNotifyType() WithHELO() Option Signature 1 type Option func(*Client) error Client Option are functions that can be used as optional arguments for the NewClient() methods to override the default vaules of the returned Client.
+<!doctype html><html lang=en class=color-toggle-hidden><head><meta charset=utf-8><meta name=referrer content="no-referrer"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=generator content="Hugo 0.109.0"><meta name=description content="Option WithDSN() WithDSNMailReturnType() WithDSNRcptNotifyType() WithHELO() Option Signature 1 type Option func(*Client) error Client Option are functions that can be used as optional arguments for the NewClient() methods to override the default vaules of the returned Client.
 WithDSN() Signature 1 func WithDSN() Option Example 1 2 3 4 5 6 7 8 9 10 package main import &#34;github.com/wneessen/go-mail&#34; func main() { c, err := mail.NewClient(&#34;mail.example.com&#34;, mail.WithDSN()) if err != nil { panic(err) } } The WithDSN option function tells the Client to request DSNs (if the server supports it) as described in RFC 1891."><title>Client options | go-mail</title><link rel=icon type=image/svg+xml href=/favicon/favicon.svg><link rel=icon type=image/png sizes=32x32 href=/favicon/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon/favicon-16x16.png><meta property="og:title" content="Client options"><meta property="og:site_name" content="go-mail"><meta property="og:description" content="Option WithDSN() WithDSNMailReturnType() WithDSNRcptNotifyType() WithHELO() Option Signature 1 type Option func(*Client) error Client Option are functions that can be used as optional arguments for the NewClient() methods to override the default vaules of the returned Client.
 WithDSN() Signature 1 func WithDSN() Option Example 1 2 3 4 5 6 7 8 9 10 package main import &#34;github.com/wneessen/go-mail&#34; func main() { c, err := mail.NewClient(&#34;mail.example.com&#34;, mail.WithDSN()) if err != nil { panic(err) } } The WithDSN option function tells the Client to request DSNs (if the server supports it) as described in RFC 1891."><meta property="og:type" content="article"><meta property="og:url" content="https://go-mail.dev/reference/client/options/"><meta property="article:section" content="Reference"><meta property="article:modified_time" content="2022-10-24T14:34:37+02:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Client options"><meta name=twitter:description content="Option WithDSN() WithDSNMailReturnType() WithDSNRcptNotifyType() WithHELO() Option Signature 1 type Option func(*Client) error Client Option are functions that can be used as optional arguments for the NewClient() methods to override the default vaules of the returned Client.
 WithDSN() Signature 1 func WithDSN() Option Example 1 2 3 4 5 6 7 8 9 10 package main import &#34;github.com/wneessen/go-mail&#34; func main() { c, err := mail.NewClient(&#34;mail.example.com&#34;, mail.WithDSN()) if err != nil { panic(err) } } The WithDSN option function tells the Client to request DSNs (if the server supports it) as described in RFC 1891."><script type=application/ld+json>{"@context":"http://schema.org","@type":"TechArticle","articleSection":"Reference","name":"Client options","url":"https://go-mail.dev/reference/client/options/","headline":"Client options","description":"Option WithDSN() WithDSNMailReturnType() WithDSNRcptNotifyType() WithHELO() Option Signature 1 type Option func(*Client) error Client Option are functions that can be used as optional arguments for the NewClient() methods to override the default vaules of the returned Client.\nWithDSN() Signature 1 func WithDSN() Option Example 1 2 3 4 5 6 7 8 9 10 package main import \u0022github.com\/wneessen\/go-mail\u0022 func main() { c, err := mail.NewClient(\u0022mail.example.com\u0022, mail.WithDSN()) if err != nil { panic(err) } } The WithDSN option function tells the Client to request DSNs (if the server supports it) as described in RFC 1891.","wordCount":"637","inLanguage":"en","isFamilyFriendly":"true","mainEntityOfPage":{"@type":"WebPage","@id":"https://go-mail.dev/reference/client/options/"},"copyrightHolder":"go-mail","copyrightYear":"0001","dateCreated":"0001-01-01T00:00:00.00Z","datePublished":"0001-01-01T00:00:00.00Z","dateModified":"2022-10-24T14:34:37.00Z","publisher":{"@type":"Organization","name":"go-mail","url":"https://go-mail.dev","logo":{"@type":"ImageObject","url":"https://go-mail.dev/brand.svg","width":"32","height":"32"}}}</script><script src=/js/main-902b82d5.bundle.min.js></script>
@@ -14,24 +14,24 @@ WithDSN() Signature 1 func WithDSN() Option Example 1 2 3 4 5 6 7 8 9 10 package
 <label><span class=flex><svg class="gdoc-icon gdoc_github"><use xlink:href="#gdoc_github"/></svg><a href=https://github.com/wneessen/go-mail class=gdoc-nav__entry>View Source</a></span></label></li></ul></section></nav></aside><div class=gdoc-page><div class="gdoc-page__header flex flex-wrap
 justify-end" itemprop=breadcrumb><div><span class=editpage><svg class="gdoc-icon gdoc_code"><use xlink:href="#gdoc_code"/></svg><a href=https://github.com/wneessen/go-mail-website/edit/main/content/en/reference/client/options.md>Edit page</a></span></div></div><article class="gdoc-markdown gdoc-markdown__align--left"><h1>Client options</h1><div class="gdoc-toc gdoc-toc__level--3"><nav id=TableOfContents><ul><li><a href=#option>Option</a><ul><li><a href=#withdsn>WithDSN()</a></li><li><a href=#withdsnmailreturntype>WithDSNMailReturnType()</a></li><li><a href=#withdsnrcptnotifytype>WithDSNRcptNotifyType()</a></li><li><a href=#withhelo>WithHELO()</a></li></ul></li></ul></nav><hr></div><div class=gdoc-page__anchorwrap><h2 id=option>Option
 <a data-clipboard-text=https://go-mail.dev/reference/client/options/#option class="gdoc-page__anchor clip flex align-center" title="Anchor to: Option" aria-label="Anchor to: Option" href=#option><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h2></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-Options id=tabs-Options-0 checked>
-<label for=tabs-Options-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-Options-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>type</span> <span class=nx>Option</span> <span class=kd>func</span><span class=p>(</span><span class=o>*</span><span class=nx>Client</span><span class=p>)</span> <span class=kt>error</span>
 </span></span></code></pre></td></tr></table></div></div></div></div><p>Client <code>Option</code> are functions that can be used as optional arguments for the <code>NewClient()</code> methods to override the
 default vaules of the returned <code>Client</code>.</p><div class=gdoc-page__anchorwrap><h3 id=withdsn>WithDSN()
 <a data-clipboard-text=https://go-mail.dev/reference/client/options/#withdsn class="gdoc-page__anchor clip flex align-center" title="Anchor to: WithDSN()" aria-label="Anchor to: WithDSN()" href=#withdsn><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithDSN id=tabs-WithDSN-0 checked>
-<label for=tabs-WithDSN-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-WithDSN-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>WithDSN</span><span class=p>()</span> <span class=nx>Option</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithDSN id=tabs-WithDSN-1>
-<label for=tabs-WithDSN-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
+<label for=tabs-WithDSN-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
@@ -52,19 +52,19 @@ situations: <code>NEVER</code>, <code>SUCCESS</code>, <code>FAILURE</code> and <
 <em>Recipient Notify Options</em>. If you like to use other settings for the DSN, please see the documentation for
 <a class=gdoc-markdown__link href=#withdsnmailreturntype>WithDSNMailReturnType</a> and <a class=gdoc-markdown__link href=#withdsnrcptnotifytype>WithDSNRcptNotifyType</a></p><div class=gdoc-page__anchorwrap><h3 id=withdsnmailreturntype>WithDSNMailReturnType()
 <a data-clipboard-text=https://go-mail.dev/reference/client/options/#withdsnmailreturntype class="gdoc-page__anchor clip flex align-center" title="Anchor to: WithDSNMailReturnType()" aria-label="Anchor to: WithDSNMailReturnType()" href=#withdsnmailreturntype><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithDSNMailReturnType id=tabs-WithDSNMailReturnType-0 checked>
-<label for=tabs-WithDSNMailReturnType-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-WithDSNMailReturnType-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>WithDSNMailReturnType</span><span class=p>(</span><span class=nx>DSNMailReturnOption</span><span class=p>)</span> <span class=nx>Option</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithDSNMailReturnType id=tabs-WithDSNMailReturnType-1>
-<label for=tabs-WithDSNMailReturnType-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
+<label for=tabs-WithDSNMailReturnType-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
@@ -80,21 +80,21 @@ as described in the <a class=gdoc-markdown__link href=https://www.rfc-editor.org
 Return option type to the given <code>DSNMailReturnOption</code></p><p>go-mail has the following two <code>DSNMailReturnOption</code> type already built-in:</p><ul><li><code>DSNMailReturnHeadersOnly</code>: requests that only the headers of the message be returned.<br>See: <a class=gdoc-markdown__link href=https://www.rfc-editor.org/rfc/rfc1891#section-5.3>RFC 1891, Section 5.3</a></li><li><code>DSNMailReturnFull</code>: requests that the entire message be returned in any &ldquo;failed&rdquo; delivery status notification
 issued for this recipient<br>See: <a class=gdoc-markdown__link href=https://www.rfc-editor.org/rfc/rfc1891#section-5.3>RFC 1891, Section 5.3</a></li></ul><div class=gdoc-page__anchorwrap><h3 id=withdsnrcptnotifytype>WithDSNRcptNotifyType()
 <a data-clipboard-text=https://go-mail.dev/reference/client/options/#withdsnrcptnotifytype class="gdoc-page__anchor clip flex align-center" title="Anchor to: WithDSNRcptNotifyType()" aria-label="Anchor to: WithDSNRcptNotifyType()" href=#withdsnrcptnotifytype><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithDSNRcptNotifyType id=tabs-WithDSNRcptNotifyType-0 checked>
-<label for=tabs-WithDSNRcptNotifyType-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-WithDSNRcptNotifyType-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>WithDSNRcptNotifyType</span><span class=p>(</span><span class=o>...</span><span class=nx>DSNRcptNotifyOption</span><span class=p>)</span> <span class=nx>Option</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithDSNRcptNotifyType id=tabs-WithDSNRcptNotifyType-1>
-<label for=tabs-WithDSNRcptNotifyType-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
-</span><span class=lnt id=hl-0-11><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-11>11</a>
-</span><span class=lnt id=hl-0-12><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-12>12</a>
+<label for=tabs-WithDSNRcptNotifyType-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
+</span><span class=lnt id=hl-0-11><a class=lnlinks href=#hl-0-11>11</a>
+</span><span class=lnt id=hl-0-12><a class=lnlinks href=#hl-0-12>12</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
@@ -116,19 +116,19 @@ be determined. The absence of the DELAY keyword in a NOTIFY parameter requests t
 issued under any conditions.
 See: <a class=gdoc-markdown__link href=https://www.rfc-editor.org/rfc/rfc1891#section-5.1>RFC 1891, Section 5.1</a></li></ul><div class=gdoc-page__anchorwrap><h3 id=withhelo>WithHELO()
 <a data-clipboard-text=https://go-mail.dev/reference/client/options/#withhelo class="gdoc-page__anchor clip flex align-center" title="Anchor to: WithHELO()" aria-label="Anchor to: WithHELO()" href=#withhelo><svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"/></svg></a></h3></div><div class=gdoc-tabs><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithHELO id=tabs-WithHELO-0 checked>
-<label for=tabs-WithHELO-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1>1</a>
+<label for=tabs-WithHELO-0 class=gdoc-tabs__label>Signature</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1>1</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kd>func</span> <span class=nf>WithHELO</span><span class=p>(</span><span class=kt>string</span><span class=p>)</span> <span class=nx>Option</span>
 </span></span></code></pre></td></tr></table></div></div></div><input type=radio class="gdoc-tabs__control hidden" name=tabs-WithHELO id=tabs-WithHELO-1>
-<label for=tabs-WithHELO-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-1> 1</a>
-</span><span class=lnt id=hl-0-2><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-2> 2</a>
-</span><span class=lnt id=hl-0-3><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-3> 3</a>
-</span><span class=lnt id=hl-0-4><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-4> 4</a>
-</span><span class=lnt id=hl-0-5><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-5> 5</a>
-</span><span class=lnt id=hl-0-6><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-6> 6</a>
-</span><span class=lnt id=hl-0-7><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-7> 7</a>
-</span><span class=lnt id=hl-0-8><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-8> 8</a>
-</span><span class=lnt id=hl-0-9><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-9> 9</a>
-</span><span class=lnt id=hl-0-10><a style=outline:none;text-decoration:none;color:inherit href=#hl-0-10>10</a>
+<label for=tabs-WithHELO-1 class=gdoc-tabs__label>Example</label><div class="gdoc-markdown--nested gdoc-tabs__content"><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt id=hl-0-1><a class=lnlinks href=#hl-0-1> 1</a>
+</span><span class=lnt id=hl-0-2><a class=lnlinks href=#hl-0-2> 2</a>
+</span><span class=lnt id=hl-0-3><a class=lnlinks href=#hl-0-3> 3</a>
+</span><span class=lnt id=hl-0-4><a class=lnlinks href=#hl-0-4> 4</a>
+</span><span class=lnt id=hl-0-5><a class=lnlinks href=#hl-0-5> 5</a>
+</span><span class=lnt id=hl-0-6><a class=lnlinks href=#hl-0-6> 6</a>
+</span><span class=lnt id=hl-0-7><a class=lnlinks href=#hl-0-7> 7</a>
+</span><span class=lnt id=hl-0-8><a class=lnlinks href=#hl-0-8> 8</a>
+</span><span class=lnt id=hl-0-9><a class=lnlinks href=#hl-0-9> 9</a>
+</span><span class=lnt id=hl-0-10><a class=lnlinks href=#hl-0-10>10</a>
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-go data-lang=go><span class=line><span class=cl><span class=kn>package</span> <span class=nx>main</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=kn>import</span> <span class=s>&#34;github.com/wneessen/go-mail&#34;</span>
