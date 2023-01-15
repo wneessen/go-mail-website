@@ -16,6 +16,67 @@ type Option func(*Client) error
 
 Client `Option` sind Funktionen, die als optionale Argumente für die `NewClient()` Methoden verwendet werden können, um die Standardeinstellungen des zurückgegebenen `Client` zu überschreiben.
 
+### WithDebugLog()
+{{< tabs "WithDebugLog" >}}
+{{< tab "Signature" >}}
+```go
+func WithDebugLog() Option
+```
+{{< /tab >}}
+{{< tab "Example" >}}
+```go
+package main
+
+import "github.com/wneessen/go-mail"
+
+func main() {
+    c, err := mail.NewClient("mail.example.com", mail.WithDebugLog())
+    if err != nil {
+        panic(err)
+    }
+}
+```
+{{< /tab >}}
+{{< tab "Version" >}}
+Eingeführt in [go-mail v0.3.9](https://github.com/wneessen/go-mail/releases/tag/v0.3.9)
+{{< /tab >}}
+{{< /tabs >}}
+
+`WithDebugLog` aktiviert die Debug-Protokollierung des SMTP-Verkehrs auf dem `Client`. Wenn aktiviert, wird jede SMTP-Kommunikation vom Client zum Server und umgekehrt in `os.Stderr` protokolliert.
+
+In der Ausgabe steht `C --> S` für die Kommunikation vom Client zum Server und `C <-- S` für die Kommunikation zurück vom Server zum Client.
+
+Hier ist ein Beispiel für die Ausgabe:
+```
+2023/01/15 20:21:18 [DEBUG] C --> S: EHLO client.example.com
+2023/01/15 20:21:18 [DEBUG] C <-- S: 250 server.example.com
+PIPELINING
+SIZE 152428800
+ETRN
+STARTTLS
+AUTH LOGIN PLAIN
+AUTH=LOGIN PLAIN
+ENHANCEDSTATUSCODES
+8BITMIME
+DSN
+2023/01/15 20:21:18 [DEBUG] C --> S: STARTTLS
+2023/01/15 20:21:18 [DEBUG] C <-- S: 220 2.0.0 Ready to start TLS
+2023/01/15 20:21:18 [DEBUG] C --> S: EHLO client.example.com
+2023/01/15 20:21:18 [DEBUG] C <-- S: 250 server.example.com
+PIPELINING
+SIZE 152428800
+ETRN
+AUTH LOGIN PLAIN
+AUTH=LOGIN PLAIN
+ENHANCEDSTATUSCODES
+8BITMIME
+DSN
+2023/01/15 20:21:18 [DEBUG] C --> S: AUTH LOGIN
+2023/01/15 20:21:18 [DEBUG] C <-- S: 334 VXNlcm5hbWU6
+2023/01/15 20:21:18 [DEBUG] C --> S: 
+2023/01/15 20:21:20 [DEBUG] C <-- S: 535 5.7.8 Error: authentication failed: VXNlcm5hbWU6
+```
+
 ### WithDSN()
 
 {{< tabs "WithDSN" >}}
