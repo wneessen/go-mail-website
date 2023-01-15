@@ -14,7 +14,7 @@ In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneesse
 
 ### Support- und Ankündigungskanäle
 
-* [Twitter](https://twitter.com/gomail_dev): Folge uns auf Twitter, um aktuelle Nachrichten über go-mail zu erhalten
+* [Mastodon](https://s.pebcak.de/@go_mail/): Folge uns auf Mastodon, um aktuelle Nachrichten über go-mail zu erhalten
 * [go-mail Forum](https://github.com/wneessen/go-mail/discussions): Erhalte Ankündigungen und starte Diskussionen über go-mail.
 * [Github Tickets](https://github.com/wneessen/go-mail/issues): Wenn Du einen Bug melden oder ein Feature vorschlagen möchtest, benutze bitte die Github "Issues" Funktion. Bitte beachte die Regeln, die in jedem Projektarchiv-Template angegeben sind.
 * [Discord](https://discord.gg/zSUeBrsFPB): Ein Platz, wo go-mail Entwickler und Nutzer sich treffen können und in Echtzeit chatten können.
