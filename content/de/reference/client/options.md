@@ -38,15 +38,15 @@ func main() {
 ```
 {{< /tab >}}
 {{< tab "Version" >}}
-Introduced in [go-mail v0.3.9](https://github.com/wneessen/go-mail/releases/tag/v0.3.9)
+Eingeführt in [go-mail v0.3.9](https://github.com/wneessen/go-mail/releases/tag/v0.3.9)
 {{< /tab >}}
 {{< /tabs >}}
 
-`WithDebugLog` enables debug logging of SMTP traffic on the `Client`. When enabled, any SMTP communication from the client to the server and vice-versa is logged to `os.Stderr`.
+`WithDebugLog` aktiviert die Debug-Protokollierung des SMTP-Verkehrs auf dem `Client`. Wenn aktiviert, wird jede SMTP-Kommunikation vom Client zum Server und umgekehrt in `os.Stderr` protokolliert.
 
-In the output `C --> S` is the communication from the client to the server and `C <-- S` represents the communication back from the server to the client.
+In der Ausgabe steht `C --> S` für die Kommunikation vom Client zum Server und `C <-- S` für die Kommunikation zurück vom Server zum Client.
 
-Here is an output example:
+Hier ist ein Beispiel für die Ausgabe:
 ```
 2023/01/15 20:21:18 [DEBUG] C --> S: EHLO client.example.com
 2023/01/15 20:21:18 [DEBUG] C <-- S: 250 server.example.com
