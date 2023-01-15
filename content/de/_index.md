@@ -118,6 +118,21 @@ Unterstützung für Go's `html/template` und `text/template` (als Nachrichtentex
 
 DKIM-Signatur-Unterstützung über die [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim) Middleware
 
+{{< /columns >}}
+
+{{< columns >}}
+
+### Debug-Logging
+
+Unterstützung für den SMTP-Client, um jede SMTP-Kommunikation zu Debug-Zwecken in STDERR zu protokollieren
+
+<--->
+
+### Benutzerdefinierte Zustellungsfehler
+
+Mit dem Typ `SendError` kann der Benutzer detaillierte Informationen über Zustellungsfehler erhalten einschließlich der Angabe, ob der Fehler vorübergehender Natur ist oder nicht
+
+<--->
 
 {{< /columns >}}
 
