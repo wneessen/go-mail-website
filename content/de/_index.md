@@ -122,15 +122,15 @@ DKIM-Signatur-Unterstützung über die [go-mail-middlware/dkim](https://github.c
 
 {{< columns >}}
 
-### Debug logging
+### Debug-Logging
 
-Support for the SMTP client to log any SMTP communication to STDERR for debug purposes
+Unterstützung für den SMTP-Client, um jede SMTP-Kommunikation zu Debug-Zwecken in STDERR zu protokollieren
 
 <--->
 
-### Custom delivery errors
+### Benutzerdefinierte Zustellungsfehler
 
-With the `SendError` type the user is able to get detailed information about delivery errors including if the error is of temporary nature or not
+Mit dem Typ `SendError` kann der Benutzer detaillierte Informationen über Zustellungsfehler erhalten einschließlich der Angabe, ob der Fehler vorübergehender Natur ist oder nicht
 
 <--->
 
