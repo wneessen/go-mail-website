@@ -131,6 +131,22 @@ Support for Go's `html/template` and `text/template` (as message body, alternati
 DKIM signature support via the [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim)
 middleware
 
+{{< /columns >}}
+
+{{< columns >}}
+
+### Debug logging
+
+Support for the SMTP client to log any SMTP communication to STDERR for debug purposes
+
+<--->
+
+### Custom delivery errors
+
+With the `SendError` type the user is able to get detailed information about delivery errors
+including if the error is of temporary nature or not
+
+<--->
 
 {{< /columns >}}
 
