@@ -39,3 +39,7 @@ main:
           en: Guide
           de: Leitfaden
         ref: "/community/guide"
+  - name:
+      en: Security
+      de: Sicherheit
+    ref: "/security"
