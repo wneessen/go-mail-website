@@ -1,21 +1,21 @@
 ---
-title: Security policy
+title: Sicherheitsrichtlinie
 ---
 
-## Known vulnerabilities
+## Bekannte Schwachstellen
 
-Even though there is no known security vulnerability in go-mail, you can always check the [security advisories](https://github.com/wneessen/go-mail/security/advisories) page of our GitHub project.
+Auch wenn es keine bekannte Sicherheitslücke in go-mail gibt, kannst du jederzeit auf der [Sicherheitshinweise](https://github.com/wneessen/go-mail/security/advisories) Seite von unseres GitHub-Projekts.
 
-## Reporting a Vulnerability
+## Eine Sicherheitslücke melden
 
-To report (possible) security issues in go-mail, please either send a mail to [security@go-mail.dev](mailto:security@go-mail.dev) or use Github's [private reporting feature](https://github.com/wneessen/go-mail/security/advisories/new). Reports are always welcome. Even if you are not 100% certain that a specific issue you found counts as a security issue, we'd love to hear the details, so we can figure out together if the issue in question needds to be addressed.
+Um (mögliche) Sicherheitsprobleme in go-mail zu melden, sende bitte entweder eine Mail an [security@go-mail.dev](mailto:security@go-mail.dev) oder nutze die Github [private Meldefunktion](https://github.com/wneessen/go-mail/security/advisories/new). Meldungen sind immer willkommen. Auch wenn du dir nicht 100%ig sicher bist, dass ein bestimmtes Problem, das du als Sicherheitsproblem einzustufen ist, würden wir gerne die Details hören, damit wir gemeinsam herausfinden können, ob das betreffende Problem behoben werden muss.
 
-Typically, you will receive an answer within a day or even within a few hours.
+In der Regel erhältst du innerhalb eines Tages oder sogar innerhalb weniger Stunden eine Antwort.
 
-### End-to-End encryption
-You can send OpenPGP/GPG encrpyted mails to the [security@go-mail.dev](mailto:security@go-mail.dev) address.
+### Ende-zu-Ende-Verschlüsselung
+Du kannst OpenPGP/GPG-verschlüsselte Mails an die Adresse [security@go-mail.dev](mailto:security@go-mail.dev) senden.
 
-OpenPGP/GPG public key:
+Öffentlicher OpenPGP/GPG-Schlüssel:
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 xjMEY8RwPBYJKwYBBAHaRw8BAQdAiLsW7pv+CCMq5Ol0hbIB1HnJI97u3zJw
