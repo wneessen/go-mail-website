@@ -20,7 +20,7 @@ ask everybody who likes to participate to act accordingly.
   start discussions about go-mail.
 * [Github issues](https://github.com/wneessen/go-mail/issues): If you have a bug to report or feature to request, please 
   use GitHub issues. Please respect the rules specified in each repository's issue template.
-* [Discord](https://discord.gg/zSUeBrsFPB): A place for go-mail devs and users to meet and chat in real time.
+* [Discord](https://discord.gg/dbfQyC4s): A place for go-mail devs and users to meet and chat in real time.
 
 ## Contributing
 
@@ -105,7 +105,7 @@ the person who opened the PR to provide that list. Once you have determined a va
 findings on the PR.
 
 If you ever need more clarity or help on testing, please ask a question in
-the [Github forum](https://github.com/wneessen/go-mail/discussions) or on [Discord](https://discord.gg/zSUeBrsFPB).
+the [Github forum](https://github.com/wneessen/go-mail/discussions) or on [Discord](https://discord.gg/dbfQyC4s).
 
 ### Documentation
 
@@ -131,7 +131,7 @@ them via a Github issue in the go-mail-website repository.
 ### Support
 
 A great way to contribute to the project is to help others who are experiencing difficulty. This is normally reported as
-a issue or a message on the `#go-mail` [Discord channel](https://discord.gg/zSUeBrsFPB). Even just clarifying the issue
+a issue or a message on the `#go-mail` [Discord channel](https://discord.gg/dbfQyC4s). Even just clarifying the issue
 can really help out. Sometimes, when an issue is discussed and gets resolved, we create a guide out of it to help others
 who face the same issues.
 
