@@ -17,7 +17,7 @@ In unserer Community folgen wir dem [Verhaltenskodex](https://github.com/wneesse
 * [Mastodon](https://s.pebcak.de/@go_mail/): Folge uns auf Mastodon, um aktuelle Nachrichten über go-mail zu erhalten
 * [go-mail Forum](https://github.com/wneessen/go-mail/discussions): Erhalte Ankündigungen und starte Diskussionen über go-mail.
 * [Github Tickets](https://github.com/wneessen/go-mail/issues): Wenn Du einen Bug melden oder ein Feature vorschlagen möchtest, benutze bitte die Github "Issues" Funktion. Bitte beachte die Regeln, die in jedem Projektarchiv-Template angegeben sind.
-* [Discord](https://discord.gg/zSUeBrsFPB): Ein Platz, wo go-mail Entwickler und Nutzer sich treffen können und in Echtzeit chatten können.
+* [Discord](https://discord.gg/dbfQyC4s): Ein Ort, an dem sich Go-Mail-Entwickler und -Benutzer treffen und in Echtzeit chatten können.
 
 ## Mitwirken
 
@@ -87,7 +87,7 @@ Wenn du testen möchtest, ob die Fehlermeldung eines anderen Nutzers auf deinem 
 
 Um PRs zu testen, wählst du einen PR zum Testen aus und überprüfst, ob in der PR-Beschreibung die Testszenarien aufgeführt sind. Wenn nicht, bitte die Person, die den PR eröffnet hat, diese Liste zur Verfügung zu stellen. Wenn du ein gültiges Testszenario ermittelt hast, melde deine Ergebnisse bitte in der PR.
 
-Wenn du mehr Informationen oder Hilfe beim Testen brauchst, kannst du im [Github-Forum](https://github.com/wneessen/go-mail/discussions) oder auf [Discord](https://discord.gg/zSUeBrsFPB) eine Frage stellen.
+Wenn du jemals mehr Klarheit oder Hilfe beim Testen brauchst, stelle bitte eine Frage im [Github Forum](https://github.com/wneessen/go-mail/discussions) oder auf [Discord](https://discord.gg/dbfQyC4s).
 
 ### Dokumentation
 
@@ -105,5 +105,5 @@ Derzeit ist die einzige unterstützte zweite Sprache Deutsch, aber wir sind dara
 
 ### Unterstützen
 
-Eine gute Möglichkeit, zum Projekt beizutragen, ist es, anderen zu helfen, die Schwierigkeiten haben. Dies wird normalerweise als GH-Issue oder als Nachricht im `#go-mail` [Discord-Kanal](https://discord.gg/zSUeBrsFPB) gemeldet. Schon die Klärung des Problems kann sehr hilfreich sein. Manchmal, wenn ein Problem diskutiert und gelöst wird, erstellen wir daraus einen Leitfaden, um anderen zu helfen, die mit den gleichen Problemen konfrontiert sind.
+Eine gute Möglichkeit, zum Projekt beizutragen, ist es, anderen zu helfen, die Schwierigkeiten haben. Dies wird normalerweise als Problem oder als Nachricht auf dem `#go-mail` [Discord-Kanal](https://discord.gg/dbfQyC4s) gemeldet. Schon die Klärung des Problems kann sehr hilfreich sein. Manchmal, wenn ein Problem diskutiert und gelöst wird, erstellen wir daraus einen Leitfaden, um anderen zu helfen, die mit den gleichen Problemen konfrontiert sind.
 
