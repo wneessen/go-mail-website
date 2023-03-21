@@ -1,21 +1,21 @@
 ---
-title: Security policy
+title: 安全策略
 ---
 
-## Known vulnerabilities
+## 已知漏洞
 
-Even though there is no known security vulnerability in go-mail, you can always check the [security advisories](https://github.com/wneessen/go-mail/security/advisories) page of our GitHub project.
+尽管 go-mail 没有已知的安全漏洞，您仍然可以查看我们的 GitHub 项目的[安全公告](https://github.com/wneessen/go-mail/security/advisories)页面。
 
-## Reporting a Vulnerability
+## 报告漏洞
 
-To report (possible) security issues in go-mail, please either send a mail to [security@go-mail.dev](mailto:security@go-mail.dev) or use Github's [private reporting feature](https://github.com/wneessen/go-mail/security/advisories/new). Reports are always welcome. Even if you are not 100% certain that a specific issue you found counts as a security issue, we'd love to hear the details, so we can figure out together if the issue in question needds to be addressed.
+要报告 go-mail 中的（可能的）安全问题，请发送电子邮件至[security@go-mail.dev](mailto:security@go-mail.dev)或使用 Github 的[私人报告功能](https://github.com/wneessen/go-mail/security/advisories/new)。 我们非常欢迎报告。 即使您不确定您发现的特定问题是否属于安全问题，我们也很乐意听取详细信息，以便我们一起确定是否需要解决该问题。
 
-Typically, you will receive an answer within a day or even within a few hours.
+通常，您会在一天内甚至几个小时内收到答复。
 
-### End-to-End encryption
-You can send OpenPGP/GPG encrpyted mails to the [security@go-mail.dev](mailto:security@go-mail.dev) address.
+### 端到端加密
+您可以将 OpenPGP/GPG 加密邮件发送到[security@go-mail.dev](mailto:security@go-mail.dev)地址。
 
-OpenPGP/GPG public key:
+OpenPGP/GPG 公钥：
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 xjMEY8RwPBYJKwYBBAHaRw8BAQdAiLsW7pv+CCMq5Ol0hbIB1HnJI97u3zJw
