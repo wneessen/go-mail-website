@@ -3,21 +3,26 @@ main:
   - name:
       en: Getting started
       de: Erste Schritte
+      zh: 开始使用
     sub:
       - name:
           en: Introduction
           de: Einführung
+          zh: 介绍
         ref: "/getting-started/introduction"
   - name:
       en: Reference
       de: Referenz
+      zh: 参考资料
     sub:
       - name:
           en: Client
           de: Client
+          zh: 客户端
         ref: "/reference/client"
         sub:
-        - name: Options
+        - name: 
+            zh: 选项
           ref: "/reference/client/options"
       - name:
           en: Msg
@@ -26,20 +31,25 @@ main:
   - name:
       en: Examples
       de: Beispiele
+      zh: 示例
     sub:
       - name:
           en: Bulk Mailer
           de: Massenversand
+          zh: 群发邮件
         ref: "/examples/bulk-mailer"
   - name:
       en: Community
       de: Community
+      zh: 社区
     sub:
       - name:
           en: Guide
           de: Leitfaden
+          zh: 指南
         ref: "/community/guide"
   - name:
       en: Security
       de: Sicherheit
+      zh: 安全
     ref: "/security"
