@@ -1,8 +1,8 @@
 ---
-title: The mail delivery client
+title: 邮件发送客户端
 ---
 
-In go-mail the `Client` is responsible for the mail delivery with remote mail servers that communicate via the SMTP protocol.
+在 go-mail 中，`Client` 负责通过 SMTP 协议与远程邮件服务器进行邮件传递。
 
 {{< toc >}}
 
@@ -34,9 +34,9 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-To create a new `Client`, you can use the `NewClient()` method. As first argument it requires the hostname of the sending SMTP server. Optionally you can provide a list of `Option` funcionts. These option functions can be used to override the default settings of the `Client`.
+要创建新的 `Client`，您可以使用 `NewClient()` 方法。 作为第一个参数，它需要发送 SMTP 服务器的主机名。 您可以选择提供一系列 `Option` 函数。 这些选项函数可用于覆盖 `Client` 的默认设置。
 
-Check the [Options](options) documentation for in-depth details to all available Options.
+有关所有可用选项的详细信息，请查看 [Options](options) 文档。
 
 ## Client
 
@@ -45,7 +45,7 @@ Check the [Options](options) documentation for in-depth details to all available
 
 ```go
 type Client struct {
-// contains filtered or unexported fields
+// 包含过滤或未导出字段
 }
 ```
 
@@ -81,7 +81,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`Close()` closes the connection to the SMTP server the `Client` is connected to. It returns an `error` in case the `Client` has no active connection or if closing the connection fails.
+`Close()` 关闭 `Client` 连接到的 SMTP 服务器的连接。 如果 `Client` 没有活动连接或关闭连接失败，则返回 `error`。
 
 ### DialAndSend()
 
@@ -127,7 +127,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSend()` method is an alias for [DialAndSendWithContext()](#dialandsendwithcontext) with a default `context.Background` context. `DialAndSend()` takes a list of `Msg` pointer as argument(s) and returns an `error` in case any of the performed actions fails.
+`DialAndSend()` 方法是 [DialAndSendWithContext()](#dialandsendwithcontext) 的别名，使用默认的 `context.Background` 上下文。 `DialAndSend()` 接受一个或多个 `Msg` 指针作为参数，并在执行任何操作失败时返回 `error`。
 
 ### DialAndSendWithContext()
 
@@ -174,6 +174,6 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSendWithContext()` is a one-for-all shortcut method on the `Client`. Once the `Client` is created, calling the `DialAndSendWithContext()` method will have it connect to the configured server, send out the given mail `Msg` and finalize by closing the connection again.
+`DialAndSendWithContext()` 是 `Client` 上的一站式快捷方法。 一旦创建了 `Client`，调用 `DialAndSendWithContext()` 方法将使其连接到配置的服务器，发送给定的邮件 `Msg`，然后通过再次关闭连接来完成。
 
-The first argument of the method is a `context.Context` followed by a list of one or more `Msg` pointers. `DialAndSendWithContext()` does return an `error` in case any of the performed actions fails.
+该方法的第一个参数是 `context.Context`，后跟一个或多个 `Msg` 指针。 `DialAndSendWithContext()` 在执行任何操作失败时返回 `error`。
