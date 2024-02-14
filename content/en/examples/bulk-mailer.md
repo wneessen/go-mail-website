@@ -104,7 +104,7 @@ func main() {
 
 	// Deliver the mails via SMTP
 	c, err := mail.NewClient("smtp.example.com",
-		mail.WithSMTPAuth(mail.SMTPAuthPlain), mail.WithTLSPolicy(mail.TLSMandatory),
+		mail.WithSMTPAuth(mail.SMTPAuthPlain), mail.WithTLSPortPolicy(mail.TLSMandatory),
 		mail.WithUsername(os.Getenv("SMTP_USER")), mail.WithPassword(os.Getenv("SMTP_PASS")),
 	)
 	if err := c.DialAndSend(ms...); err != nil {
