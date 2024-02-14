@@ -46,53 +46,69 @@ Your marketing team
 
     htmlBodyTemplate = `<p>Hi {{.Firstname}},</p>
 <p>we are writing your to let you know that this week we have an amazing offer for you.
-// 准备不同的模板
-ttpl, err := tt.New("texttpl").Parse(textBodyTemplate)
-if err != nil {
-    log.Fatalf("failed to parse text template: %s", err)
-}
-htpl, err := ht.New("htmltpl").Parse(htmlBodyTemplate)
-if err != nil {
-    log.Fatalf("failed to parse text template: %s", err)
-}
-
-var ms []*mail.Msg
-r := rand.New(rand.NewSource(time.Now().UnixNano()))
-for _, u := range ul {
-    rn := r.Int31()
-    m := mail.NewMsg()
-    if err := m.EnvelopeFrom(fmt.Sprintf("noreply+%d@acme.com", rn)); err != nil {
-        log.Fatalf("failed to set ENVELOPE FROM address: %s", err)
-    }
-    if err := m.FromFormat(senderName, senderAddr); err != nil {
-        log.Fatalf("failed to set formatted FROM address: %s", err)
-    }
-    if err := m.AddToFormat(fmt.Sprintf("%s %s", u.Firstname, u.Lastname), u.EmailAddr); err != nil {
-        log.Fatalf("failed to set formatted TO address: %s", err)
-    }
-    m.SetMessageID()
-    m.SetDate()
-    m.SetBulk()
-    m.Subject(fmt.Sprintf("%s, we have a great offer for you!", u.Firstname))
-    if err := m.SetBodyHTMLTemplate(htpl, u); err != nil {
-        log.Fatalf("failed to set HTML template as HTML body: %s", err)
-    }
-    if err := m.AddAlternativeTextTemplate(ttpl, u); err != nil {
-        log.Fatalf("failed to set text template as alternative body: %s", err)
-    }
-
-    ms = append(ms, m)
-}
-
-// 通过SMTP发送邮件
-c, err := mail.NewClient("smtp.example.com",
-    mail.WithSMTPAuth(mail.SMTPAuthPlain), mail.WithTLSPolicy(mail.TLSMandatory),
-    mail.WithUsername(os.Getenv("SMTP_USER")), mail.WithPassword(os.Getenv("SMTP_PASS")),
+Using the coupon code "<strong>GOMAIL</strong>" you will get a 20% discount on all 
+our products in our online shop.</p>
+<p>Check out our latest offer on <a href="https://acme.com" target="_blank">https://acme.com</a>
+and use your discount code today!</p>
+<p>Your marketing team<br />
+&nbsp;&nbsp;at ACME Inc.</p>`
 )
-if err := c.DialAndSend(ms...); err != nil {
-    log.Fatalf("failed to deliver mail: %s", err)
-}
-log.Printf("Bulk mailing successfully delivered.")
+
+func main() {
+    // Define a list of users we want to mail to
+    ul := []User{
+        {"Toni", "Tester", "toni.tester@example.com"},
+        {"Tina", "Tester", "tina.tester@example.com"},
+        {"John", "Doe", "john.doe@example.com"},
+    }
+
+    // Prepare the different templates
+    ttpl, err := tt.New("texttpl").Parse(textBodyTemplate)
+    if err != nil {
+        log.Fatalf("failed to parse text template: %s", err)
+    }
+    htpl, err := ht.New("htmltpl").Parse(htmlBodyTemplate)
+    if err != nil {
+        log.Fatalf("failed to parse text template: %s", err)
+    }
+
+    var ms []*mail.Msg
+    r := rand.New(rand.NewSource(time.Now().UnixNano()))
+    for _, u := range ul {
+        rn := r.Int31()
+        m := mail.NewMsg()
+        if err := m.EnvelopeFrom(fmt.Sprintf("noreply+%d@acme.com", rn)); err != nil {
+            log.Fatalf("failed to set ENVELOPE FROM address: %s", err)
+        }
+        if err := m.FromFormat(senderName, senderAddr); err != nil {
+            log.Fatalf("failed to set formatted FROM address: %s", err)
+        }
+        if err := m.AddToFormat(fmt.Sprintf("%s %s", u.Firstname, u.Lastname), u.EmailAddr); err != nil {
+            log.Fatalf("failed to set formatted TO address: %s", err)
+        }
+        m.SetMessageID()
+        m.SetDate()
+        m.SetBulk()
+        m.Subject(fmt.Sprintf("%s, we have a great offer for you!", u.Firstname))
+        if err := m.SetBodyHTMLTemplate(htpl, u); err != nil {
+            log.Fatalf("failed to set HTML template as HTML body: %s", err)
+        }
+        if err := m.AddAlternativeTextTemplate(ttpl, u); err != nil {
+            log.Fatalf("failed to set text template as alternative body: %s", err)
+        }
+
+        ms = append(ms, m)
+    }
+
+    // Deliver the mails via SMTP
+    c, err := mail.NewClient("smtp.example.com",
+        mail.WithSMTPAuth(mail.SMTPAuthPlain), mail.WithTLSPortPolicy(mail.TLSMandatory),
+        mail.WithUsername(os.Getenv("SMTP_USER")), mail.WithPassword(os.Getenv("SMTP_PASS")),
+    )
+    if err := c.DialAndSend(ms...); err != nil {
+        log.Fatalf("failed to deliver mail: %s", err)
+    }
+    log.Printf("Bulk mailing successfully delivered.")
 }
 ```
 
