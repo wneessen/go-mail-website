@@ -3,7 +3,7 @@ title: 简介
 weight: -20
 ---
 
-这篇简短的教程向您展示了如何从安装到发送第一封邮件使用go-mail。
+This short tutorial shows you how to get up and running with go-mail from installation to sending your first mail.
 
 <!--more-->
 
@@ -11,13 +11,13 @@ weight: -20
 
 ## 要求
 
-go-mail需要一个工作的Go安装（版本1.16+）。 从[Go下载页面](https://go.dev/dl/)下载Go。
+go-mail requires a working Go installation (Version 1.16+). Download Go from the [Go Downloads Page](https://go.dev/dl/). 从[Go下载页面](https://go.dev/dl/)下载Go。
 
 ## 安装
 
 可以使用Go模块安装机制通过`go get`命令安装go-mail。
 
-要安装go-mail的最新版本，请进入您的项目文件夹，然后通过发出以下命令导入模块即可：
+To install the latest version of go-mail, enter your project folder and simply import the module by issuing the following command:
 
 ```shell
 $ go get github.com/wneessen/go-mail
@@ -25,11 +25,11 @@ $ go get github.com/wneessen/go-mail
 
 ## 发送您的第一封邮件
 
-go-mail由两个主要组件组成。 `Msg`表示邮件消息，`Client`通过SMTP服务处理邮件传递。
+go-mail由两个主要组件组成。 go-mail consists of two main components. The `Msg` which represents the mail message and the `Client` which takes care of the mail delivery via a SMTP service.
 
 ### 创建新消息
 
-首先，让我们使用`NewMsg()`方法创建一个新的`Msg`，并分配一个发件人地址和一个收件人地址。
+First let's create a new `Msg` using the `NewMsg()` method and assign a sender address as well as a recipient address.
 
 ```go
 package main
@@ -59,11 +59,11 @@ m.Subject("This is my first mail with go-mail!")
 m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
 ```
 
-`SetBodyString()`的第一个参数是我们需要提供的内容类型。 在我们的示例中，`mail.TypeTextPlain`基本上表示`text/plain`内容类型-表示纯文本邮件正文。
+The first argument for `SetBodyString()` is a content type we need to provide. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content type - meaning a plain text mail body. 在我们的示例中，`mail.TypeTextPlain`基本上表示`text/plain`内容类型-表示纯文本邮件正文。
 
 ### 发送邮件
 
-现在我们已经准备好发送邮件消息了，让我们将其发送出去。 为此，我们将使用`Client`，它处理SMTP传输。
+现在我们已经准备好发送邮件消息了，让我们将其发送出去。 Now that we have our mail message ready to go, let's bring it on the way and send it out. For this we'll use the `Client`, which handles the SMTP transmission.
 
 ```go
 c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain), 
@@ -73,7 +73,7 @@ if err != nil {
 }
 ```
 
-在此示例中，我们使用主机名`smtp.example.com`连接到邮件服务器，并为`Client`提供了一些选项，例如我们要连接的端口，我们要使用`SMTP PLAIN`进行身份验证以及用户名和密码。
+In this example we connect to the mail server with the hostname `smtp.example.com` and provide the `Client` with a couple of options like the port we want to connect to, the fact that we want to use `SMTP PLAIN` for authentication and the username and password.
 
 最后，我们告诉客户端交付邮件。
 
@@ -83,7 +83,7 @@ if err := c.DialAndSend(m); err != nil {
 }
 ```
 
-`DialAndSend()`方法负责建立连接并发送邮件。 您也可以分别调用它们，但是我们不需要快速示例。
+The `DialAndSend()` method takes care of establishing the connection and sending out the mail. You have the option to call them separately as well, but we won't need this for the quick example. 您也可以分别调用它们，但是我们不需要快速示例。
 
 ## 结论
 
@@ -102,6 +102,17 @@ func main() {
     }
     m.Subject("This is my first mail with go-mail!")
     m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+    c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
+        mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
+    if err != nil {
+        log.Fatalf("failed to create mail client: %s", err)
+    }
+    if err := c.DialAndSend(m); err != nil {
+        log.Fatalf("failed to send mail: %s", err)
+    }
+}
+    m.Subject("This is my first mail with go-mail!")
+m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!") I certainly do!")
     c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
         mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
     if err != nil {
