@@ -5,19 +5,13 @@ geekdocNav: false
 geekdocAnchor: false
 ---
 
-[![GoDoc](https://godoc.org/github.com/wneessen/go-mail?status.svg)](https://pkg.go.dev/github.com/wneessen/go-mail)
-[![codecov](https://codecov.io/gh/wneessen/go-mail/branch/main/graph/badge.svg?token=37KWJV03MR)](https://codecov.io/gh/wneessen/go-mail)
-[![Go Report Card](https://goreportcard.com/badge/github.com/wneessen/go-mail)](https://goreportcard.com/report/github.com/wneessen/go-mail)
-[![Crowdin](https://badges.crowdin.net/go-mail/localized.svg)](https://crowdin.com/project/go-mail)
-[![GitHub release](https://img.shields.io/github/v/release/wneessen/go-mail)](https://github.com/wneessen/go-mail/releases/latest)
-[![在 Awesome Go 中提到](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/avelino/awesome-go) [![#go-mail on Discord](https://img.shields.io/badge/Discord-%23gomail-blue.svg)](https://discord.gg/dbfQyC4s)
-[![REUSE status](https://api.reuse.software/badge/github.com/wneessen/go-mail)](https://api.reuse.software/info/github.com/wneessen/go-mail)
+[![GoDoc](https://godoc.org/github.com/wneessen/go-mail?status.svg)](https://pkg.go.dev/github.com/wneessen/go-mail) [![codecov](https://codecov.io/gh/wneessen/go-mail/branch/main/graph/badge.svg?token=37KWJV03MR)](https://codecov.io/gh/wneessen/go-mail) [![Go Report Card](https://goreportcard.com/badge/github.com/wneessen/go-mail)](https://goreportcard.com/report/github.com/wneessen/go-mail) [![Crowdin](https://badges.crowdin.net/go-mail/localized.svg)](https://crowdin.com/project/go-mail) [![GitHub release](https://img.shields.io/github/v/release/wneessen/go-mail)](https://github.com/wneessen/go-mail/releases/latest) [![在 Awesome Go 中提到](https://awesome.re/mentioned-badge-flat.svg)](https://github.com/avelino/awesome-go) [![#go-mail on Discord](https://img.shields.io/badge/Discord-%23gomail-blue.svg)](https://discord.gg/ysQXkaccXk) [![REUSE status](https://api.reuse.software/badge/github.com/wneessen/go-mail)](https://api.reuse.software/info/github.com/wneessen/go-mail)
 <a rel="me" href="https://s.pebcak.de/@go_mail"><img alt="Mastodon Follow" src="https://img.shields.io/mastodon/follow/109378026621298088?domain=https%3A%2F%2Fs.pebcak.de&style=social"></a>
 <a href="https://ko-fi.com/D1D24V9IX"><img src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/5cbed8a4ae2b88347c06c923_BuyMeACoffee_blue.png" height="20" alt="buy ma a coffee"></a>
 
 <p align="center"><img src="/go-mail-2.svg" width="250" alt="go-mail logo"/></p>
 
-go-mail 是一个易于使用的 Go 库，用于格式化和发送邮件。它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。该库仅依赖于 Go 标准库。
+go-mail 是一个易于使用的 Go 库，用于格式化和发送邮件。 它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。 该库仅依赖于 Go 标准库。
 
 go-mail 的工作方式类似于编程式电子邮件客户端，并提供了许多您在 MUA 中考虑的标准方法和功能。
 
@@ -29,7 +23,7 @@ go-mail 的工作方式类似于编程式电子邮件客户端，并提供了许
 
 {{< columns >}}
 
-### 仅依赖于标准库
+### Standard Library dependant
 
 go-mail 不需要任何第三方模块，仅运行在 Go 标准库上
 
@@ -103,7 +97,7 @@ go-mail 支持不同的编码和内容类型
 
 ### Sendmail 和文件存储
 
-支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们）
+支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们） as `.eml` files to disk to open them in a MUA)
 
 {{< /columns >}}
 
@@ -144,4 +138,5 @@ go-mail 提供了请求 MDN（RFC 8098）和 DSN（RFC 1891）的支持
 {{< /columns >}}
 
 ## 支持
-我们在 Discord 上有一个支持和一般讨论频道。找到我们：[#go-mail](https://discord.gg/dbfQyC4s)
+我们在 Discord 上有一个支持和一般讨论频道。 Find us at: [#go-mail](https://discord.gg/ysQXkaccXk)
+
