@@ -110,6 +110,7 @@ func main() {
     }
     log.Printf("Bulk mailing successfully delivered.")
 }
+}
 ```
 
 Nehmen wir das Beispiel mal auseinander, um uns ein paar Details anzuschauen...
