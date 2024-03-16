@@ -11,9 +11,9 @@ geekdocAnchor: false
 
 <p align="center"><img src="/go-mail-2.svg" width="250" alt="go-mail logo"/></p>
 
-go-mail 是一个易于使用的 Go 库，用于格式化和发送邮件。 它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。 该库仅依赖于 Go 标准库。
+go-mail is an easy to use Go library for formating and sending mails. It uses idiomatic Go style and follows best practice with sane defaults. The library only dependends on the Go Standard Library. 它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。 该库仅依赖于 Go 标准库。
 
-go-mail 的工作方式类似于编程式电子邮件客户端，并提供了许多您在 MUA 中考虑的标准方法和功能。
+go-mail works like a programatic email client and provides lots of methods and functionalities you would consider standard in a MUA.
 
 <div class="btn-centered btn-huge">
 {{< button size="huge" relref="getting-started/introduction/" >}}开始使用 go-mail{{< /button >}}
@@ -31,13 +31,13 @@ go-mail 不需要任何第三方模块，仅运行在 Go 标准库上
 
 ### 现代、惯用的 Go
 
-我们使用现代和惯用的 Go 标准，遵循最先进的最佳实践和合理的默认值
+We are using modern and idiotmatic Go standards with this library and follow state-of-the-art best practices with sane defaults
 
 <--->
 
 ### 完整的 TLS 支持
 
-go-mail 支持不同策略的隐式 STARTTLS，以及用于发送邮件服务器的显式 SSL/TLS 的连接
+go-mail supports implicit STARTTLS with different policies as well as explicit SSL/TLS for connections to sending mail servers
 
 {{< /columns >}}
 
@@ -51,7 +51,7 @@ go-mail 支持不同策略的隐式 STARTTLS，以及用于发送邮件服务器
 
 ### SMTP 认证
 
-支持三种常见的 SMTP 认证机制（LOGIN、PLAIN、CRAM-MD5）以及自定义身份验证。
+Support for three common SMTP authentication mechanisms (LOGIN, PLAIN, CRAM-MD5) as well as custom authentications.
 
 <--->
 
@@ -97,7 +97,7 @@ go-mail 支持不同的编码和内容类型
 
 ### Sendmail 和文件存储
 
-支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们） as `.eml` files to disk to open them in a MUA)
+支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们） as `.eml` files to disk to open them in a MUA) as `.eml` files to disk to open them in a MUA)
 
 {{< /columns >}}
 
@@ -117,7 +117,7 @@ go-mail 提供了请求 MDN（RFC 8098）和 DSN（RFC 1891）的支持
 
 ### DKIM 支持
 
-通过 [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim) 中间件的 DKIM 签名支持
+DKIM signature support via the [go-mail-middlware/dkim](https://github.com/wneessen/go-mail-middleware/tree/main/dkim) middleware
 
 {{< /columns >}}
 
@@ -131,12 +131,12 @@ go-mail 提供了请求 MDN（RFC 8098）和 DSN（RFC 1891）的支持
 
 ### 自定义交付错误
 
-使用 `SendError` 类型，用户可以获取有关交付错误的详细信息，包括错误是否为临时性质
+With the `SendError` type the user is able to get detailed information about delivery errors including if the error is of temporary nature or not
 
 <--->
 
 {{< /columns >}}
 
 ## 支持
-我们在 Discord 上有一个支持和一般讨论频道。 Find us at: [#go-mail](https://discord.gg/ysQXkaccXk)
+We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) 找到我们：[#go-mail](https://discord.gg/dbfQyC4s)
 
