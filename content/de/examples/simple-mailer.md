@@ -1,9 +1,8 @@
 ---
-title: Simple Mailer Example
+title: Einfaches Mailer-Beispiel
 ---
 
-This example is the most simple piece of code that is required to successfully send a mail with
-go-mail.
+Dieses Beispiel ist der simpelste Code, der erforderlich ist, um eine E-Mail mit go-mail erfolgreich zu versenden.
 
 ```go
 package main
@@ -41,25 +40,25 @@ func main() {
 }
 ```
 
-This example will send a very basic test mail from `toni@tester.com` to `tina@recipient.org`.
+In diesem Beispiel wird eine einfache Test-Mail von `toni@tester.com` an `tina@recipient.org` gesendet.
 
-First, in [line 11](#hl-0-11), we create a new `Msg`. The `Msg` type holds everything that is required
-for your mail message. Think of it like a new mail within your mail user agent. The `Msg` type
-provides you with all of the methods that are required to prepare and format your mail message.
+Zunächst erstellen wir in [Zeile 11](#hl-0-11) eine neue `Msg`. Der Typ `Msg` enthält alles, was für
+für deine Mailnachricht. Stell dir das wie eine neue Mail in deinem Mail-Benutzer-Agent vor. Der Typ `Msg`
+stellt dir alle Methoden zur Verfügung, die du zur Vorbereitung und Formatierung deiner Mailnachricht benötigst.
 
-In [line 12](#hl-0-12) thru [14](#hl-0-14) we set the sender address. In this case it's `toni@tester.com`.
-Since go-mail is doing a lot of validation under the hood, it will make sure that the provided mail address
-is valid. Therefore we check the returned error. In [line 15](#hl-0-15) thru [17](#hl-0-17) we do the
-same for the recipient address. The mail will be sent to `tina@recipient.org`.
+In [Zeile 12](#hl-0-12) bis [14](#hl-0-14) legen wir die Absenderadresse fest. In diesem Fall ist es `toni@tester.com`.
+Da go-mail unter der Haube eine Menge Validierungen durchführt, stellt es sicher, dass die angegebene Mailadresse
+gültig ist. Deshalb prüfen wir den zurückgegebenen Fehler. In [Zeile 15](#hl-0-15) bis [17](#hl-0-17) machen wir das Gleiche
+dasselbe für die Empfängeradresse. Die E-Mail wird an `tina@recipient.org` gesendet.
 
-Next, in [line 18](#hl-0-18) we set our subject for our mail message. Followed by setting a simple string
-as message body in [line 19](#hl-0-19). The first argument for `Msg.SetBodyString()` is a MIME content type.
-In this case we use `mail.TypeTextPlain` for the mail body - so a simple `plain/text` mail body.
+Als Nächstes legen wir in [Zeile 18](#hl-0-18) den Betreff für unsere E-Mail-Nachricht fest. Gefolgt vom Setzen einer einfachen Zeichenfolge
+als Nachrichtentext in [Zeile 19](#hl-0-19). Das erste Argument für `Msg.SetBodyString()` ist ein MIME Content Type.
+In diesem Fall verwenden wir `mail.TypeTextPlain` für den Mailbody - also einen einfachen `plain/text` Mailbody.
 
-Now that our simple mail message is prepared for delivery, we can create a `Client`. The `Client` in go-mail
-handles the connection to a mail server and everything related to it. In [line 22](#hl-0-22) thru
-[25](#hl-0-25) we initialize a new `Client` type and give it some options. The first argument is the
-mail server we want to connect to. In our example it's `smtp.example.com`. Then we tell the `Client`
+Jetzt, wo unsere einfache E-Mail-Nachricht für den Versand vorbereitet ist, können wir einen "Client" erstellen. Der `Client` in go-mail
+verwaltet die Verbindung zu einem Mailserver und alles, was damit zusammenhängt. In [Zeile 22](#hl-0-22) bis
+[25](#hl-0-25) initialisieren wir einen neuen `Client`-Typ und geben ihm einige Optionen. Das erste Argument ist der
+Mailserver, mit dem wir uns verbinden wollen. In unserem Beispiel ist es `smtp.example.com`. Then we tell the `Client`
 that we need to perform SMTP Auth via the `PLAIN` auth method. The `mail.WithSMTPAuth(mail.SMTPAuthPlain)`
 option handles this. With the `mail.WithTLSPortPolicy(mail.TLSMandatory)` option, we tell the `Client`
 that we require a TLS connection for sending our mail. We set it to mandatory mode, so that the `Client`
