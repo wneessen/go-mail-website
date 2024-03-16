@@ -34,6 +34,10 @@ main:
       zh: 示例
     sub:
       - name:
+          en: Simple Test-Mailer
+          de: Einfache Test-Mailer
+        ref: "/examples/simple-mailer"
+      - name:
           en: Bulk Mailer
           de: Massenversand
           zh: 群发邮件
