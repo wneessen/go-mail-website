@@ -58,14 +58,14 @@ In diesem Fall verwenden wir `mail.TypeTextPlain` für den Mailbody - also einen
 Jetzt, wo unsere einfache E-Mail-Nachricht für den Versand vorbereitet ist, können wir einen "Client" erstellen. Der `Client` in go-mail
 verwaltet die Verbindung zu einem Mailserver und alles, was damit zusammenhängt. In [Zeile 22](#hl-0-22) bis
 [25](#hl-0-25) initialisieren wir einen neuen `Client`-Typ und geben ihm einige Optionen. Das erste Argument ist der
-Mailserver, mit dem wir uns verbinden wollen. In unserem Beispiel ist es `smtp.example.com`. Then we tell the `Client`
-that we need to perform SMTP Auth via the `PLAIN` auth method. The `mail.WithSMTPAuth(mail.SMTPAuthPlain)`
-option handles this. With the `mail.WithTLSPortPolicy(mail.TLSMandatory)` option, we tell the `Client`
-that we require a TLS connection for sending our mail. We set it to mandatory mode, so that the `Client`
-will stop processing if it cannot accomplish a TLS secured connection. With the `mail.WithUsername()`
-and `mail.WithPassword()` options, we let the `Client` know what username and password to use for the
-SMTP auth. [Lines 26-28](#hl-0-26) check if the `Client` invocation worked without errors.
+Mailserver, mit dem wir uns verbinden wollen. In unserem Beispiel ist es `smtp.example.com`. Dann teilen wir dem `Client` mit
+dass wir die SMTP-Authentifizierung über die Auth-Methode "PLAIN" durchführen müssen. Die Option `mail.WithSMTPAuth(mail.SMTPAuthPlain)`
+Option übernimmt dies. Mit der Option `mail.WithTLSPortPolicy(mail.TLSMandatory)` teilen wir dem `Client`
+dass wir eine TLS-Verbindung für den Versand unserer Mails benötigen. Wir setzen ihn auf den Zwangsmodus, so dass der `Client`
+die Verarbeitung abbricht, wenn er keine TLS-gesicherte Verbindung herstellen kann. Mit den Optionen `mail.WithUsername()`
+und `mail.WithPassword()` teilen wir dem `Client` mit, welchen Benutzernamen und welches Passwort er für die
+SMTP-Authentifizierung. [Zeilen 26-28](#hl-0-26) prüfe, ob der `Client`-Aufruf ohne Fehler funktioniert hat.
 
-Finally, in [line 29-32](#hl-0-29) we send out our mail message using our mail client with the
-`Client.DialAndSend()` method. We print out a brief message on success or throw an error in case
-the delivery failed.
+Zum Schluss, in [Zeile 29-32](#hl-0-29), senden wir unsere Mail-Nachricht mit unserem Mail-Client mit der
+Methode `Client.DialAndSend()`. Bei Erfolg wird eine kurze Nachricht ausgegeben oder ein Fehler gemeldet, wenn
+die Zustellung fehlgeschlagen ist.
