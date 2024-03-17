@@ -81,7 +81,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-`Close()` closes the connection to the SMTP server the `Client` is connected to. It returns an `error` in case the `Client` has no active connection or if closing the connection fails. 如果 `Client` 没有活动连接或关闭连接失败，则返回 `error`。
+`Close()` closes the connection to the SMTP server the `Client` is connected to. It returns an `error` in case the `Client` has no active connection or if closing the connection fails. 如果 `Client` 没有活动连接或关闭连接失败，则返回 `error`。 如果 `Client` 没有活动连接或关闭连接失败，则返回 `error`。
 
 ### DialAndSend()
 
@@ -127,7 +127,7 @@ func main() {
 {{< /tab >}}
 {{< /tabs >}}
 
-The `DialAndSend()` method is an alias for [DialAndSendWithContext()](#dialandsendwithcontext) with a default `context.Background` context. `DialAndSend()` takes a list of `Msg` pointer as argument(s) and returns an `error` in case any of the performed actions fails. `DialAndSend()` 接受一个或多个 `Msg` 指针作为参数，并在执行任何操作失败时返回 `error`。
+The `DialAndSend()` method is an alias for [DialAndSendWithContext()](#dialandsendwithcontext) with a default `context.Background` context. `DialAndSend()` takes a list of `Msg` pointer as argument(s) and returns an `error` in case any of the performed actions fails. `DialAndSend()` 接受一个或多个 `Msg` 指针作为参数，并在执行任何操作失败时返回 `error`。 `DialAndSend()` 接受一个或多个 `Msg` 指针作为参数，并在执行任何操作失败时返回 `error`。
 
 ### DialAndSendWithContext()
 
@@ -176,4 +176,4 @@ func main() {
 
 `DialAndSendWithContext()` 是 `Client` 上的一站式快捷方法。 The `DialAndSendWithContext()` is a one-for-all shortcut method on the `Client`. Once the `Client` is created, calling the `DialAndSendWithContext()` method will have it connect to the configured server, send out the given mail `Msg` and finalize by closing the connection again.
 
-The first argument of the method is a `context.Context` followed by a list of one or more `Msg` pointers. `DialAndSendWithContext()` does return an `error` in case any of the performed actions fails. `DialAndSendWithContext()` 在执行任何操作失败时返回 `error`。
+The first argument of the method is a `context.Context` followed by a list of one or more `Msg` pointers. `DialAndSendWithContext()` does return an `error` in case any of the performed actions fails. The first argument of the method is a `context.Context` followed by a list of one or more `Msg` pointers. `DialAndSendWithContext()` does return an `error` in case any of the performed actions fails. `DialAndSendWithContext()` 在执行任何操作失败时返回 `error`。
