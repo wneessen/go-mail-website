@@ -8,7 +8,7 @@ Even though there is no known security vulnerability in go-mail, you can always 
 
 ## 报告漏洞
 
-To report (possible) security issues in go-mail, please either send a mail to [security@go-mail.dev](mailto:security@go-mail.dev) or use Github's [private reporting feature](https://github.com/wneessen/go-mail/security/advisories/new). Reports are always welcome. Even if you are not 100% certain that a specific issue you found counts as a security issue, we'd love to hear the details, so we can figure out together if the issue in question needds to be addressed. 我们非常欢迎报告。 即使您不确定您发现的特定问题是否属于安全问题，我们也很乐意听取详细信息，以便我们一起确定是否需要解决该问题。
+To report (possible) security issues in go-mail, please either send a mail to [security@go-mail.dev](mailto:security@go-mail.dev) or use Github's [private reporting feature](https://github.com/wneessen/go-mail/security/advisories/new). Reports are always welcome. Even if you are not 100% certain that a specific issue you found counts as a security issue, we'd love to hear the details, so we can figure out together if the issue in question needds to be addressed. 我们非常欢迎报告。 我们非常欢迎报告。 即使您不确定您发现的特定问题是否属于安全问题，我们也很乐意听取详细信息，以便我们一起确定是否需要解决该问题。
 
 通常，您会在一天内甚至几个小时内收到答复。
 
