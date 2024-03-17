@@ -11,7 +11,7 @@ geekdocAnchor: false
 
 <p align="center"><img src="/go-mail-2.svg" width="250" alt="go-mail logo"/></p>
 
-go-mail is an easy to use Go library for formating and sending mails. It uses idiomatic Go style and follows best practice with sane defaults. The library only dependends on the Go Standard Library. 它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。 该库仅依赖于 Go 标准库。
+go-mail is an easy to use Go library for formating and sending mails. It uses idiomatic Go style and follows best practice with sane defaults. The library only dependends on the Go Standard Library. 它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。 它使用惯用的 Go 风格，并遵循最佳实践和合理的默认值。 该库仅依赖于 Go 标准库。
 
 go-mail works like a programatic email client and provides lots of methods and functionalities you would consider standard in a MUA.
 
@@ -97,7 +97,7 @@ go-mail 支持不同的编码和内容类型
 
 ### Sendmail 和文件存储
 
-支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们） as `.eml` files to disk to open them in a MUA) as `.eml` files to disk to open them in a MUA)
+支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们） as `.eml` files to disk to open them in a MUA) 支持通过本地 sendmail 安装发送邮件消息以及输出到本地文件（例如作为磁盘上的 `.eml` 文件以在 MUA 中打开它们） as `.eml` files to disk to open them in a MUA) as `.eml` files to disk to open them in a MUA)
 
 {{< /columns >}}
 
@@ -138,5 +138,5 @@ With the `SendError` type the user is able to get detailed information about del
 {{< /columns >}}
 
 ## 支持
-We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) 找到我们：[#go-mail](https://discord.gg/dbfQyC4s)
+We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) 找到我们：[#go-mail](https://discord.gg/dbfQyC4s)
 
