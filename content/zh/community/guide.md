@@ -16,12 +16,12 @@ In our community, we follow our [Code of Conduct](https://github.com/wneessen/go
 
 * [Mastodon](https://s.pebcak.de/@go_mail/)：在Mastodon上关注我们，以获取有关go-mail的最新消息
 * [go-mail forum](https://github.com/wneessen/go-mail/discussions): Receive announcements and start discussions about go-mail.
-* [Github issues](https://github.com/wneessen/go-mail/issues): If you have a bug to report or feature to request, please use GitHub issues. Please respect the rules specified in each repository's issue template. 请遵守每个存储库的问题模板中指定的规则。
+* [Github issues](https://github.com/wneessen/go-mail/issues): If you have a bug to report or feature to request, please use GitHub issues. Please respect the rules specified in each repository's issue template. 请遵守每个存储库的问题模板中指定的规则。 请遵守每个存储库的问题模板中指定的规则。
 * [Discord](https://discord.gg/dbfQyC4s)：go-mail开发人员和用户在此处实时会面和聊天的地方。
 
 ## 贡献
 
-go-mail is an open source, community driven project. We welcome anyone to join us in contributing to the project. This documentation is aimed at anyone wishing to get familiar with the project and the development processes. 我们欢迎任何人加入我们为项目做出贡献。 本文档旨在帮助任何希望熟悉项目和开发流程的人。
+go-mail is an open source, community driven project. We welcome anyone to join us in contributing to the project. This documentation is aimed at anyone wishing to get familiar with the project and the development processes. 我们欢迎任何人加入我们为项目做出贡献。 我们欢迎任何人加入我们为项目做出贡献。 本文档旨在帮助任何希望熟悉项目和开发流程的人。
 
 * [开发新功能](#developing-new-features)
 * [修复错误](#fixing-bugs)
@@ -34,14 +34,14 @@ go-mail is an open source, community driven project. We welcome anyone to join u
 
 ### 开发新功能
 
-We are always keen to add features to go-mail. The process for adding new features are as follows: 添加新功能的过程如下：
+We are always keen to add features to go-mail. The process for adding new features are as follows: 添加新功能的过程如下： 添加新功能的过程如下：
 
 * Check the [issue section on Github](https://github.com/wneessen/go-mail/issues) for available issues with the "TODO" or "help wanted" tag
 * If no open "TODO"/"help wanted" issue is found or the feature you have in mind is not covered, please open a proposal issue for that specific feature and wait for the "OK" from the project maintainers
 * 开发之前，请检查问题是否包括以下信息：
   * 增强的目的
   * 增强范围之外的内容
-* If the issue does not include this information, feel free to request the information from the person who opened the issue. Sometimes placeholder issues are created and require more details 有时会创建占位符问题并需要更多详细信息
+* If the issue does not include this information, feel free to request the information from the person who opened the issue. Sometimes placeholder issues are created and require more details 有时会创建占位符问题并需要更多详细信息 有时会创建占位符问题并需要更多详细信息
 * 在问题上发表评论，说明您希望开发该功能
 * 克隆存储库并创建格式为`feature/<issue_number>_<issue_title>`的分支
 * New features often require documentation so please ensure you have also added or updated the documentation as part of the changes
@@ -64,7 +64,7 @@ We are always keen to add features to go-mail. The process for adding new featur
 * If the issue does not include this information, feel free to request the information from the person who opened the issue
 * 在问题上发表评论，说明您希望开发修复程序
 * 克隆存储库并创建格式为`bugfix/<issue_number>_<issue_title>`的分支
-* Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the feature is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested
+* Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the feature is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested
 * 一旦所有测试都完成，请从草案中更新PR的状态并留言。
 
 {{< hint type=note >}}
@@ -93,7 +93,7 @@ If you ever need more clarity or help on testing, please ask a question in the [
 
 While we require proper GoDoc documenation comments in the code, this website is meant as more in-depth documenation of features and the project itself.
 
-Since documenattion is hard and the website is still in an incomplete state, any contribution to this is greatly appreciated. Features without documentation are condidered "unfinished" to the project, it's as important as the code. 没有文档的功能被认为是“未完成”的项目，它与代码一样重要。
+Since documenattion is hard and the website is still in an incomplete state, any contribution to this is greatly appreciated. Features without documentation are condidered "unfinished" to the project, it's as important as the code. Since documenattion is hard and the website is still in an incomplete state, any contribution to this is greatly appreciated. Features without documentation are condidered "unfinished" to the project, it's as important as the code. 没有文档的功能被认为是“未完成”的项目，它与代码一样重要。
 
 该网站基于Hugo使用Geekdocs主题构建。 它非常简单，基本上由Markdown文件组成。 The website is built on Hugo using the Geekdocs theme. It's very simple and basically consists of markdown files. There are instructions on how to install the website on your local computer in the [website's repository](https://github.com/wneessen/go-mail-website).
 
@@ -101,7 +101,7 @@ Since documenattion is hard and the website is still in an incomplete state, any
 
 The default documents of the go-mail project are English documents. We use the "Crowdin" tool to translate documents in other languages and synchronize them to the website. You can [join our project](https://translations.go-mail.dev) and submit your translations to make contributions. 我们使用“Crowdin”工具将其他语言的文档翻译并同步到网站上。 您可以[加入我们的项目](https://translations.go-mail.dev)并提交您的翻译以进行贡献。
 
-Currently the only supported 2nd language is German, but we are keen to add other languages as well. Please request them via a Github issue in the go-mail-website repository. 请通过go-mail-website存储库中的Github问题请求它们。
+Currently the only supported 2nd language is German, but we are keen to add other languages as well. Please request them via a Github issue in the go-mail-website repository. 请通过go-mail-website存储库中的Github问题请求它们。 请通过go-mail-website存储库中的Github问题请求它们。
 
 ### 支持
 
