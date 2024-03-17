@@ -103,7 +103,7 @@ func main() {
 
 The `WithDSN` option function tells the `Client` to request DSNs (if the server supports it) as described in [RFC 1891](https://rfc-editor.org/rfc/rfc1891.html).
 
-DSNs (Delivery Status Notification) are an extension to the SMTP protocol and need to be supported by the sending server. The RFC for DSNs defines different parameters of which we've implemented the once which we think make most sense for go-mail: DSNs (Delivery Status Notification) are an extension to the SMTP protocol and need to be supported by the sending server. The RFC for DSNs defines different parameters of which we've implemented the once which we think make most sense for go-mail: DSN 的 RFC 定义了不同的参数，我们已经实现了我们认为对 go-mail 最有意义的参数：
+DSNs (Delivery Status Notification) are an extension to the SMTP protocol and need to be supported by the sending server. The RFC for DSNs defines different parameters of which we've implemented the once which we think make most sense for go-mail: DSNs (Delivery Status Notification) are an extension to the SMTP protocol and need to be supported by the sending server. The RFC for DSNs defines different parameters of which we've implemented the once which we think make most sense for go-mail: DSN 的 RFC 定义了不同的参数，我们已经实现了我们认为对 go-mail 最有意义的参数： DSNs (Delivery Status Notification) are an extension to the SMTP protocol and need to be supported by the sending server. The RFC for DSNs defines different parameters of which we've implemented the once which we think make most sense for go-mail: DSN 的 RFC 定义了不同的参数，我们已经实现了我们认为对 go-mail 最有意义的参数：
 
 * The `RET` extension for the `MAIL FROM` command, to let the user specify if a DSN should contain the full mail (`FULL`) or only headers (`HDRS`) of the sent mail.
 * The `NOTIFY` extension that allows the user to request a DSN for the different types of allowed situations: `NEVER`, `SUCCESS`, `FAILURE` and `DELAY`
@@ -142,6 +142,7 @@ go-mail 已经内置了以下两种 `DSNMailReturnOption` 类型：
 * `DSNMailReturnHeadersOnly`: requests that only the headers of the message be returned. \
   See: [RFC 1891, Section 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3) \
   参见：[RFC 1891，第5.3节](https://www.rfc-editor.org/rfc/rfc1891#section-5.3) \
+  参见：[RFC 1891，第5.3节](https://www.rfc-editor.org/rfc/rfc1891#section-5.3) \
   参见：[RFC 1891，第5.3节](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
 * `DSNMailReturnFull`: requests that the entire message be returned in any "failed" delivery status notification issued for this recipient \
   See: [RFC 1891, Section 5.3](https://www.rfc-editor.org/rfc/rfc1891#section-5.3)
@@ -178,6 +179,7 @@ go-mail 已经内置了以下 `DSNRcptNotifyOption` 类型：
 
 * `DSNRcptNotifyNever`: requests that a DSN not be returned to the sender under any conditions. \
   See: [RFC 1891, Section 5.1](https://www.rfc-editor.org/rfc/rfc1891#section-5.1) \
+  参见：[RFC 1891，第5.1节](https://www.rfc-editor.org/rfc/rfc1891#section-5.1) \
   参见：[RFC 1891，第5.1节](https://www.rfc-editor.org/rfc/rfc1891#section-5.1) \
   参见：[RFC 1891，第5.1节](https://www.rfc-editor.org/rfc/rfc1891#section-5.1)
 * `DSNRcptNotifySuccess`：请求在成功传递时发出 DSN\
