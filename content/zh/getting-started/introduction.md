@@ -11,7 +11,7 @@ This short tutorial shows you how to get up and running with go-mail from instal
 
 ## 要求
 
-go-mail requires a working Go installation (Version 1.16+). Download Go from the [Go Downloads Page](https://go.dev/dl/). 从[Go下载页面](https://go.dev/dl/)下载Go。
+go-mail requires a working Go installation (Version 1.16+). Download Go from the [Go Downloads Page](https://go.dev/dl/). 从[Go下载页面](https://go.dev/dl/)下载Go。 从[Go下载页面](https://go.dev/dl/)下载Go。
 
 ## 安装
 
@@ -59,7 +59,7 @@ m.Subject("This is my first mail with go-mail!")
 m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
 ```
 
-The first argument for `SetBodyString()` is a content type we need to provide. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content type - meaning a plain text mail body. 在我们的示例中，`mail.TypeTextPlain`基本上表示`text/plain`内容类型-表示纯文本邮件正文。
+The first argument for `SetBodyString()` is a content type we need to provide. In our example the `mail.TypeTextPlain` basically represents a `text/plain` content type - meaning a plain text mail body. 在我们的示例中，`mail.TypeTextPlain`基本上表示`text/plain`内容类型-表示纯文本邮件正文。 在我们的示例中，`mail.TypeTextPlain`基本上表示`text/plain`内容类型-表示纯文本邮件正文。
 
 ### 发送邮件
 
@@ -83,7 +83,7 @@ if err := c.DialAndSend(m); err != nil {
 }
 ```
 
-The `DialAndSend()` method takes care of establishing the connection and sending out the mail. You have the option to call them separately as well, but we won't need this for the quick example. 您也可以分别调用它们，但是我们不需要快速示例。
+The `DialAndSend()` method takes care of establishing the connection and sending out the mail. You have the option to call them separately as well, but we won't need this for the quick example. 您也可以分别调用它们，但是我们不需要快速示例。 您也可以分别调用它们，但是我们不需要快速示例。
 
 ## 结论
 
@@ -93,6 +93,38 @@ The `DialAndSend()` method takes care of establishing the connection and sending
 
 ```go
 func main() {
+    m := mail.NewMsg()
+    if err := m.From("toni.sender@example.com"); err != nil {
+        log.Fatalf("failed to set From address: %s", err)
+    }
+    if err := m.To("tina.recipient@example.com"); err != nil {
+        log.Fatalf("failed to set To address: %s", err)
+    }
+    m.Subject("This is my first mail with go-mail!")
+    m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!")
+    c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
+        mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
+    if err != nil {
+        log.Fatalf("failed to create mail client: %s", err)
+    }
+    if err := c.DialAndSend(m); err != nil {
+        log.Fatalf("failed to send mail: %s", err)
+    }
+}
+    m.Subject("This is my first mail with go-mail!")
+m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!") I certainly do!")
+    c, err := mail.NewClient("smtp.example.com", mail.WithPort(25), mail.WithSMTPAuth(mail.SMTPAuthPlain),
+        mail.WithUsername("my_username"), mail.WithPassword("extremely_secret_pass"))
+    if err != nil {
+        log.Fatalf("failed to create mail client: %s", err)
+    }
+    if err := c.DialAndSend(m); err != nil {
+        log.Fatalf("failed to send mail: %s", err)
+    }
+}
+    m.Subject("This is my first mail with go-mail!")
+m.SetBodyString(mail.TypeTextPlain, "Do you like this mail? I certainly do!") I certainly do!")
+    func main() {
     m := mail.NewMsg()
     if err := m.From("toni.sender@example.com"); err != nil {
         log.Fatalf("failed to set From address: %s", err)
