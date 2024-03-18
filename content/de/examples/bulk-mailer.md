@@ -112,6 +112,7 @@ func main() {
 }
 }
 }
+}
 ```
 
 Nehmen wir das Beispiel mal auseinander, um uns ein paar Details anzuschauen...

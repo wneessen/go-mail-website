@@ -34,14 +34,14 @@ go-mail is an open source, community driven project. We welcome anyone to join u
 
 ### 开发新功能
 
-We are always keen to add features to go-mail. The process for adding new features are as follows: 添加新功能的过程如下： 添加新功能的过程如下：
+We are always keen to add features to go-mail. The process for adding new features are as follows: 添加新功能的过程如下： 添加新功能的过程如下： 添加新功能的过程如下：
 
 * Check the [issue section on Github](https://github.com/wneessen/go-mail/issues) for available issues with the "TODO" or "help wanted" tag
 * If no open "TODO"/"help wanted" issue is found or the feature you have in mind is not covered, please open a proposal issue for that specific feature and wait for the "OK" from the project maintainers
 * 开发之前，请检查问题是否包括以下信息：
   * 增强的目的
   * 增强范围之外的内容
-* If the issue does not include this information, feel free to request the information from the person who opened the issue. Sometimes placeholder issues are created and require more details 有时会创建占位符问题并需要更多详细信息 有时会创建占位符问题并需要更多详细信息
+* If the issue does not include this information, feel free to request the information from the person who opened the issue. Sometimes placeholder issues are created and require more details 有时会创建占位符问题并需要更多详细信息 有时会创建占位符问题并需要更多详细信息 有时会创建占位符问题并需要更多详细信息
 * 在问题上发表评论，说明您希望开发该功能
 * 克隆存储库并创建格式为`feature/<issue_number>_<issue_title>`的分支
 * New features often require documentation so please ensure you have also added or updated the documentation as part of the changes
@@ -64,7 +64,7 @@ We are always keen to add features to go-mail. The process for adding new featur
 * If the issue does not include this information, feel free to request the information from the person who opened the issue
 * 在问题上发表评论，说明您希望开发修复程序
 * 克隆存储库并创建格式为`bugfix/<issue_number>_<issue_title>`的分支
-* Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the feature is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested
+* Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the fix is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested Once the feature is ready for testing, create a draft PR. Please ensure the PR description has the test scenarios and test cases listed with checkmarks, so that others can know what still needs to be tested To test PRs, choose a PR to test and check if the PR description has the testing scenarios listed. If not, please ask the person who opened the PR to provide that list. Once you have determined a valid test scenario, please report your findings on the PR. 如果没有，请要求打开PR的人提供该列表。
 * 一旦所有测试都完成，请从草案中更新PR的状态并留言。
 
 {{< hint type=note >}}

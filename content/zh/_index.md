@@ -138,5 +138,5 @@ With the `SendError` type the user is able to get detailed information about del
 {{< /columns >}}
 
 ## 支持
-We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) 找到我们：[#go-mail](https://discord.gg/dbfQyC4s)
+We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) 找到我们：[#go-mail](https://discord.gg/dbfQyC4s) We have a support and general discussion channel on Discord. Find us at: [#go-mail](https://discord.gg/dbfQyC4s) 找到我们：[#go-mail](https://discord.gg/dbfQyC4s)
 
