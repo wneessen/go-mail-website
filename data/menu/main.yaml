@@ -52,6 +52,10 @@ main:
           de: Leitfaden
           zh: 指南
         ref: "/community/guide"
+      - name:
+          en: Merch
+          de: Merch
+        ref: "/community/merch"
   - name:
       en: Security
       de: Sicherheit
