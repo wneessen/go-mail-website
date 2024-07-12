@@ -134,7 +134,7 @@ of no surprise to you, if you already used go-mail before.
 
 One more interesting thing happens in [lines 86](#hl-0-86) thru [91](#hl-0-91) in which we use our 
 prepared `html/template` and `text/template` templates and apply it to our mail message using 
-`m.SetBodyHTMLTemplate` and `m.AddAlternativeTextTemplate`. We provide the whole user struct as data to that 
+`m.SetBodyTextTemplate` and `m.AddAlternativeHTMLTemplate`. We provide the whole user struct as data to that 
 methods, so that `html/template` and `text/template` can take care of replacing placeholders in the mail body. 
 Go-mail will take care of all the bells and whistles with the template handling for you. With our mail message 
 now complete, we append it to our mail message slice in [line 93](#hl-0-93).
