@@ -92,11 +92,11 @@ func main() {
 		m.SetDate()
 		m.SetBulk()
 		m.Subject(fmt.Sprintf("%s, we have a great offer for you!", u.Firstname))
-		if err := m.SetBodyHTMLTemplate(htpl, u); err != nil {
-			log.Fatalf("failed to set HTML template as HTML body: %s", err)
+		if err := m.SetBodyTextTemplate(ttpl, u); err != nil {
+			log.Fatalf("failed to add text template to mail body: %s", err)
 		}
-		if err := m.AddAlternativeTextTemplate(ttpl, u); err != nil {
-			log.Fatalf("failed to set text template as alternative body: %s", err)
+		if err := m.AddAlternativeHTMLTemplate(htpl, u); err != nil {
+			log.Fatalf("failed to add HTML template to mail body: %s", err)
 		}
 
 		ms = append(ms, m)
