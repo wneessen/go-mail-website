@@ -90,11 +90,11 @@ func main() {
         m.SetDate()
         m.SetBulk()
         m.Subject(fmt.Sprintf("%s, we have a great offer for you!", u.Firstname))
-        if err := m.SetBodyHTMLTemplate(htpl, u); err != nil {
-            log.Fatalf("failed to set HTML template as HTML body: %s", err)
+        if err := m.SetBodyTextTemplate(ttpl, u); err != nil {
+            log.Fatalf("failed to add text template to mail body: %s", err)
         }
-        if err := m.AddAlternativeTextTemplate(ttpl, u); err != nil {
-            log.Fatalf("failed to set text template as alternative body: %s", err)
+        if err := m.AddAlternativeHTMLTemplate(htpl, u); err != nil {
+            log.Fatalf("failed to add HTML template to mail body: %s", err)
         }
 
         ms = append(ms, m)
@@ -110,10 +110,6 @@ func main() {
     }
     log.Printf("Bulk mailing successfully delivered.")
 }
-}
-}
-}
-}
 ```
 
 Nehmen wir das Beispiel mal auseinander, um uns ein paar Details anzuschauen...
@@ -126,6 +122,6 @@ Als Nächstes erstellen wir eine Liste von Nutzern, an die wir unser tolles Mass
 
 Bei Massenmails ist es üblich, dass die `ENVELOPE FROM` und die `MAIL FROM` unterschiedlich sind, so dass Bounce-Mails an ein System gesendet werden, das diese Bounces im lokalen System als gebounced markieren kann. Deshalb setzen wir diese beiden von Adressaten in [Zeile 73](#hl-0-73) und [Zeile 76](#hl-0-76). Die Zeilen [79](#hl-0-79) bis [85](#hl-0-85) sollten dich nicht überraschen, wenn du go-mail schon einmal benutzt hast.
 
-Eine weitere wichtige Sache passiert in [Zeilen 86](#hl-0-86) bis [91](#hl-0-91), in denen wir unsere vorbereiteten `html/template` und `text/template` Vorlagen verwenden und sie mit `m.SetBodyHTMLTemplate` und `m.AddAlternativeTextTemplate` auf unsere E-Mail-Nachricht anwenden. Wir stellen dieser Methode die gesamte Benutzerstruktur als Daten zur Verfügung, so dass `html/template` und `text/template` sich um das Ersetzen der Platzhalter im Mailkörper kümmern können. Go-mail kümmert sich um den ganzen Schnickschnack mit der Vorlagenbearbeitung für dich. Da unsere Mailnachricht nun vollständig ist, fügen wir sie in [Zeile 93](#hl-0-93) an unsere Mailnachrichtenscheibe an.
+One more interesting thing happens in [lines 86](#hl-0-86) thru [91](#hl-0-91) in which we use our prepared `html/template` and `text/template` templates and apply it to our mail message using `m.SetBodyTextTemplate` and `m.AddAlternativeHTMLTemplate`. Wir stellen dieser Methode die gesamte Benutzerstruktur als Daten zur Verfügung, so dass `html/template` und `text/template` sich um das Ersetzen der Platzhalter im Mailkörper kümmern können. Go-mail kümmert sich um den ganzen Schnickschnack mit der Vorlagenbearbeitung für dich. Da unsere Mailnachricht nun vollständig ist, fügen wir sie in [Zeile 93](#hl-0-93) an unsere Mailnachrichtenscheibe an.
 
 Zum Schluss erstellen wir einen neuen [Client](/reference/client/) und senden alle unsere vorbereiteten Nachrichten in einem Rutsch, indem wir die gesamte Nachrichtenscheibe an `Client.DialAndSend` übergeben.
