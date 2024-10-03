@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Communities on go-mail</title><link>https://go-mail.dev/de/community/</link><description>Recent content in Communities on go-mail</description><generator>Hugo</generator><language>de</language><atom:link href="https://go-mail.dev/de/community/index.xml" rel="self" type="application/rss+xml"/><item><title>Community-Leitfaden</title><link>https://go-mail.dev/de/community/guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/de/community/guide/</guid><description>Die go-mail-Community wächst und wenn Du dies liest, stehen die Chancen gut, dass Du auch mitmachen willst!
-Ressourcen Verhaltenskodex Support- und Ankündigungskanäle Mitwirken Entwicklung neuer Funktionen Fehler beheben Testen Dokumentation Übersetzungen Unterstützen Ressourcen Verhaltenskodex In unserer Community folgen wir dem Verhaltenskodex und verlangen von jedem, der Teilnehmen möchte, sich ebenso zu verhalten.
-Support- und Ankündigungskanäle Mastodon: Folge uns auf Mastodon, um aktuelle Nachrichten über go-mail zu erhalten go-mail Forum: Erhalte Ankündigungen und starte Diskussionen über go-mail.</description></item><item><title>Merchandising</title><link>https://go-mail.dev/de/community/merch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/de/community/merch/</guid><description>Dank unserer wunderbaren Freunde von HelloTux können wir großartiges Go-Mail-Merchandising anbieten. Alle Merchandising-Artikel sind bestickt, um die bestmögliche und langlebige Qualität zu gewährleisten.
-Wenn Sie die Open-Source-Community unterstützen und Deine Lieblings-Go-Mail-Bibliothek mit einem coolen Drip repräsentieren möchten, besuchen Sie unseren Merch-Shop unter: https://www.hellotux.com/go-mail.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Communities on go-mail</title><link>https://go-mail.dev/de/community/</link><description>Recent content in Communities on go-mail</description><generator>Hugo</generator><language>de</language><atom:link href="https://go-mail.dev/de/community/index.xml" rel="self" type="application/rss+xml"/><item><title>Community-Leitfaden</title><link>https://go-mail.dev/de/community/guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/de/community/guide/</guid><description>&lt;p>Die go-mail-Community wächst und wenn Du dies liest, stehen die Chancen gut, dass Du auch mitmachen willst!&lt;/p>
+&lt;div class="gdoc-toc gdoc-toc__level--3">
+ &lt;nav id="TableOfContents">
+ &lt;ul>
+ &lt;li>
+ &lt;ul>
+ &lt;li>&lt;a href="#ressourcen">Ressourcen&lt;/a>
+ &lt;ul>
+ &lt;li>&lt;a href="#verhaltenskodex">Verhaltenskodex&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#support--und-ankündigungskanäle">Support- und Ankündigungskanäle&lt;/a>&lt;/li>
+ &lt;/ul>
+ &lt;/li>
+ &lt;li>&lt;a href="#mitwirken">Mitwirken&lt;/a>
+ &lt;ul>
+ &lt;li>&lt;a href="#entwicklung-neuer-funktionen">Entwicklung neuer Funktionen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#fehler-beheben">Fehler beheben&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#testen">Testen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#dokumentation">Dokumentation&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#übersetzungen">Übersetzungen&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#unterstützen">Unterstützen&lt;/a>&lt;/li>
+ &lt;/ul>
+ &lt;/li>
+ &lt;/ul>
+ &lt;/li>
+ &lt;/ul>
+&lt;/nav>
+ &lt;hr />
+ &lt;/div>
+&lt;div class="gdoc-page__anchorwrap">
+ &lt;h2 id="ressourcen">
+ Ressourcen
+ &lt;a data-clipboard-text="https://go-mail.dev/de/community/guide/#ressourcen" class="gdoc-page__anchor clip flex align-center" title="Link zu: Ressourcen" aria-label="Link zu: Ressourcen" href="#ressourcen">
+ &lt;svg class="gdoc-icon gdoc_link">&lt;use xlink:href="#gdoc_link">&lt;/use>&lt;/svg>
+ &lt;/a>
+ &lt;/h2>
+&lt;/div>
+&lt;div class="gdoc-page__anchorwrap">
+ &lt;h3 id="verhaltenskodex">
+ Verhaltenskodex
+ &lt;a data-clipboard-text="https://go-mail.dev/de/community/guide/#verhaltenskodex" class="gdoc-page__anchor clip flex align-center" title="Link zu: Verhaltenskodex" aria-label="Link zu: Verhaltenskodex" href="#verhaltenskodex">
+ &lt;svg class="gdoc-icon gdoc_link">&lt;use xlink:href="#gdoc_link">&lt;/use>&lt;/svg>
+ &lt;/a>
+ &lt;/h3>
+&lt;/div>
+&lt;p>In unserer Community folgen wir dem &lt;a
+ class="gdoc-markdown__link"
+ href="https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md"
+>Verhaltenskodex&lt;/a> und verlangen von jedem, der Teilnehmen möchte, sich ebenso zu verhalten.&lt;/p></description></item><item><title>Merchandising</title><link>https://go-mail.dev/de/community/merch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/de/community/merch/</guid><description>&lt;p>Dank unserer wunderbaren Freunde von &lt;a
+ class="gdoc-markdown__link"
+ href="https://www.hellotux.com"
+>HelloTux&lt;/a>
+können wir großartiges Go-Mail-Merchandising anbieten. Alle Merchandising-Artikel
+sind bestickt, um die bestmögliche und langlebige Qualität zu gewährleisten.&lt;br />
+&lt;br />
+Wenn Sie die Open-Source-Community unterstützen und Deine
+Lieblings-Go-Mail-Bibliothek mit einem coolen Drip repräsentieren möchten,
+besuchen Sie unseren Merch-Shop unter:
+&lt;a
+ class="gdoc-markdown__link"
+ href="https://www.hellotux.com/go-mail"
+>https://www.hellotux.com/go-mail&lt;/a>.&lt;/p></description></item></channel></rss>

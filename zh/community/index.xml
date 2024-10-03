@@ -1,3 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Communities on go-mail</title><link>https://go-mail.dev/zh/community/</link><description>Recent content in Communities on go-mail</description><generator>Hugo</generator><language>zh</language><atom:link href="https://go-mail.dev/zh/community/index.xml" rel="self" type="application/rss+xml"/><item><title>社区指南</title><link>https://go-mail.dev/zh/community/guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/zh/community/guide/</guid><description>go-mail社区正在壮大，如果您正在阅读此文，那么您也想加入！
-资源 行为准则 支持和公告渠道 贡献 开发新功能 修复错误 测试 文档 翻译 支持 资源 行为准则 In our community, we follow our Code of Conduct and ask everybody who likes to participate to act accordingly.
-支持和公告渠道 Mastodon：在Mastodon上关注我们，以获取有关go-mail的最新消息 go-mail forum: Receive announcements and start discussions about go-mail. Github issues: If you have a bug to report or feature to request, please use GitHub issues. Please respect the rules specified in each repository&amp;rsquo;s issue template. 请遵守每个存储库的问题模板中指定的规则。 请遵守每个存储库的问题模板中指定的规则。 Discord：go-mail开发人员和用户在此处实时会面和聊天的地方。 贡献 go-mail is an open source, community driven project.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Communities on go-mail</title><link>https://go-mail.dev/zh/community/</link><description>Recent content in Communities on go-mail</description><generator>Hugo</generator><language>zh</language><atom:link href="https://go-mail.dev/zh/community/index.xml" rel="self" type="application/rss+xml"/><item><title>社区指南</title><link>https://go-mail.dev/zh/community/guide/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/zh/community/guide/</guid><description>&lt;p>go-mail社区正在壮大，如果您正在阅读此文，那么您也想加入！&lt;/p>
+&lt;div class="gdoc-toc gdoc-toc__level--3">
+ &lt;nav id="TableOfContents">
+ &lt;ul>
+ &lt;li>
+ &lt;ul>
+ &lt;li>&lt;a href="#资源">资源&lt;/a>
+ &lt;ul>
+ &lt;li>&lt;a href="#行为准则">行为准则&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#支持和公告渠道">支持和公告渠道&lt;/a>&lt;/li>
+ &lt;/ul>
+ &lt;/li>
+ &lt;li>&lt;a href="#贡献">贡献&lt;/a>
+ &lt;ul>
+ &lt;li>&lt;a href="#开发新功能">开发新功能&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#修复错误">修复错误&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#测试">测试&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#文档">文档&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#翻译">翻译&lt;/a>&lt;/li>
+ &lt;li>&lt;a href="#支持">支持&lt;/a>&lt;/li>
+ &lt;/ul>
+ &lt;/li>
+ &lt;/ul>
+ &lt;/li>
+ &lt;/ul>
+&lt;/nav>
+ &lt;hr />
+ &lt;/div>
+&lt;div class="gdoc-page__anchorwrap">
+ &lt;h2 id="资源">
+ 资源
+ &lt;a data-clipboard-text="https://go-mail.dev/zh/community/guide/#资源" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 资源" aria-label="Anchor to: 资源" href="#%e8%b5%84%e6%ba%90">
+ &lt;svg class="gdoc-icon gdoc_link">&lt;use xlink:href="#gdoc_link">&lt;/use>&lt;/svg>
+ &lt;/a>
+ &lt;/h2>
+&lt;/div>
+&lt;div class="gdoc-page__anchorwrap">
+ &lt;h3 id="行为准则">
+ 行为准则
+ &lt;a data-clipboard-text="https://go-mail.dev/zh/community/guide/#行为准则" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 行为准则" aria-label="Anchor to: 行为准则" href="#%e8%a1%8c%e4%b8%ba%e5%87%86%e5%88%99">
+ &lt;svg class="gdoc-icon gdoc_link">&lt;use xlink:href="#gdoc_link">&lt;/use>&lt;/svg>
+ &lt;/a>
+ &lt;/h3>
+&lt;/div>
+&lt;p>In our community, we follow our &lt;a
+ class="gdoc-markdown__link"
+ href="https://github.com/wneessen/go-mail/blob/main/CODE_OF_CONDUCT.md"
+>Code of Conduct&lt;/a> and ask everybody who likes to participate to act accordingly.&lt;/p>
+&lt;div class="gdoc-page__anchorwrap">
+ &lt;h3 id="支持和公告渠道">
+ 支持和公告渠道
+ &lt;a data-clipboard-text="https://go-mail.dev/zh/community/guide/#支持和公告渠道" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 支持和公告渠道" aria-label="Anchor to: 支持和公告渠道" href="#%e6%94%af%e6%8c%81%e5%92%8c%e5%85%ac%e5%91%8a%e6%b8%a0%e9%81%93">
+ &lt;svg class="gdoc-icon gdoc_link">&lt;use xlink:href="#gdoc_link">&lt;/use>&lt;/svg>
+ &lt;/a>
+ &lt;/h3>
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;a
+ class="gdoc-markdown__link"
+ href="https://s.pebcak.de/@go_mail/"
+>Mastodon&lt;/a>：在Mastodon上关注我们，以获取有关go-mail的最新消息&lt;/li>
+&lt;li>&lt;a
+ class="gdoc-markdown__link"
+ href="https://github.com/wneessen/go-mail/discussions"
+>go-mail forum&lt;/a>: Receive announcements and start discussions about go-mail.&lt;/li>
+&lt;li>&lt;a
+ class="gdoc-markdown__link"
+ href="https://github.com/wneessen/go-mail/issues"
+>Github issues&lt;/a>: If you have a bug to report or feature to request, please use GitHub issues. Please respect the rules specified in each repository&amp;rsquo;s issue template. 请遵守每个存储库的问题模板中指定的规则。 请遵守每个存储库的问题模板中指定的规则。&lt;/li>
+&lt;li>&lt;a
+ class="gdoc-markdown__link"
+ href="https://discord.gg/dbfQyC4s"
+>Discord&lt;/a>：go-mail开发人员和用户在此处实时会面和聊天的地方。&lt;/li>
+&lt;/ul>
+&lt;div class="gdoc-page__anchorwrap">
+ &lt;h2 id="贡献">
+ 贡献
+ &lt;a data-clipboard-text="https://go-mail.dev/zh/community/guide/#贡献" class="gdoc-page__anchor clip flex align-center" title="Anchor to: 贡献" aria-label="Anchor to: 贡献" href="#%e8%b4%a1%e7%8c%ae">
+ &lt;svg class="gdoc-icon gdoc_link">&lt;use xlink:href="#gdoc_link">&lt;/use>&lt;/svg>
+ &lt;/a>
+ &lt;/h2>
+&lt;/div>
+&lt;p>go-mail is an open source, community driven project. We welcome anyone to join us in contributing to the project. This documentation is aimed at anyone wishing to get familiar with the project and the development processes. 我们欢迎任何人加入我们为项目做出贡献。 我们欢迎任何人加入我们为项目做出贡献。 本文档旨在帮助任何希望熟悉项目和开发流程的人。&lt;/p></description></item></channel></rss>

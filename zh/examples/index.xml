@@ -1,3 +1,544 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Examples on go-mail</title><link>https://go-mail.dev/zh/examples/</link><description>Recent content in Examples on go-mail</description><generator>Hugo</generator><language>zh</language><atom:link href="https://go-mail.dev/zh/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Mailer Example</title><link>https://go-mail.dev/zh/examples/simple-mailer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/zh/examples/simple-mailer/</guid><description>This example is the most simple piece of code that is required to successfully send a mail with go-mail.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 package main import ( &amp;#34;log&amp;#34; &amp;#34;os&amp;#34; &amp;#34;github.com/wneessen/go-mail&amp;#34; ) func main() { msg := mail.NewMsg() if err := msg.From(&amp;#34;toni@tester.com&amp;#34;); err !</description></item><item><title>批量邮件示例</title><link>https://go-mail.dev/zh/examples/bulk-mailer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/zh/examples/bulk-mailer/</guid><description>在这个示例中，我们创建了一个小型的批量邮件发送程序，可以将相同的邮件发送给更多的收件人。 In this example we create a small bulk mailer for sending out the same mail to a bigger list of recipients. It is important for us to address the recipient directly in the mail, therefore we will make use of Go&amp;rsquo;s html/template and text/template system together with placeholders.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 package main import ( &amp;#34;fmt&amp;#34; ht &amp;#34;html/template&amp;#34; &amp;#34;log&amp;#34; &amp;#34;math/rand&amp;#34; &amp;#34;os&amp;#34; tt &amp;#34;text/template&amp;#34; &amp;#34;time&amp;#34; &amp;#34;github.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Examples on go-mail</title><link>https://go-mail.dev/zh/examples/</link><description>Recent content in Examples on go-mail</description><generator>Hugo</generator><language>zh</language><atom:link href="https://go-mail.dev/zh/examples/index.xml" rel="self" type="application/rss+xml"/><item><title>Simple Mailer Example</title><link>https://go-mail.dev/zh/examples/simple-mailer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/zh/examples/simple-mailer/</guid><description>&lt;p>This example is the most simple piece of code that is required to successfully send a mail with
+go-mail.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10">10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11">11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15">15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16">16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17">17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-18">&lt;a class="lnlinks" href="#hl-0-18">18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-19">&lt;a class="lnlinks" href="#hl-0-19">19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-20">&lt;a class="lnlinks" href="#hl-0-20">20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-21">&lt;a class="lnlinks" href="#hl-0-21">21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-22">&lt;a class="lnlinks" href="#hl-0-22">22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-23">&lt;a class="lnlinks" href="#hl-0-23">23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-24">&lt;a class="lnlinks" href="#hl-0-24">24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-25">&lt;a class="lnlinks" href="#hl-0-25">25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-26">&lt;a class="lnlinks" href="#hl-0-26">26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-27">&lt;a class="lnlinks" href="#hl-0-27">27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-28">&lt;a class="lnlinks" href="#hl-0-28">28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-29">&lt;a class="lnlinks" href="#hl-0-29">29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-30">&lt;a class="lnlinks" href="#hl-0-30">30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-31">&lt;a class="lnlinks" href="#hl-0-31">31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-32">&lt;a class="lnlinks" href="#hl-0-32">32&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-33">&lt;a class="lnlinks" href="#hl-0-33">33&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="s">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="s">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="s">&amp;#34;github.com/wneessen/go-mail&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">msg&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewMsg&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">msg&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">From&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;toni@tester.com&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set FROM address: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">msg&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">To&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;tina@recipient.org&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set TO address: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">msg&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Subject&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;This is my first test mail with go-mail!&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">msg&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetBodyString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">TypeTextPlain&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;This will be the content of the mail.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Deliver the mails via SMTP 
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewClient&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;smtp.example.com&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithSMTPAuth&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">SMTPAuthPlain&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithTLSPortPolicy&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">TLSMandatory&lt;/span>&lt;span class="p">),&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithUsername&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SMTP_USER&amp;#34;&lt;/span>&lt;span class="p">)),&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithPassword&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SMTP_PASS&amp;#34;&lt;/span>&lt;span class="p">)),&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to create new mail delivery client: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">DialAndSend&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">msg&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to deliver mail: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Test mail successfully delivered.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This example will send a very basic test mail from &lt;code>toni@tester.com&lt;/code> to &lt;code>tina@recipient.org&lt;/code>.&lt;/p></description></item><item><title>批量邮件示例</title><link>https://go-mail.dev/zh/examples/bulk-mailer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://go-mail.dev/zh/examples/bulk-mailer/</guid><description>&lt;p>在这个示例中，我们创建了一个小型的批量邮件发送程序，可以将相同的邮件发送给更多的收件人。 In this example we create a small bulk mailer for sending out the same mail to a bigger list of recipients. It is important for us to address the recipient directly in the mail, therefore we will make use of Go&amp;rsquo;s &lt;code>html/template&lt;/code> and &lt;code>text/template&lt;/code> system together with placeholders.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10"> 10&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11"> 11&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12"> 12&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13"> 13&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14"> 14&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15"> 15&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16"> 16&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17"> 17&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-18">&lt;a class="lnlinks" href="#hl-0-18"> 18&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-19">&lt;a class="lnlinks" href="#hl-0-19"> 19&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-20">&lt;a class="lnlinks" href="#hl-0-20"> 20&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-21">&lt;a class="lnlinks" href="#hl-0-21"> 21&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-22">&lt;a class="lnlinks" href="#hl-0-22"> 22&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-23">&lt;a class="lnlinks" href="#hl-0-23"> 23&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-24">&lt;a class="lnlinks" href="#hl-0-24"> 24&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-25">&lt;a class="lnlinks" href="#hl-0-25"> 25&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-26">&lt;a class="lnlinks" href="#hl-0-26"> 26&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-27">&lt;a class="lnlinks" href="#hl-0-27"> 27&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-28">&lt;a class="lnlinks" href="#hl-0-28"> 28&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-29">&lt;a class="lnlinks" href="#hl-0-29"> 29&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-30">&lt;a class="lnlinks" href="#hl-0-30"> 30&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-31">&lt;a class="lnlinks" href="#hl-0-31"> 31&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-32">&lt;a class="lnlinks" href="#hl-0-32"> 32&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-33">&lt;a class="lnlinks" href="#hl-0-33"> 33&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-34">&lt;a class="lnlinks" href="#hl-0-34"> 34&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-35">&lt;a class="lnlinks" href="#hl-0-35"> 35&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-36">&lt;a class="lnlinks" href="#hl-0-36"> 36&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-37">&lt;a class="lnlinks" href="#hl-0-37"> 37&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-38">&lt;a class="lnlinks" href="#hl-0-38"> 38&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-39">&lt;a class="lnlinks" href="#hl-0-39"> 39&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-40">&lt;a class="lnlinks" href="#hl-0-40"> 40&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-41">&lt;a class="lnlinks" href="#hl-0-41"> 41&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-42">&lt;a class="lnlinks" href="#hl-0-42"> 42&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-43">&lt;a class="lnlinks" href="#hl-0-43"> 43&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-44">&lt;a class="lnlinks" href="#hl-0-44"> 44&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-45">&lt;a class="lnlinks" href="#hl-0-45"> 45&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-46">&lt;a class="lnlinks" href="#hl-0-46"> 46&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-47">&lt;a class="lnlinks" href="#hl-0-47"> 47&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-48">&lt;a class="lnlinks" href="#hl-0-48"> 48&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-49">&lt;a class="lnlinks" href="#hl-0-49"> 49&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-50">&lt;a class="lnlinks" href="#hl-0-50"> 50&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-51">&lt;a class="lnlinks" href="#hl-0-51"> 51&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-52">&lt;a class="lnlinks" href="#hl-0-52"> 52&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-53">&lt;a class="lnlinks" href="#hl-0-53"> 53&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-54">&lt;a class="lnlinks" href="#hl-0-54"> 54&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-55">&lt;a class="lnlinks" href="#hl-0-55"> 55&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-56">&lt;a class="lnlinks" href="#hl-0-56"> 56&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-57">&lt;a class="lnlinks" href="#hl-0-57"> 57&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-58">&lt;a class="lnlinks" href="#hl-0-58"> 58&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-59">&lt;a class="lnlinks" href="#hl-0-59"> 59&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-60">&lt;a class="lnlinks" href="#hl-0-60"> 60&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-61">&lt;a class="lnlinks" href="#hl-0-61"> 61&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-62">&lt;a class="lnlinks" href="#hl-0-62"> 62&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-63">&lt;a class="lnlinks" href="#hl-0-63"> 63&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-64">&lt;a class="lnlinks" href="#hl-0-64"> 64&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-65">&lt;a class="lnlinks" href="#hl-0-65"> 65&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-66">&lt;a class="lnlinks" href="#hl-0-66"> 66&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-67">&lt;a class="lnlinks" href="#hl-0-67"> 67&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-68">&lt;a class="lnlinks" href="#hl-0-68"> 68&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-69">&lt;a class="lnlinks" href="#hl-0-69"> 69&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-70">&lt;a class="lnlinks" href="#hl-0-70"> 70&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-71">&lt;a class="lnlinks" href="#hl-0-71"> 71&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-72">&lt;a class="lnlinks" href="#hl-0-72"> 72&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-73">&lt;a class="lnlinks" href="#hl-0-73"> 73&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-74">&lt;a class="lnlinks" href="#hl-0-74"> 74&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-75">&lt;a class="lnlinks" href="#hl-0-75"> 75&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-76">&lt;a class="lnlinks" href="#hl-0-76"> 76&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-77">&lt;a class="lnlinks" href="#hl-0-77"> 77&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-78">&lt;a class="lnlinks" href="#hl-0-78"> 78&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-79">&lt;a class="lnlinks" href="#hl-0-79"> 79&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-80">&lt;a class="lnlinks" href="#hl-0-80"> 80&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-81">&lt;a class="lnlinks" href="#hl-0-81"> 81&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-82">&lt;a class="lnlinks" href="#hl-0-82"> 82&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-83">&lt;a class="lnlinks" href="#hl-0-83"> 83&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-84">&lt;a class="lnlinks" href="#hl-0-84"> 84&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-85">&lt;a class="lnlinks" href="#hl-0-85"> 85&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-86">&lt;a class="lnlinks" href="#hl-0-86"> 86&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-87">&lt;a class="lnlinks" href="#hl-0-87"> 87&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-88">&lt;a class="lnlinks" href="#hl-0-88"> 88&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-89">&lt;a class="lnlinks" href="#hl-0-89"> 89&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-90">&lt;a class="lnlinks" href="#hl-0-90"> 90&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-91">&lt;a class="lnlinks" href="#hl-0-91"> 91&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-92">&lt;a class="lnlinks" href="#hl-0-92"> 92&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-93">&lt;a class="lnlinks" href="#hl-0-93"> 93&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-94">&lt;a class="lnlinks" href="#hl-0-94"> 94&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-95">&lt;a class="lnlinks" href="#hl-0-95"> 95&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-96">&lt;a class="lnlinks" href="#hl-0-96"> 96&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-97">&lt;a class="lnlinks" href="#hl-0-97"> 97&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-98">&lt;a class="lnlinks" href="#hl-0-98"> 98&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-99">&lt;a class="lnlinks" href="#hl-0-99"> 99&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-100">&lt;a class="lnlinks" href="#hl-0-100">100&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-101">&lt;a class="lnlinks" href="#hl-0-101">101&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-102">&lt;a class="lnlinks" href="#hl-0-102">102&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-103">&lt;a class="lnlinks" href="#hl-0-103">103&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-104">&lt;a class="lnlinks" href="#hl-0-104">104&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-105">&lt;a class="lnlinks" href="#hl-0-105">105&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-106">&lt;a class="lnlinks" href="#hl-0-106">106&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-107">&lt;a class="lnlinks" href="#hl-0-107">107&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-108">&lt;a class="lnlinks" href="#hl-0-108">108&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-109">&lt;a class="lnlinks" href="#hl-0-109">109&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-110">&lt;a class="lnlinks" href="#hl-0-110">110&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-111">&lt;a class="lnlinks" href="#hl-0-111">111&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-112">&lt;a class="lnlinks" href="#hl-0-112">112&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-113">&lt;a class="lnlinks" href="#hl-0-113">113&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-114">&lt;a class="lnlinks" href="#hl-0-114">114&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-115">&lt;a class="lnlinks" href="#hl-0-115">115&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-116">&lt;a class="lnlinks" href="#hl-0-116">116&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-117">&lt;a class="lnlinks" href="#hl-0-117">117&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-118">&lt;a class="lnlinks" href="#hl-0-118">118&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-119">&lt;a class="lnlinks" href="#hl-0-119">119&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-120">&lt;a class="lnlinks" href="#hl-0-120">120&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-121">&lt;a class="lnlinks" href="#hl-0-121">121&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-122">&lt;a class="lnlinks" href="#hl-0-122">122&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-123">&lt;a class="lnlinks" href="#hl-0-123">123&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-124">&lt;a class="lnlinks" href="#hl-0-124">124&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-125">&lt;a class="lnlinks" href="#hl-0-125">125&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-126">&lt;a class="lnlinks" href="#hl-0-126">126&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-127">&lt;a class="lnlinks" href="#hl-0-127">127&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-128">&lt;a class="lnlinks" href="#hl-0-128">128&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-129">&lt;a class="lnlinks" href="#hl-0-129">129&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-130">&lt;a class="lnlinks" href="#hl-0-130">130&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-131">&lt;a class="lnlinks" href="#hl-0-131">131&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-132">&lt;a class="lnlinks" href="#hl-0-132">132&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-133">&lt;a class="lnlinks" href="#hl-0-133">133&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-134">&lt;a class="lnlinks" href="#hl-0-134">134&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-135">&lt;a class="lnlinks" href="#hl-0-135">135&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-136">&lt;a class="lnlinks" href="#hl-0-136">136&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-137">&lt;a class="lnlinks" href="#hl-0-137">137&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-138">&lt;a class="lnlinks" href="#hl-0-138">138&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-139">&lt;a class="lnlinks" href="#hl-0-139">139&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-140">&lt;a class="lnlinks" href="#hl-0-140">140&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-141">&lt;a class="lnlinks" href="#hl-0-141">141&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-142">&lt;a class="lnlinks" href="#hl-0-142">142&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-143">&lt;a class="lnlinks" href="#hl-0-143">143&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-144">&lt;a class="lnlinks" href="#hl-0-144">144&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-145">&lt;a class="lnlinks" href="#hl-0-145">145&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-146">&lt;a class="lnlinks" href="#hl-0-146">146&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-147">&lt;a class="lnlinks" href="#hl-0-147">147&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-148">&lt;a class="lnlinks" href="#hl-0-148">148&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-149">&lt;a class="lnlinks" href="#hl-0-149">149&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-150">&lt;a class="lnlinks" href="#hl-0-150">150&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-151">&lt;a class="lnlinks" href="#hl-0-151">151&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-152">&lt;a class="lnlinks" href="#hl-0-152">152&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-153">&lt;a class="lnlinks" href="#hl-0-153">153&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-154">&lt;a class="lnlinks" href="#hl-0-154">154&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-155">&lt;a class="lnlinks" href="#hl-0-155">155&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-156">&lt;a class="lnlinks" href="#hl-0-156">156&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-157">&lt;a class="lnlinks" href="#hl-0-157">157&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-158">&lt;a class="lnlinks" href="#hl-0-158">158&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-159">&lt;a class="lnlinks" href="#hl-0-159">159&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-160">&lt;a class="lnlinks" href="#hl-0-160">160&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-161">&lt;a class="lnlinks" href="#hl-0-161">161&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-162">&lt;a class="lnlinks" href="#hl-0-162">162&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-163">&lt;a class="lnlinks" href="#hl-0-163">163&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-164">&lt;a class="lnlinks" href="#hl-0-164">164&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-165">&lt;a class="lnlinks" href="#hl-0-165">165&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-166">&lt;a class="lnlinks" href="#hl-0-166">166&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-167">&lt;a class="lnlinks" href="#hl-0-167">167&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-168">&lt;a class="lnlinks" href="#hl-0-168">168&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-169">&lt;a class="lnlinks" href="#hl-0-169">169&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-170">&lt;a class="lnlinks" href="#hl-0-170">170&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-171">&lt;a class="lnlinks" href="#hl-0-171">171&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-172">&lt;a class="lnlinks" href="#hl-0-172">172&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-173">&lt;a class="lnlinks" href="#hl-0-173">173&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-174">&lt;a class="lnlinks" href="#hl-0-174">174&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-175">&lt;a class="lnlinks" href="#hl-0-175">175&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-176">&lt;a class="lnlinks" href="#hl-0-176">176&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-177">&lt;a class="lnlinks" href="#hl-0-177">177&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-178">&lt;a class="lnlinks" href="#hl-0-178">178&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-179">&lt;a class="lnlinks" href="#hl-0-179">179&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-180">&lt;a class="lnlinks" href="#hl-0-180">180&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-181">&lt;a class="lnlinks" href="#hl-0-181">181&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-182">&lt;a class="lnlinks" href="#hl-0-182">182&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-183">&lt;a class="lnlinks" href="#hl-0-183">183&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-184">&lt;a class="lnlinks" href="#hl-0-184">184&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-185">&lt;a class="lnlinks" href="#hl-0-185">185&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-186">&lt;a class="lnlinks" href="#hl-0-186">186&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-187">&lt;a class="lnlinks" href="#hl-0-187">187&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-188">&lt;a class="lnlinks" href="#hl-0-188">188&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-189">&lt;a class="lnlinks" href="#hl-0-189">189&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-190">&lt;a class="lnlinks" href="#hl-0-190">190&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-191">&lt;a class="lnlinks" href="#hl-0-191">191&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-192">&lt;a class="lnlinks" href="#hl-0-192">192&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-193">&lt;a class="lnlinks" href="#hl-0-193">193&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-194">&lt;a class="lnlinks" href="#hl-0-194">194&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-195">&lt;a class="lnlinks" href="#hl-0-195">195&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-196">&lt;a class="lnlinks" href="#hl-0-196">196&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-197">&lt;a class="lnlinks" href="#hl-0-197">197&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-198">&lt;a class="lnlinks" href="#hl-0-198">198&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-199">&lt;a class="lnlinks" href="#hl-0-199">199&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-200">&lt;a class="lnlinks" href="#hl-0-200">200&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-201">&lt;a class="lnlinks" href="#hl-0-201">201&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-202">&lt;a class="lnlinks" href="#hl-0-202">202&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-203">&lt;a class="lnlinks" href="#hl-0-203">203&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-204">&lt;a class="lnlinks" href="#hl-0-204">204&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-205">&lt;a class="lnlinks" href="#hl-0-205">205&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-206">&lt;a class="lnlinks" href="#hl-0-206">206&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-207">&lt;a class="lnlinks" href="#hl-0-207">207&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-208">&lt;a class="lnlinks" href="#hl-0-208">208&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-209">&lt;a class="lnlinks" href="#hl-0-209">209&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-210">&lt;a class="lnlinks" href="#hl-0-210">210&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-211">&lt;a class="lnlinks" href="#hl-0-211">211&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-212">&lt;a class="lnlinks" href="#hl-0-212">212&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-213">&lt;a class="lnlinks" href="#hl-0-213">213&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-214">&lt;a class="lnlinks" href="#hl-0-214">214&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-215">&lt;a class="lnlinks" href="#hl-0-215">215&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-216">&lt;a class="lnlinks" href="#hl-0-216">216&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-217">&lt;a class="lnlinks" href="#hl-0-217">217&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-218">&lt;a class="lnlinks" href="#hl-0-218">218&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-219">&lt;a class="lnlinks" href="#hl-0-219">219&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-220">&lt;a class="lnlinks" href="#hl-0-220">220&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-221">&lt;a class="lnlinks" href="#hl-0-221">221&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-222">&lt;a class="lnlinks" href="#hl-0-222">222&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-223">&lt;a class="lnlinks" href="#hl-0-223">223&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-224">&lt;a class="lnlinks" href="#hl-0-224">224&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-225">&lt;a class="lnlinks" href="#hl-0-225">225&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-226">&lt;a class="lnlinks" href="#hl-0-226">226&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-227">&lt;a class="lnlinks" href="#hl-0-227">227&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-228">&lt;a class="lnlinks" href="#hl-0-228">228&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-229">&lt;a class="lnlinks" href="#hl-0-229">229&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-230">&lt;a class="lnlinks" href="#hl-0-230">230&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-231">&lt;a class="lnlinks" href="#hl-0-231">231&lt;/a>
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">ht&lt;/span> &lt;span class="s">&amp;#34;html/template&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;math/rand&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tt&lt;/span> &lt;span class="s">&amp;#34;text/template&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;github.com/wneessen/go-mail&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// User is a simple type allowing us to set a firstname, lastname and mail address
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">type&lt;/span> &lt;span class="nx">User&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Firstname&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Lastname&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">EmailAddr&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Our sender information that will be used in the FROM address field
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">const&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">senderName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;ACME Inc.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">senderAddr&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;noreply@acme.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">const&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">textBodyTemplate&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">`Hi &lt;/span>&lt;span class="cp">{{&lt;/span>&lt;span class="na">.Firstname&lt;/span>&lt;span class="cp">}}&lt;/span>&lt;span class="s">,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">we are writing your to let you know that this week we have an amazing offer for you.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Using the coupon code &amp;#34;GOMAIL&amp;#34; you will get a 20% discount on all our products in our
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">online shop.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Check out our latest offer on https://acme.com and use your discount code today!
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Your marketing team
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> at ACME Inc.`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">htmlBodyTemplate&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">`&amp;lt;p&amp;gt;Hi &lt;/span>&lt;span class="cp">{{&lt;/span>&lt;span class="na">.Firstname&lt;/span>&lt;span class="cp">}}&lt;/span>&lt;span class="s">,&amp;lt;/p&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">&amp;lt;p&amp;gt;we are writing your to let you know that this week we have an amazing offer for you.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">package main
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">import (
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;fmt&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ht &amp;#34;html/template&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;log&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;math/rand&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;os&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> tt &amp;#34;text/template&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;time&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;github.com/wneessen/go-mail&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">// User is a simple type allowing us to set a firstname, lastname and mail address
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">type User struct {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> Firstname string
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> Lastname string
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> EmailAddr string
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">// Our sender information that will be used in the FROM address field
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">const (
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> senderName = &amp;#34;ACME Inc.&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> senderAddr = &amp;#34;noreply@acme.com&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">const (
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> textBodyTemplate = `&lt;/span>&lt;span class="nx">Hi&lt;/span> &lt;span class="p">{{.&lt;/span>&lt;span class="nx">Firstname&lt;/span>&lt;span class="p">}},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">we&lt;/span> &lt;span class="nx">are&lt;/span> &lt;span class="nx">writing&lt;/span> &lt;span class="nx">your&lt;/span> &lt;span class="nx">to&lt;/span> &lt;span class="nx">let&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">know&lt;/span> &lt;span class="nx">that&lt;/span> &lt;span class="nx">this&lt;/span> &lt;span class="nx">week&lt;/span> &lt;span class="nx">we&lt;/span> &lt;span class="nx">have&lt;/span> &lt;span class="nx">an&lt;/span> &lt;span class="nx">amazing&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">you&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Using&lt;/span> &lt;span class="nx">the&lt;/span> &lt;span class="nx">coupon&lt;/span> &lt;span class="nx">code&lt;/span> &lt;span class="s">&amp;#34;GOMAIL&amp;#34;&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">will&lt;/span> &lt;span class="nx">get&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="nx">discount&lt;/span> &lt;span class="nx">on&lt;/span> &lt;span class="nx">all&lt;/span> &lt;span class="nx">our&lt;/span> &lt;span class="nx">products&lt;/span> &lt;span class="nx">in&lt;/span> &lt;span class="nx">our&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">online&lt;/span> &lt;span class="nx">shop&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Check&lt;/span> &lt;span class="nx">out&lt;/span> &lt;span class="nx">our&lt;/span> &lt;span class="nx">latest&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="nx">on&lt;/span> &lt;span class="nx">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//acme.com and use your discount code today!
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Your&lt;/span> &lt;span class="nx">marketing&lt;/span> &lt;span class="nx">team&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">at&lt;/span> &lt;span class="nx">ACME&lt;/span> &lt;span class="nx">Inc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="s">`
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> htmlBodyTemplate = `&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">Hi&lt;/span> &lt;span class="p">{{.&lt;/span>&lt;span class="nx">Firstname&lt;/span>&lt;span class="p">}},&amp;lt;&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">we&lt;/span> &lt;span class="nx">are&lt;/span> &lt;span class="nx">writing&lt;/span> &lt;span class="nx">your&lt;/span> &lt;span class="nx">to&lt;/span> &lt;span class="nx">let&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">know&lt;/span> &lt;span class="nx">that&lt;/span> &lt;span class="nx">this&lt;/span> &lt;span class="nx">week&lt;/span> &lt;span class="nx">we&lt;/span> &lt;span class="nx">have&lt;/span> &lt;span class="nx">an&lt;/span> &lt;span class="nx">amazing&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">you&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">ht&lt;/span> &lt;span class="s">&amp;#34;html/template&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;log&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;math/rand&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;os&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">tt&lt;/span> &lt;span class="s">&amp;#34;text/template&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;github.com/wneessen/go-mail&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// User is a simple type allowing us to set a firstname, lastname and mail address
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">type&lt;/span> &lt;span class="nx">User&lt;/span> &lt;span class="kd">struct&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Firstname&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">Lastname&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">EmailAddr&lt;/span> &lt;span class="kt">string&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// Our sender information that will be used in the FROM address field
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kd">const&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">senderName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;ACME Inc.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">senderAddr&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">&amp;#34;noreply@acme.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">const&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">textBodyTemplate&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">`Hi &lt;/span>&lt;span class="cp">{{&lt;/span>&lt;span class="na">.Firstname&lt;/span>&lt;span class="cp">}}&lt;/span>&lt;span class="s">,
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">we are writing your to let you know that this week we have an amazing offer for you.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Using the coupon code &amp;#34;GOMAIL&amp;#34; you will get a 20% discount on all our products in our
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">online shop.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Check out our latest offer on https://acme.com and use your discount code today!
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">Your marketing team
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> at ACME Inc.`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">htmlBodyTemplate&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s">`&amp;lt;p&amp;gt;Hi &lt;/span>&lt;span class="cp">{{&lt;/span>&lt;span class="na">.Firstname&lt;/span>&lt;span class="cp">}}&lt;/span>&lt;span class="s">,&amp;lt;/p&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">&amp;lt;p&amp;gt;we are writing your to let you know that this week we have an amazing offer for you.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">package main
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">import (
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;fmt&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> ht &amp;#34;html/template&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;log&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;math/rand&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;os&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> tt &amp;#34;text/template&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;time&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> &amp;#34;github.com/wneessen/go-mail&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">// User is a simple type allowing us to set a firstname, lastname and mail address
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">type User struct {
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> Firstname string
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> Lastname string
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> EmailAddr string
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">// Our sender information that will be used in the FROM address field
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">const (
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> senderName = &amp;#34;ACME Inc.&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> senderAddr = &amp;#34;noreply@acme.com&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">)
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">const (
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> textBodyTemplate = `&lt;/span>&lt;span class="nx">Hi&lt;/span> &lt;span class="p">{{.&lt;/span>&lt;span class="nx">Firstname&lt;/span>&lt;span class="p">}},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">we&lt;/span> &lt;span class="nx">are&lt;/span> &lt;span class="nx">writing&lt;/span> &lt;span class="nx">your&lt;/span> &lt;span class="nx">to&lt;/span> &lt;span class="nx">let&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">know&lt;/span> &lt;span class="nx">that&lt;/span> &lt;span class="nx">this&lt;/span> &lt;span class="nx">week&lt;/span> &lt;span class="nx">we&lt;/span> &lt;span class="nx">have&lt;/span> &lt;span class="nx">an&lt;/span> &lt;span class="nx">amazing&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">you&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Using&lt;/span> &lt;span class="nx">the&lt;/span> &lt;span class="nx">coupon&lt;/span> &lt;span class="nx">code&lt;/span> &lt;span class="s">&amp;#34;GOMAIL&amp;#34;&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">will&lt;/span> &lt;span class="nx">get&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="nx">discount&lt;/span> &lt;span class="nx">on&lt;/span> &lt;span class="nx">all&lt;/span> &lt;span class="nx">our&lt;/span> &lt;span class="nx">products&lt;/span> &lt;span class="nx">in&lt;/span> &lt;span class="nx">our&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">online&lt;/span> &lt;span class="nx">shop&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Check&lt;/span> &lt;span class="nx">out&lt;/span> &lt;span class="nx">our&lt;/span> &lt;span class="nx">latest&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="nx">on&lt;/span> &lt;span class="nx">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//acme.com and use your discount code today!
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Your&lt;/span> &lt;span class="nx">marketing&lt;/span> &lt;span class="nx">team&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">at&lt;/span> &lt;span class="nx">ACME&lt;/span> &lt;span class="nx">Inc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="s">`
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s"> htmlBodyTemplate = `&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">Hi&lt;/span> &lt;span class="p">{{.&lt;/span>&lt;span class="nx">Firstname&lt;/span>&lt;span class="p">}},&amp;lt;&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">we&lt;/span> &lt;span class="nx">are&lt;/span> &lt;span class="nx">writing&lt;/span> &lt;span class="nx">your&lt;/span> &lt;span class="nx">to&lt;/span> &lt;span class="nx">let&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">know&lt;/span> &lt;span class="nx">that&lt;/span> &lt;span class="nx">this&lt;/span> &lt;span class="nx">week&lt;/span> &lt;span class="nx">we&lt;/span> &lt;span class="nx">have&lt;/span> &lt;span class="nx">an&lt;/span> &lt;span class="nx">amazing&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="nx">you&lt;/span>&lt;span class="p">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">Using&lt;/span> &lt;span class="nx">the&lt;/span> &lt;span class="nx">coupon&lt;/span> &lt;span class="nx">code&lt;/span> &lt;span class="s">&amp;#34;&amp;lt;strong&amp;gt;GOMAIL&amp;lt;/strong&amp;gt;&amp;#34;&lt;/span> &lt;span class="nx">you&lt;/span> &lt;span class="nx">will&lt;/span> &lt;span class="nx">get&lt;/span> &lt;span class="nx">a&lt;/span> &lt;span class="mi">20&lt;/span>&lt;span class="o">%&lt;/span> &lt;span class="nx">discount&lt;/span> &lt;span class="nx">on&lt;/span> &lt;span class="nx">all&lt;/span> 
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">our&lt;/span> &lt;span class="nx">products&lt;/span> &lt;span class="nx">in&lt;/span> &lt;span class="nx">our&lt;/span> &lt;span class="nx">online&lt;/span> &lt;span class="nx">shop&lt;/span>&lt;span class="p">.&amp;lt;&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">Check&lt;/span> &lt;span class="nx">out&lt;/span> &lt;span class="nx">our&lt;/span> &lt;span class="nx">latest&lt;/span> &lt;span class="nx">offer&lt;/span> &lt;span class="nx">on&lt;/span> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">a&lt;/span> &lt;span class="nx">href&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s">&amp;#34;https://acme.com&amp;#34;&lt;/span> &lt;span class="nx">target&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="s">&amp;#34;_blank&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">https&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="c1">//acme.com&amp;lt;/a&amp;gt;
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">and&lt;/span> &lt;span class="nx">use&lt;/span> &lt;span class="nx">your&lt;/span> &lt;span class="nx">discount&lt;/span> &lt;span class="nx">code&lt;/span> &lt;span class="nx">today&lt;/span>&lt;span class="p">!&amp;lt;&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="nx">Your&lt;/span> &lt;span class="nx">marketing&lt;/span> &lt;span class="nx">team&lt;/span>&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nx">br&lt;/span> &lt;span class="o">/&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">nbsp&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="nx">nbsp&lt;/span>&lt;span class="p">;&lt;/span>&lt;span class="nx">at&lt;/span> &lt;span class="nx">ACME&lt;/span> &lt;span class="nx">Inc&lt;/span>&lt;span class="p">.&amp;lt;&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="nx">p&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>&lt;span class="err">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Define a list of users we want to mail to
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">ul&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="nx">User&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s">&amp;#34;Toni&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Tester&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;toni.tester@example.com&amp;#34;&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s">&amp;#34;Tina&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Tester&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;tina.tester@example.com&amp;#34;&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>&lt;span class="s">&amp;#34;John&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Doe&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;john.doe@example.com&amp;#34;&lt;/span>&lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Prepare the different templates
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">ttpl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">tt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">New&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;texttpl&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nf">Parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">textBodyTemplate&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to parse text template: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">htpl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">ht&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">New&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;htmltpl&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nf">Parse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">htmlBodyTemplate&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to parse text template: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">var&lt;/span> &lt;span class="nx">ms&lt;/span> &lt;span class="p">[]&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Msg&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">r&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">rand&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">New&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">rand&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewSource&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">time&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Now&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="nf">UnixNano&lt;/span>&lt;span class="p">()))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="nx">_&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">u&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="k">range&lt;/span> &lt;span class="nx">ul&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">rn&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">r&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Int31&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">m&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewMsg&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">EnvelopeFrom&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;noreply+%d@acme.com&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">rn&lt;/span>&lt;span class="p">));&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set ENVELOPE FROM address: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">FromFormat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">senderName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">senderAddr&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set formatted FROM address: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">AddToFormat&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%s %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">u&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Firstname&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">u&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Lastname&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nx">u&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">EmailAddr&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set formatted TO address: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetMessageID&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetDate&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetBulk&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Subject&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Sprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;%s, we have a great offer for you!&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">u&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Firstname&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">SetBodyHTMLTemplate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">htpl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">u&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set HTML template as HTML body: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">m&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">AddAlternativeTextTemplate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ttpl&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">u&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to set text template as alternative body: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">ms&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">append&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ms&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">m&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Deliver the mails via SMTP
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">NewClient&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;smtp.example.com&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithSMTPAuth&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">SMTPAuthPlain&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithTLSPortPolicy&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">TLSMandatory&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithUsername&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SMTP_USER&amp;#34;&lt;/span>&lt;span class="p">)),&lt;/span> &lt;span class="nx">mail&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">WithPassword&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">os&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Getenv&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;SMTP_PASS&amp;#34;&lt;/span>&lt;span class="p">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">:=&lt;/span> &lt;span class="nx">c&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">DialAndSend&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">ms&lt;/span>&lt;span class="o">...&lt;/span>&lt;span class="p">);&lt;/span> &lt;span class="nx">err&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="kc">nil&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Fatalf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;failed to deliver mail: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">err&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">log&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Printf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Bulk mailing successfully delivered.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Let&amp;rsquo;s take the example apart to look at some details&amp;hellip;&lt;/p></description></item></channel></rss>
