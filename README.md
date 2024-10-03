@@ -1,3 +1,6 @@
+> [!CAUTION]
+> This repository has been archived. The go-mail website is now hosted in the [go-mail Wiki](https://github.com/wneessen/go-mail/wiki).
+
 # go-mail-website
 
 This is the documentation website for the [go-mail](https://github.com/wneessen/go-mail) library. The website is built with [Hugo](https://gohugo.io/) and uses the brilliant 
